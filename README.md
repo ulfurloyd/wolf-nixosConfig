@@ -2,7 +2,7 @@
 
 - using NixOS, Nix-Flakes and Home Manager
 
-- missing implementations - 
+## missing implementations - 
 - [ ] nvim
 - [ ] zsh
 
