@@ -31,6 +31,7 @@ in
   home.packages = with pkgs; [
     zsh
     zinit
+    zoxide
     eza
     neofetch
     pfetch
@@ -91,19 +92,21 @@ in
     shellAliases = myAliases;
   };
 
-  programs.zsh = {
-    enable = true;
-    shellAliases = myAliases;
-    oh-my-zsh = {
-      enable = true;
-      plugins = [
-        "vi-mode"
-	"git"
-      ];
-      theme = "nicoulaj";
-    };
-  };
+  # programs.zsh = {
+  #   enable = true;
+  #   shellAliases = myAliases;
+  #   oh-my-zsh = {
+  #     enable = true;
+  #     plugins = [
+  #       "vi-mode"
+  #       "git"
+  #     ];
+  #     theme = "nicoulaj";
+  #   };
+  # };
 
+  #   home.file."$HOME/.zshrc".source = ./.zshrc;
+  # 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
