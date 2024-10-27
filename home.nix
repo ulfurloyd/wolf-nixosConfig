@@ -1,9 +1,23 @@
 { config, pkgs, ... }:
 
+# global declaration of shell aliases
 let
   myAliases = {
-    ll = "ls -lah";
-    ".." = "cd ..";
+    nf = "neofetch";
+    pf = "pfetch";
+    ls = "exa -lah";
+    v = "nvim";
+    ani = "ani-cli";
+    myscrot = "scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png";
+
+    # fuzzy finder
+    vif = "nvim $(fzf)";
+
+    # zoxide
+    # cd = "z";
+
+    # tmux
+    t = "tmux";
     };
 in
 {
@@ -12,22 +26,15 @@ in
   home.username = "wolf";
   home.homeDirectory = "/home/wolf";
 
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
-  home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-    pkgs.zsh
+  home.packages = with pkgs; [
+    zsh
+    zinit
+    eza
+    neofetch
+    pfetch
+    fzf
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -86,6 +93,14 @@ in
   programs.zsh = {
     enable = true;
     shellAliases = myAliases;
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "vi-mode"
+	"git"
+      ];
+      theme = "nicoulaj";
+    };
   };
 
   # Let Home Manager install and manage itself.
