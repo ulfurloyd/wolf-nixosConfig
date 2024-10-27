@@ -32,11 +32,16 @@ in
     zsh
     zinit
     zoxide
+    tmux
     eza
     neofetch
     pfetch
     fzf
     gh
+    kitty
+    fira
+    fira-code
+    vesktop
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -85,6 +90,18 @@ in
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
+  };
+
+  programs.kitty = {
+    enable = true;
+    settings = {
+      font_family = "FiraCode-Regular";
+      font_size = "13.0";
+      enable_audio_bell = "no";
+      confirm_os_window_close = "0";
+      background_opacity = "0.8";
+      shell = "zsh";
+    };
   };
 
   programs.bash = {
