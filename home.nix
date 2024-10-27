@@ -1,26 +1,11 @@
 { config, pkgs, ... }:
 
-# global declaration of shell aliases
-let
-  myAliases = {
-    nf = "neofetch";
-    pf = "pfetch";
-    ls = "exa -lah";
-    v = "nvim";
-    ani = "ani-cli";
-    myscrot = "scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png";
-
-    # fuzzy finder
-    vif = "nvim $(fzf)";
-
-    # zoxide
-    # cd = "z";
-
-    # tmux
-    t = "tmux";
-    };
-in
 {
+
+  imports = [
+    ./sh.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "wolf";
@@ -29,6 +14,7 @@ in
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
+    nodejs_22
     zsh
     zinit
     zoxide
@@ -92,6 +78,21 @@ in
     # EDITOR = "emacs";
   };
 
+  programs.neovim = {
+    enable = true;
+
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+
+    # extraLuaConfig = ''
+    #   -- Write lua code here
+
+    #   -- or interpolate files like this:
+    #   ${builtins.readFile ./nvim/lua/vim-opts.lua}
+    # '';
+  };
+
   programs.kitty = {
     enable = true;
     settings = {
@@ -104,26 +105,6 @@ in
     };
   };
 
-  programs.bash = {
-    enable = true;
-    shellAliases = myAliases;
-  };
-
-  # programs.zsh = {
-  #   enable = true;
-  #   shellAliases = myAliases;
-  #   oh-my-zsh = {
-  #     enable = true;
-  #     plugins = [
-  #       "vi-mode"
-  #       "git"
-  #     ];
-  #     theme = "nicoulaj";
-  #   };
-  # };
-
-  #   home.file."$HOME/.zshrc".source = ./.zshrc;
-  # 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
