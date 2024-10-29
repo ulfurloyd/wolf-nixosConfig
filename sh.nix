@@ -20,6 +20,16 @@ let
     };
 in
 {
+
+  home.packages = with pkgs; [
+    zsh
+    zinit
+    zoxide
+    eza
+    neofetch
+    pfetch
+    fzf
+  ];
   programs.bash = {
     enable = true;
     shellAliases = myAliases;
