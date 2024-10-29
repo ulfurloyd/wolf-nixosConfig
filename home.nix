@@ -3,7 +3,7 @@
 {
 
   imports = [
-    ./sh.nix
+    ./config/shell/sh.nix
     ./config/nvim/vim.nix
   ];
 
