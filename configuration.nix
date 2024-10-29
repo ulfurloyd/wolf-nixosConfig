@@ -110,6 +110,14 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  # Install steam
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -123,6 +131,7 @@
     vim
     neovim
     wget
+    lutris
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
