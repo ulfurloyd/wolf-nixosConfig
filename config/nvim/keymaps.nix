@@ -12,6 +12,14 @@
         silent = true;
       };
     }
+    {
+      mode = "n";
+      key = "<leader>tp";
+      action = ":TransparentToggle<CR>";
+      options = {
+        desc = "Toggle Transparency";
+      };
+    }
     ];
   };
 }

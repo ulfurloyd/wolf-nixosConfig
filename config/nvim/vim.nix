@@ -10,6 +10,8 @@
     ./plugins/startify.nix
     ./plugins/oil.nix
     ./plugins/comment.nix
+    ./plugins/transparent.nix
+    ./plugins/completions.nix
   ];
 
   programs.nixvim = {
