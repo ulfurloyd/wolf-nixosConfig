@@ -3,14 +3,18 @@
 {
 
   imports = [
+    ./colorscheme.nix
+    ./keymaps.nix
     ./plugins/lsp.nix
+    ./plugins/lualine.nix
+    ./plugins/startify.nix
+    ./plugins/oil.nix
+    ./plugins/comment.nix
   ];
 
   programs.nixvim = {
 
     enable = true;
-
-    colorschemes.catppuccin.enable = true;
 
     # config options for neovim
     opts = {

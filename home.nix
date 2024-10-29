@@ -5,6 +5,7 @@
   imports = [
     ./config/shell/sh.nix
     ./config/nvim/vim.nix
+    ./config/term/kitty.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -21,6 +22,7 @@
     kitty
     fira
     fira-code
+    onefetch
     vesktop
   ];
 
@@ -31,18 +33,6 @@
 
   home.sessionVariables = {
     # EDITOR = "emacs";
-  };
-
-  programs.kitty = {
-    enable = true;
-    settings = {
-      font_family = "FiraCode-Regular";
-      font_size = "13.0";
-      enable_audio_bell = "no";
-      confirm_os_window_close = "0";
-      background_opacity = "0.8";
-      shell = "zsh";
-    };
   };
 
   # Let Home Manager install and manage itself.
