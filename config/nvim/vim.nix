@@ -12,6 +12,8 @@
     ./plugins/comment.nix
     ./plugins/transparent.nix
     ./plugins/completions.nix
+    # ./plugins/treesitter.nix
+    ./plugins/telescope.nix
   ];
 
   programs.nixvim = {
