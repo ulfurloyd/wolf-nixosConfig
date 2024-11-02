@@ -10,6 +10,7 @@
     ./plugins/lsp.nix
     ./plugins/lualine.nix
     ./plugins/neo-tree.nix
+    ./plugins/neocord.nix
     ./plugins/oil.nix
     ./plugins/startify.nix
     ./plugins/transparent.nix
