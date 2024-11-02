@@ -20,6 +20,14 @@
         desc = "Toggle Transparency";
       };
     }
+    {
+      mode = "n";
+      key = "<leader>op";
+      action = ":Neotree toggle<CR>";
+      options = {
+        desc = "Toggle Neotree";
+      };
+    }
     ];
   };
 }

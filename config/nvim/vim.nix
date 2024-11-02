@@ -5,14 +5,15 @@
   imports = [
     ./colorscheme.nix
     ./keymaps.nix
+    ./plugins/comment.nix
+    ./plugins/completions.nix
     ./plugins/lsp.nix
     ./plugins/lualine.nix
-    ./plugins/startify.nix
+    ./plugins/neo-tree.nix
     ./plugins/oil.nix
-    ./plugins/comment.nix
+    ./plugins/startify.nix
     ./plugins/transparent.nix
-    ./plugins/completions.nix
-    # ./plugins/treesitter.nix
+    ./plugins/treesitter.nix
     ./plugins/telescope.nix
   ];
 

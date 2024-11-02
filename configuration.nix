@@ -75,6 +75,13 @@
     variant = "";
   };
 
+  fonts.packages = with pkgs; [
+    nerdfonts
+    fira
+    fira-code
+    fira-code-symbols
+  ];
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 

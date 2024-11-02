@@ -6,22 +6,23 @@
     ./config/shell/sh.nix
     ./config/nvim/vim.nix
     ./config/term/kitty.nix
+    # ./config/tmux/tmux.nix
   ];
 
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
   home.username = "wolf";
   home.homeDirectory = "/home/wolf";
 
-  home.stateVersion = "24.05"; # Please read the comment before changing.
+  home.stateVersion = "24.05";
 
   home.packages = with pkgs; [
     nodejs_22
     gh
     tmux
     kitty
+    nerdfonts
     fira
     fira-code
+    fira-code-symbols
     onefetch
     vesktop
     ripgrep
@@ -33,7 +34,7 @@
   };
 
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
