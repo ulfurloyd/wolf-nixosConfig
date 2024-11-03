@@ -70,8 +70,8 @@
       "ctrl+alt+]"            = "resize_window taller";
 
       ## flavour
-      "ctrl+shift+}"          = "set-background-opacity +0.2";
-      "ctrl+shift+{"          = "set-background-opacity -0.2";
+      "alt+y>="          = "set_background_opacity +0.2";
+      "alt+y>-"          = "set_background_opacity -0.2";
     };
 
     extraConfig = ''
