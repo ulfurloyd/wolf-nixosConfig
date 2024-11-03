@@ -28,6 +28,14 @@
         desc = "Toggle Neotree";
       };
     }
+    {
+      mode = "n";
+      key = "<leader>gg";
+      action = ":LazyGit<CR>";
+      options = {
+        desc = "LazyGit";
+      };
+    }
     ];
   };
 }

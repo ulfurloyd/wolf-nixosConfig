@@ -7,6 +7,7 @@
     ./keymaps.nix
     ./plugins/comment.nix
     ./plugins/completions.nix
+    ./plugins/lazygit.nix
     ./plugins/lsp.nix
     ./plugins/lualine.nix
     ./plugins/neo-tree.nix

@@ -69,7 +69,7 @@
       "ctrl+alt+["            = "resize_window shorter";
       "ctrl+alt+]"            = "resize_window taller";
 
-      ## flavour
+      ## opacity
       "alt+y>="          = "set_background_opacity +0.2";
       "alt+y>-"          = "set_background_opacity -0.2";
     };
