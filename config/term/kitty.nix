@@ -15,6 +15,14 @@
     };
 
     keybindings = {
+      ## LAYOUTS
+      # layout selection
+      "alt+q>f"           = "goto_layout stack";
+      "alt+q>v"           = "goto_layout tall";
+      "alt+q>s"           = "goto_layout fat";
+      #-----------------------------------------------------#
+
+
       ## TABS
       # tab selection
       "alt+1"                 = "goto_tab 1";
@@ -32,6 +40,7 @@
       "alt+t"                 = "new_tab";
       "alt+shift+w"           = "close_tab";
       "alt+shift+r"           = "set_tab_title";
+      #-----------------------------------------------------#
 
 
       ## WINDOWS

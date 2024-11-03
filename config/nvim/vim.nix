@@ -50,7 +50,7 @@
       cursorline = true;
 
       # minimum number of screen lines to keep above and below the cursor
-      scrolloff = 8;
+      scrolloff = 4;
 
       # enable 24-bit RGB coolr in the TUI
       termguicolors = true;
