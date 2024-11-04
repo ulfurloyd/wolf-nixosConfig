@@ -10,7 +10,7 @@
       }
     '';
 
-    xwayland.enable = false;
+    xwayland.enable = true;
 
     settings = {
       "monitor" = ",1920x1080@144,auto,1";
