@@ -4,7 +4,13 @@
   wayland.windowManager.hyprland = {
     enable = true;
 
-    xwayland.enable = true;
+    extraConfig = ''
+      cursor {
+        no_hardware_cursors = true;
+      }
+    '';
+
+    xwayland.enable = false;
 
     settings = {
       "monitor" = ",1920x1080@144,auto,1";

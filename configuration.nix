@@ -3,7 +3,9 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
+let
+  cfg = config.services.seatd;
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -19,8 +21,33 @@
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 
+  # load nvidia drivers for xorg and wayland
+  # services.xserver.videoDrivers = [ "nvidia" ];
+
+  environment.sessionVariables = {
+  # Hint electron apps to use wayland
+    NIXOS_OZONE_WL = "1";
+  };
+
+  hardware = {
+    # Opengl
+    opengl.enable = true;
+  
+    nvidia = {
+      # Most Wayland compositors need this
+      modesetting.enable = true;
+  
+      open = false;
+  
+      nvidiaSettings = true;
+  
+      package = config.boot.kernelPackages.nvidiaPackages.production;
+    };
+  };
+
   # systemd services
-   systemd.services.swapEscape = {
+  systemd.services = {
+   swapEscape = {
      enable = true;
      unitConfig = {
        Description = "Autostart Kanata as superuser";
@@ -33,6 +60,27 @@
      # };
      wantedBy = [ "multi-user.target" ];
    };
+
+   seatd = {
+      enable = true;
+      unitConfig = {
+        Description = "Seatd";
+        Documentation = [ "man:seatd(1)" ];
+      };
+
+      wantedBy = [ "multi-user.target" ];
+      restartIfChanged = false;
+
+      serviceConfig = {
+        Type = "simple";
+        NotifyAccess = "all";
+        SyslogIdentifier = "seatd";
+        ExecStart = "${pkgs.sdnotify-wrapper}/bin/sdnotify-wrapper ${pkgs.seatd.bin}/bin/seatd -n 1 -u ${cfg.user} -g ${cfg.group} -l ${cfg.logLevel}";
+        RestartSec = 1;
+        Restart = "always";
+      };
+    };
+  };
 
   networking.hostName = "wolfNix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -66,8 +114,10 @@
   services.xserver.enable = true;
 
   # Enable the Pantheon Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.pantheon.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.xserver.displayManager.lightdm.enable = false;
+  services.desktopManager.plasma6.enable = true;
+  services.xserver.desktopManager.pantheon.enable = false;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -104,11 +154,15 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  users.groups.seat = {
+    name = "seat";
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.wolf = {
     isNormalUser = true;
     description = "Eklavya Sood";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "seat" "video"];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -125,12 +179,21 @@
     localNetworkGameTransfers.openFirewall = true;
   };
 
+  programs.hyprland.enable = true;
+  
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    wlroots
+    seatd
+    sdnotify-wrapper
+    hyprland
+    rofi-wayland
+    waybar
+    ly
     gcc
     unzip
     kanata

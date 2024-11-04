@@ -14,6 +14,14 @@
     }
     {
       mode = "n";
+      key = "<leader>pv";
+      action = ":Telescope buffers<CR>";
+      options = {
+        desc = "Telescope buffer list";
+      };
+    }
+    {
+      mode = "n";
       key = "<leader>tp";
       action = ":TransparentToggle<CR>";
       options = {

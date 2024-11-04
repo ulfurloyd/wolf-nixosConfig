@@ -3,9 +3,10 @@
 {
 
   imports = [
+    ./config/hypr/hyprland.nix
+    ./config/term/kitty.nix
     ./config/shell/sh.nix
     ./config/nvim/vim.nix
-    ./config/term/kitty.nix
     # ./config/tmux/tmux.nix
   ];
 
