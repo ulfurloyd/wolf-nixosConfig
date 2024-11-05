@@ -11,9 +11,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    wezterm.url = "github:wez/wezterm?dir=nix";
+
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager, nixvim, ... }:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -28,6 +30,7 @@
 
     homeConfigurations = {
       wolf = home-manager.lib.homeManagerConfiguration {
+        extraSpecialArgs = { inherit inputs; };
         inherit pkgs;
         modules = [ 
 	  ./home.nix

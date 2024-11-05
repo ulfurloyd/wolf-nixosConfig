@@ -5,10 +5,13 @@
   imports = [
     ./config/hypr/hyprland.nix
     ./config/term/kitty.nix
+    ./config/term/wezterm.nix
     ./config/shell/sh.nix
     ./config/nvim/vim.nix
     # ./config/tmux/tmux.nix
   ];
+
+  nixpkgs.config.allowUnfree = true;
 
   home.username = "wolf";
   home.homeDirectory = "/home/wolf";
@@ -25,8 +28,12 @@
     fira-code
     fira-code-symbols
     onefetch
+    discord
+    ripcord
     vesktop
+    dorion
     ripgrep
+    tre-command
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

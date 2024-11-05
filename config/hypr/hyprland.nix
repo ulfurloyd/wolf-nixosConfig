@@ -6,8 +6,11 @@
 
     extraConfig = ''
       cursor {
-        no_hardware_cursors = true;
+        no_hardware_cursors = false;
       }
+
+      exec-once = dunst
+      exec-once = waybar &
     '';
 
     xwayland.enable = true;
@@ -62,6 +65,8 @@
         "$mod SHIFT, 8, movetoworkspace, 8"
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
+
+        "$mod, B, exec, firefox"
       ];
     };
   };

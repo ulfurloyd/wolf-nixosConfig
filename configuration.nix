@@ -113,6 +113,16 @@ in
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  # services.xserver.windowManager = {
+  #   dwm = {
+  #     enable = true;
+  #     package = pkgs.dwm.overrideAttrs {
+  #       src = /home/wolf/.config/dwm;
+  #     };
+  #   };
+  # };
+
+
   # Enable the Pantheon Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.xserver.displayManager.lightdm.enable = false;
@@ -202,6 +212,7 @@ in
     neovim
     wget
     lutris
+    wl-clipboard
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
