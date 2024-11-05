@@ -13,6 +13,8 @@
 
     wezterm.url = "github:wez/wezterm?dir=nix";
 
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
+
   };
 
   outputs = inputs @ { self, nixpkgs, home-manager, nixvim, ... }:
@@ -25,6 +27,7 @@
       wolfNix = lib.nixosSystem {
         inherit system;
         modules = [ ./configuration.nix ];
+        specialArgs = { inherit inputs; };
       };
     };
 
@@ -33,8 +36,8 @@
         extraSpecialArgs = { inherit inputs; };
         inherit pkgs;
         modules = [ 
-	  ./home.nix
-	  nixvim.homeManagerModules.nixvim
+	        ./home.nix
+	        nixvim.homeManagerModules.nixvim
         ];
       };
     };
