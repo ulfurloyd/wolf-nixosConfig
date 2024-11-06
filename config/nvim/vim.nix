@@ -5,18 +5,7 @@
   imports = [
     ./colorscheme.nix
     ./keymaps.nix
-    ./plugins/comment.nix
-    ./plugins/completions.nix
-    ./plugins/lazygit.nix
-    ./plugins/lsp.nix
-    ./plugins/lualine.nix
-    ./plugins/neo-tree.nix
-    ./plugins/neocord.nix
-    ./plugins/oil.nix
-    ./plugins/startify.nix
-    ./plugins/transparent.nix
-    ./plugins/treesitter.nix
-    ./plugins/telescope.nix
+    ./plugins
   ];
 
   programs.nixvim = {

@@ -3,12 +3,7 @@
 {
 
   imports = [
-    ./config/hypr/hyprland.nix
-    ./config/term/kitty.nix
-    ./config/term/wezterm.nix
-    ./config/shell/sh.nix
-    ./config/nvim/vim.nix
-    # ./config/tmux/tmux.nix
+    ./config/default.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
