@@ -113,21 +113,29 @@ in
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # services.xserver.windowManager = {
-  #   dwm = {
-  #     enable = true;
-  #     package = pkgs.dwm.overrideAttrs {
-  #       src = /home/wolf/.config/dwm;
-  #     };
-  #   };
-  # };
-
-
-  # Enable the Pantheon Desktop Environment.
+  # Enable Desktop Environments.
   services.displayManager.sddm.enable = true;
   services.xserver.displayManager.lightdm.enable = false;
   services.desktopManager.plasma6.enable = true;
   services.xserver.desktopManager.pantheon.enable = false;
+
+  # Enable Hyprland
+  programs.hyprland.enable = true;
+
+  # Enable DWM
+  services.xserver.windowManager = {
+    dwm = {
+      enable = true;
+      package = pkgs.dwm.overrideAttrs {
+        src = /home/wolf/.config/dwm;
+      };
+    };
+
+    bspwm = {
+      enable = true;
+    };
+  };
+  
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -189,8 +197,6 @@ in
     localNetworkGameTransfers.openFirewall = true;
   };
 
-  programs.hyprland.enable = true;
-  
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -214,6 +220,9 @@ in
     lutris
     wl-clipboard
     inputs.zen-browser.packages."${system}".default
+    gnumake
+    feh
+    picom
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

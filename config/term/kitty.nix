@@ -9,7 +9,7 @@
       font_size = "13.0";
       enable_audio_bell = "no";
       confirm_os_window_close = "0";
-      background_opacity = "1.0";
+      background_opacity = "0.6";
       shell = "zsh";
       dynamic_background_opacity = "yes";
     };

@@ -29,6 +29,7 @@
     dorion
     ripgrep
     tre-command
+    btop
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

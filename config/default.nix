@@ -1,7 +1,7 @@
 { config, pkg, ... }:
 {
   imports = [
-    ./hypr/hyprland.nix
+    ./wm/hyprland.nix
     ./term/kitty.nix
     ./term/wezterm.nix
     ./shell/sh.nix
