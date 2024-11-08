@@ -89,7 +89,7 @@
       "super + ctrl + {m, x, y, z}" = "bspc node -g {marked, locked, sticky, private}";
 
       # focus/swap
-      "super + {_, shift + } {h, j, k, l}" = "bspc node -{f, s} {west, south, north, east}";
+      "super + {_, shift + } {h, j, k, l}" = "bspc node -{f,s} {west, south, north, east}";
 
       # focus the node for the given path jump
       "super + {p, b, comma, period}" = "bspc node -f @{parent, brother, first, second}";
