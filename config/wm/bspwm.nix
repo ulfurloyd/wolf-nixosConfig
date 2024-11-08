@@ -17,6 +17,7 @@
     startupPrograms = [
       "picom -f"
       "feh --bg-scale ~/.dotfiles/wallpapers/bleak_cabin.png"
+      "polybar"
       "nm-applet"
       "emacs --daemon 2> /dev/null"
     ];
