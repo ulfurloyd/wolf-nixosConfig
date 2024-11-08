@@ -111,31 +111,60 @@ in
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
 
   # Enable Desktop Environments.
-  services.displayManager.sddm.enable = true;
-  services.xserver.displayManager.lightdm.enable = false;
-  services.desktopManager.plasma6.enable = true;
-  services.xserver.desktopManager.pantheon.enable = false;
+  # services.displayManager.sddm.enable = true;
+  # services.xserver.displayManager.lightdm.enable = false;
+  # services.desktopManager.plasma6.enable = true;
+  # services.xserver.desktopManager.pantheon.enable = false;
 
-  # Enable Hyprland
-  programs.hyprland.enable = true;
-
-  # Enable DWM
-  services.xserver.windowManager = {
-    dwm = {
-      enable = true;
-      package = pkgs.dwm.overrideAttrs {
-        src = /home/wolf/.config/dwm;
+# Display Managers, Desktop Managers, Window Managers
+  services = {
+    displayManager = {
+      sddm = {
+        enable = true;
       };
     };
 
-    bspwm = {
+    desktopManager = {
+      plasma6 = {
+        enable = true;
+      };
+    };
+
+    xserver = {
       enable = true;
+
+      displayManager = {
+        lightdm = {
+          enable = false;
+        };
+      };
+
+      desktopManager = {
+        pantheon = {
+          enable = false;
+        };
+      };
+
+      windowManager = {
+        dwm = {
+          enable = true;
+          package = pkgs.dwm.overrideAttrs {
+            src = /home/wolf/.config/dwm;
+          };
+        };
+
+        bspwm = {
+          enable = true;
+        };
+      };
     };
   };
-  
+
+  # Enable Hyprland
+  programs.hyprland.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -223,6 +252,7 @@ in
     gnumake
     feh
     picom
+    sxhkd
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
