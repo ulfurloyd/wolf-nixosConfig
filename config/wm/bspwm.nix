@@ -129,6 +129,17 @@
       # move a floating window
       "super + {Left, Down, Up, Right}" = "bspc node -v {-20 0, 0 20, 0 -20, 20 0}";
 
+      # volume controls
+      "super + minus" = "pactl set-sink-volume 0 -5%";
+      "super + equal" = "pactl set-sink-volume 0 +5%";
+      "super + plus" = "pactl set-sink-mute 0 toggle";
+
+      # media controls
+      "super + period" = "playerctl next";
+      "super + comma" = "playerctl previous";
+      "super + p" = "playerctl play-pause";
+      # "" = "";
+
       # "" = "";
       # "" = "";
     };

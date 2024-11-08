@@ -10,13 +10,13 @@
         height = "18";
         radius = "7.0";
         "modules-center" = "bspwm";
+        wm-restack = "bspwm";
       };
 
       "module/bspwm" = {
         type = "internal/bspwm";
         label-focused = "%name%";
       };
-
     };
   };
 }

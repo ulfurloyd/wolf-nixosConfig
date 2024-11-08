@@ -253,6 +253,9 @@ in
     feh
     picom
     sxhkd
+    alsa-utils
+    xorg.xev
+    playerctl
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -270,7 +273,7 @@ in
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedUDPPorts = [ 5353 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
