@@ -15,7 +15,7 @@
 
     # Startup Programs
     startupPrograms = [
-      "picom -f"
+      "picom -f --backend glx"
       "feh --bg-scale ~/.dotfiles/wallpapers/bleak_cabin.png"
       "polybar"
       "nm-applet"
