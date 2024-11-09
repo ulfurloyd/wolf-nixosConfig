@@ -257,6 +257,7 @@ in
     alsa-utils
     xorg.xev
     playerctl
+    nix-output-monitor
     nh
   ];
 
