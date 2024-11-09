@@ -8,5 +8,6 @@
     ./term/wezterm.nix
     ./shell/sh.nix
     ./nvim/vim.nix
+    ./stylix
   ];
 }

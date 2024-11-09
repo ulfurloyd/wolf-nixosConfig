@@ -6,6 +6,14 @@
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    stylix = {
+      url = "github:danth/stylix/release-24.05";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
+
     nixvim = {
       url = "github:nix-community/nixvim/nixos-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +34,7 @@
     nixosConfigurations = {
       wolfNix = lib.nixosSystem {
         inherit system;
-        modules = [ ./configuration.nix ];
+        modules = [ inputs.stylix.nixosModules.stylix ./configuration.nix ];
         specialArgs = { inherit inputs; };
       };
     };
@@ -36,6 +44,7 @@
         extraSpecialArgs = { inherit inputs; };
         inherit pkgs;
         modules = [ 
+          inputs.stylix.homeManagerModules.stylix
 	        ./home.nix
 	        nixvim.homeManagerModules.nixvim
         ];
