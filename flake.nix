@@ -77,6 +77,8 @@
       buildInputs = [
         pythonPackages.dbus-python
       ];
+    };
+    nix = {
       allowDirty = true;
     };
   };
