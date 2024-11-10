@@ -9,7 +9,8 @@
         width = "100%";
         height = "18";
         radius = "7.0";
-        "modules-center" = "bspwm";
+        "modules-left" = "bspwm";
+        "modules-center" = "spotify";
         "modules-right" = "date";
         wm-restack = "bspwm";
       };
@@ -39,6 +40,18 @@
         # the module will toggle between formats
 
         label = "%time% %date%";
+      };
+
+      "module/spotify" = {
+        type = "custom/script";
+        interval = "1";
+        format-prefix = "";
+        format = "<label>";
+        exec = "~/.dotfiles/scripts/polybarSpotifyWrapper.sh";
+        format-underline = "#dd0000";
+        "click-left" = "playerctl --player=spotify play-pause";
+        "click-right" = "playerctl --player=spotify next";
+        "click-middle" = "playerctl --player=spotify previous";
       };
     };
   };

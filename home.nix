@@ -33,6 +33,8 @@
     obsidian
     ani-cli
     ncdu
+    python3
+    python311Packages.dbus-python
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

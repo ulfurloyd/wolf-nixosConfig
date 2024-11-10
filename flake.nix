@@ -27,7 +27,7 @@
 
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nixvim, ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager, nixvim,  ... }:
     let
       pkgs = nixpkgs.legacyPackages.${system};
       system = "x86_64-linux";
@@ -42,6 +42,8 @@
         term = "kitty";
         editor = "nvim";
       };
+
+      pythonPackages = pkgs.python311Packages;
 
     in {
     nixosConfigurations = {
@@ -69,6 +71,13 @@
           inputs.spicetify-nix.homeManagerModules.default
         ];
       };
+    };
+
+    devShell.${system} = pkgs.mkShell {
+      buildInputs = [
+        pythonPackages.dbus-python
+      ];
+      allowDirty = true;
     };
   };
 }
