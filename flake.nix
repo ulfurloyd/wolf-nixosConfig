@@ -23,6 +23,8 @@
 
     zen-browser.url = "github:MarceColl/zen-browser-flake";
 
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
   };
 
   outputs = inputs @ { self, nixpkgs, home-manager, nixvim, ... }:
@@ -64,6 +66,7 @@
           inputs.stylix.homeManagerModules.stylix
 	        ./home.nix
 	        nixvim.homeManagerModules.nixvim
+          inputs.spicetify-nix.homeManagerModules.default
         ];
       };
     };

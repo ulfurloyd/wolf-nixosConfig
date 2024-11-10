@@ -31,8 +31,8 @@
     tre-command
     btop
     obsidian
-    spotify
     ani-cli
+    ncdu
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -46,6 +46,11 @@
 
   programs.lazygit = {
     enable = true;
+  };
+
+  programs.spicetify = {
+    enable = true;
+    colorScheme = "text";
   };
 
   # Let Home Manager install and manage itself.
