@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 {
   xsession.windowManager.bspwm = {
     enable = true;
@@ -51,7 +51,7 @@
     # Defining keybindings
     keybindings = {
       # terminal
-      "super + Return" = "kitty";
+      "super + Return" = userSettings.term;
 
       # run launcher
       "super + {_, shift + } @space" = "rofi -show {drun,run} -show-icons";
@@ -61,7 +61,7 @@
 
       # launch
       # browser
-      "super + b" = "zen";
+      "super + b" = userSettings.browser;
 
       # discord client
       "super + d" = "vesktop";

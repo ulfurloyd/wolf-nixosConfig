@@ -27,22 +27,39 @@
 
   outputs = inputs @ { self, nixpkgs, home-manager, nixvim, ... }:
     let
-      lib = nixpkgs.lib;
-      system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      system = "x86_64-linux";
+      lib = nixpkgs.lib;
+      
+      userSettings = {
+        username = "wolf";
+        email = "eklavyasood@gmail.com";
+        dotfilesDir = "~/.dotfiles";
+        wm = "bspwm";
+        browser = "zen";
+        term = "kitty";
+        editor = "nvim";
+      };
+
     in {
     nixosConfigurations = {
       wolfNix = lib.nixosSystem {
         inherit system;
         modules = [ inputs.stylix.nixosModules.stylix ./configuration.nix ];
-        specialArgs = { inherit inputs; };
+
+        specialArgs = {
+          inherit inputs;
+        };
       };
     };
 
     homeConfigurations = {
       wolf = home-manager.lib.homeManagerConfiguration {
-        extraSpecialArgs = { inherit inputs; };
         inherit pkgs;
+        extraSpecialArgs = {
+          inherit inputs;
+          inherit userSettings;
+        };
         modules = [ 
           inputs.stylix.homeManagerModules.stylix
 	        ./home.nix

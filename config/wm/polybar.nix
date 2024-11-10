@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, stylix, ... }:
 {
   services.polybar = {
     enable = true;
@@ -10,7 +10,7 @@
         height = "18";
         radius = "7.0";
         "modules-center" = "bspwm";
-        "modules-left" = "date";
+        "modules-right" = "date";
         wm-restack = "bspwm";
       };
 

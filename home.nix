@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
 
@@ -8,7 +8,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  home.username = "wolf";
+  home.username = userSettings.username;
   home.homeDirectory = "/home/wolf";
 
   home.stateVersion = "24.05";
@@ -32,6 +32,7 @@
     btop
     obsidian
     spotify
+    ani-cli
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
