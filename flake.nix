@@ -42,9 +42,6 @@
         term = "kitty";
         editor = "nvim";
       };
-
-      pythonPackages = pkgs.python311Packages;
-
     in {
     nixosConfigurations = {
       wolfNix = lib.nixosSystem {
@@ -71,15 +68,6 @@
           inputs.spicetify-nix.homeManagerModules.default
         ];
       };
-    };
-
-    devShell.${system} = pkgs.mkShell {
-      buildInputs = [
-        pythonPackages.dbus-python
-      ];
-    };
-    nix = {
-      allowDirty = true;
     };
   };
 }

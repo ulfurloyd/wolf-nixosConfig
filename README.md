@@ -4,11 +4,7 @@
 
 - modularity as a core structure
 
-- working on nixvim, basic implementation done
-
-## missing implementations - 
-- zsh
-- any window managers at all
+- working on my bspwm environment (polybar)
 
 ## long term
 - make this configuration reproducible
