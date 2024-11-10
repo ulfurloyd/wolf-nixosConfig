@@ -1,11 +1,19 @@
 {pkgs, config, ...}:
+let
+  imagePath = "../../../themes/bleak-cabin/bleak_cabin.png";
+in
 {
   stylix = {
     enable = true;
 
-    image = ../../wallpapers/bleak_cabin.png;
+    # image = ../../wallpapers/river_to_castle_theme_blue.jpg;
+    image = ./. + imagePath;
 
     polarity = "dark";
+
+    targets = {
+      kitty = { enable = true; };
+    };
 
     fonts = {
       serif = {
@@ -27,6 +35,11 @@
         package = pkgs.noto-fonts-emoji;
         name = "Noto Color Emoji";
       };
+    };
+
+    cursor = {
+      package = pkgs.volantes-cursors;
+      name = "volantes-cursors";
     };
   };
 }

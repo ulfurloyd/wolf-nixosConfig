@@ -16,7 +16,7 @@
     # Startup Programs
     startupPrograms = [
       "picom -f --backend glx"
-      "feh --bg-scale ~/.dotfiles/wallpapers/bleak_cabin.png"
+      # "feh --bg-scale ~/.dotfiles/wallpapers/bleak_cabin.png"
       "polybar"
       "nm-applet"
       "emacs --daemon 2> /dev/null"
@@ -54,7 +54,7 @@
       "super + Return" = "kitty";
 
       # run launcher
-      "super + @space" = "rofi -show drun -show-icons";
+      "super + {_, shift + } @space" = "rofi -show {drun,run} -show-icons";
 
       # Reset sxhkd
       "super + Escape" = "pkill -USR1 -x sxhkd";

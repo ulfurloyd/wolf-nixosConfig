@@ -28,15 +28,17 @@
         
         # See "https://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
         # NOTE: if you want to use syntax tags here you need to use %%{...}
-        date = "%Y-%m-%d%";
+        date = "%d/%m/%Y";
+        date-alt = "%Y-%m-%d";
         
         # Optional time format
         time = "%H:%M";
+        time-alt = "%H:%M:%S";
         
         # if `date-alt` or `time-alt` is defined, clicking
         # the module will toggle between formats
-        date-alt = "%A, %d %B %Y";
-        time-alt = "%H:%M:%S";
+
+        label = "%time% %date%";
       };
     };
   };
