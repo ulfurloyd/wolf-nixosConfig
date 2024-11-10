@@ -19,8 +19,8 @@ in
 
   # zsh
   environment.shells = with pkgs; [ bash zsh ];
-  users.defaultUserShell = pkgs.zsh;
-  programs.zsh.enable = true;
+  # users.defaultUserShell = pkgs.zsh;
+  # programs.zsh.enable = true;
 
   # load nvidia drivers for xorg and wayland
   # services.xserver.videoDrivers = [ "nvidia" ];
@@ -259,6 +259,8 @@ in
     playerctl
     nix-output-monitor
     nh
+    zsh
+    zsh-powerlevel10k
   ];
 
   programs.nh = {

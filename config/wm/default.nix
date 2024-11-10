@@ -2,7 +2,7 @@
 {
   imports = [
     ./hyprland.nix
-    ./dwm.nix
     ./bspwm.nix
+    ./polybar.nix
   ];
 }
