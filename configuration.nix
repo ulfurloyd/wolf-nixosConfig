@@ -237,7 +237,6 @@ in
     seatd
     sdnotify-wrapper
     hyprland
-    rofi-wayland
     waybar
     ly
     gcc

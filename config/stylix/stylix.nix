@@ -13,6 +13,10 @@ in
 
     targets = {
       kitty = { enable = true; };
+      rofi = {
+        enable = false;
+        # fontSize = 14; # this option doesn't exist yet
+      };
     };
 
     fonts = {
@@ -34,6 +38,10 @@ in
       emoji = {
         package = pkgs.noto-fonts-emoji;
         name = "Noto Color Emoji";
+      };
+
+      sizes = {
+        applications = 12;
       };
     };
 

@@ -4,5 +4,6 @@
     ./hyprland.nix
     ./bspwm.nix
     ./polybar.nix
+    ./rofi.nix
   ];
 }

@@ -41,6 +41,7 @@
         browser = "zen";
         term = "kitty";
         editor = "nvim";
+        font = "Fira Serif";
       };
     in {
     nixosConfigurations = {

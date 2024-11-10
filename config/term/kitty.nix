@@ -12,6 +12,7 @@
       # background_opacity = "0.6";
       shell = "zsh";
       dynamic_background_opacity = "yes";
+      tab_bar_style = "powerline";
     };
 
     keybindings = {
