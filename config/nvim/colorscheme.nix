@@ -16,7 +16,7 @@
         };
       };
       nightfox = {
-        enable = true;
+        enable = false;
         # one of "carbonfox", "dawnfox", "dayfox", "duskfox", "nightfox", "nordfox", "terafox"
         flavor = "carbonfox";
       };

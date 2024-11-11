@@ -11,12 +11,23 @@ in
 
     polarity = "dark";
 
+    opacity = {
+      terminal = 0.8;
+    };
+
     targets = {
       kitty = { enable = true; };
+
       rofi = {
         enable = false;
         # fontSize = 14; # this option doesn't exist yet
       };
+
+      nixvim = {
+        enable = true;
+        # plugin = "base16-nvim";
+      };
+      
     };
 
     fonts = {
@@ -48,7 +59,7 @@ in
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
-      size = 12;
+      size = 20;
     };
   };
 }

@@ -1,4 +1,7 @@
-{ config, pkgs, userSettings, ... }:
+{ config, pkgs, stylix, userSettings, ... }:
+let
+  font = config.stylix.fonts.sansSerif.name;
+in
 {
   services.polybar = {
     enable = true;
@@ -7,12 +10,26 @@
     settings = {
       "bar/example" = {
         width = "100%";
-        height = "24";
+        height = "25";
         radius = "7.0";
-        font-0 = "FiraCode Serif:size=10:0";
-        "modules-left" = "bspwm";
+        font-0 = "${font}:size=10:0";
+
+        line-size = "2";
+        line-color = "#${config.stylix.base16Scheme.base01}";
+
+        border-size = "6";
+
+        padding = "0";
+
+        module-margin-left = "0";
+        module-margin-right = "0";
+
+        seperator = "||";
+
+        "modules-left" = "bspwm xwindow";
         "modules-center" = "spotify";
-        "modules-right" = "date";
+        "modules-right" = "filesystem date";
+
         wm-restack = "bspwm";
       };
 
@@ -58,13 +75,29 @@
         label = "%time% %date%";
       };
 
+      "module/filesystem" = {
+        type = "internal/fs";
+        interval = "25";
+
+        mount-0 = "/";
+
+        format-mounted = "<label-mounted>";
+        format-unmounted = "<label-unmounted>";
+      };
+
+      "module/xwindow" = {
+        type = "internal/xwindow";
+        label = "%title:0:30:...%";
+      };
+
       "module/spotify" = {
         type = "custom/script";
         interval = "1";
         format-prefix = "";
+        format-underline = "#${config.stylix.base16Scheme.base03}";
         format = "<label>";
         exec = "~/.dotfiles/scripts/polybarSpotifyWrapper.sh";
-        format-underline = "#dd0000";
+        # format-underline = "#dd0000";
         "click-left" = "playerctl --player=spotify play-pause";
         "click-right" = "playerctl --player=spotify next";
         "click-middle" = "playerctl --player=spotify previous";
