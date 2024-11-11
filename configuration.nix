@@ -13,6 +13,8 @@ in
       ./stylix
     ];
 
+  time.hardwareClockInLocalTime = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -23,7 +25,6 @@ in
   # programs.zsh.enable = true;
 
   # load nvidia drivers for xorg and wayland
-  # services.xserver.videoDrivers = [ "nvidia" ];
 
   environment.sessionVariables = {
   # Hint electron apps to use wayland
@@ -32,17 +33,27 @@ in
 
   hardware = {
     # Opengl
-    opengl.enable = true;
+    opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+      extraPackages = with pkgs; [
+        rocm-opencl-icd
+        rocm-opencl-runtime
+      ];
+    };
   
     nvidia = {
       # Most Wayland compositors need this
       modesetting.enable = true;
+      powerManagement.enable = false;
+      powerManagement.finegrained = false;
   
-      open = false;
+      open = true;
   
       nvidiaSettings = true;
   
-      package = config.boot.kernelPackages.nvidiaPackages.production;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
   };
 
@@ -136,6 +147,7 @@ in
 
     xserver = {
       enable = true;
+      videoDrivers = [ "nvidia" ];
 
       displayManager = {
         lightdm = {
@@ -260,7 +272,18 @@ in
     nh
     zsh
     zsh-powerlevel10k
+    openrgb
   ];
+
+  services.hardware.openrgb = {
+    enable = true;
+    package = pkgs.openrgb-with-all-plugins;
+    motherboard = "amd";
+    server = {
+      port = 6742;
+      # autoStart = true;
+    };
+  };
 
   programs.nh = {
     enable = true;

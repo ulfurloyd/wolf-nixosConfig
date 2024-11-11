@@ -16,7 +16,7 @@
     # Startup Programs
     startupPrograms = [
       "picom -f --backend glx"
-      # "feh --bg-scale ~/.dotfiles/wallpapers/bleak_cabin.png"
+      "feh --bg-scale ~/.dotfiles/wallpapers/bleak_cabin.png"
       "polybar"
       "nm-applet"
       "emacs --daemon 2> /dev/null"
@@ -24,7 +24,7 @@
 
     # Defining workspace names
     monitors = {
-      HDMI-1 = [
+      HDMI-0 = [
         "1"
         "2"
         "3"

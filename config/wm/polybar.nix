@@ -18,6 +18,9 @@
       "module/bspwm" = {
         type = "internal/bspwm";
         label-focused = "%name%";
+        label-occupied = "%name%";
+        label-urgent = "%name%!";
+        label-empty = "%name%";
       };
 
       "module/date" = {
