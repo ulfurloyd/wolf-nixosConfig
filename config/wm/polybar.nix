@@ -1,5 +1,6 @@
 { config, pkgs, stylix, userSettings, ... }:
 let
+  stylixPalette = config.stylix.base16Scheme;
   font = config.stylix.fonts.sansSerif.name;
 in
 {
@@ -94,7 +95,7 @@ in
         type = "custom/script";
         interval = "1";
         format-prefix = "";
-        format-underline = "#${config.stylix.base16Scheme.base03}";
+        format-underline = "#${stylixPalette.base03}";
         format = "<label>";
         exec = "~/.dotfiles/scripts/polybarSpotifyWrapper.sh";
         # format-underline = "#dd0000";
