@@ -50,6 +50,10 @@
       "spotify" = {
         desktop = "^10";
       };
+
+      "whatsapp-for-linux" = {
+        desktop = "^6";
+      };
     };
   };
 

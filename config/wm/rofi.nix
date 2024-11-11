@@ -1,11 +1,10 @@
-{ userSettings, ... }:
+{ lib, userSettings, ... }:
 {
   programs.rofi = {
     enable = true;
     terminal = userSettings.term;
     cycle = true;
-    font = userSettings.font + " 12";
-    theme = "sidebar";
+    font = lib.mkForce "${userSettings.font} 13";
 
     extraConfig = {
       display-drun = "APPS";

@@ -6,8 +6,7 @@
     enableCompletion = true;
 
     initExtraFirst = ''
-      echo
-      pfetch
+      afetch
     '';
 
     initExtra = ''

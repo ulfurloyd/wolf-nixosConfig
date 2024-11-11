@@ -19,7 +19,7 @@ in
       kitty = { enable = true; };
 
       rofi = {
-        enable = false;
+        enable = true;
         # fontSize = 14; # this option doesn't exist yet
       };
 
@@ -27,6 +27,8 @@ in
         enable = true;
         # plugin = "base16-nvim";
       };
+
+      # spicetify = { enable = true; };
       
     };
 

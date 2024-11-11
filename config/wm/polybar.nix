@@ -16,7 +16,7 @@ in
         font-0 = "${font}:size=10:0";
 
         line-size = "2";
-        line-color = "#${config.stylix.base16Scheme.base01}";
+        line-color = "#${stylixPalette.base01}";
 
         border-size = "6";
 
@@ -25,7 +25,7 @@ in
         module-margin-left = "0";
         module-margin-right = "0";
 
-        seperator = "||";
+        separator = " || ";
 
         "modules-left" = "bspwm xwindow";
         "modules-center" = "spotify";
