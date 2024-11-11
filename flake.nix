@@ -41,6 +41,7 @@
         browser = "zen";
         term = "kitty";
         editor = "nvim";
+        musicPlayer = "spotify";
         font = "Fira Serif";
       };
     in {

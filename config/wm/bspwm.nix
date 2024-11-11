@@ -37,6 +37,20 @@
         "10"
       ];
     };
+
+    rules = {
+      "zen" = {
+        desktop = "^2";
+      };
+
+      "vesktop" = {
+        desktop = "^3";
+      };
+
+      "spotify" = {
+        desktop = "^10";
+      };
+    };
   };
 
   # sxhkd Config
@@ -66,6 +80,9 @@
       # discord client
       "super + d" = "vesktop";
 
+      # music client
+      "super + s" = userSettings.musicPlayer;
+
       # bspwm hotkeys
 
       # quit/restart bspwm
@@ -84,7 +101,7 @@
       "super + g" = "bspc node -s biggest.window";
 
       # set the window state
-      "super + {t, shift + t, s, f}" = "bspc node -t {tiled, pseudo_tiled, floating, fullscreen}";
+      "super + {t, shift + t, shift + f, f}" = "bspc node -t {tiled, pseudo_tiled, floating, fullscreen}";
 
       # set the node flags
       "super + ctrl + {m, x, y, z}" = "bspc node -g {marked, locked, sticky, private}";
