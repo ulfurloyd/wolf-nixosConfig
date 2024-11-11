@@ -3,6 +3,7 @@
   imports = [
     ./comment.nix
     ./completions.nix
+    ./harpoon.nix
     ./lazygit.nix
     ./lsp.nix
     ./lualine.nix

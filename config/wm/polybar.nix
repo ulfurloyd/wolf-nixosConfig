@@ -1,4 +1,4 @@
-{ config, pkgs, stylix, ... }:
+{ config, pkgs, userSettings, ... }:
 {
   services.polybar = {
     enable = true;
@@ -7,8 +7,9 @@
     settings = {
       "bar/example" = {
         width = "100%";
-        height = "18";
+        height = "24";
         radius = "7.0";
+        font-0 = "FiraCode Serif:size=10:0";
         "modules-left" = "bspwm";
         "modules-center" = "spotify";
         "modules-right" = "date";
@@ -17,10 +18,22 @@
 
       "module/bspwm" = {
         type = "internal/bspwm";
+
         label-focused = "%name%";
+        label-focused-padding = "2";
+        label-focused-font = "0";
+
         label-occupied = "%name%";
+        label-occupied-padding = "2";
+        label-occupied-font = "0";
+
         label-urgent = "%name%!";
+        label-urgent-padding = "2";
+        label-urgent-font = "0";
+
         label-empty = "%name%";
+        label-empty-padding = "2";
+        label-empty-font = "0";
       };
 
       "module/date" = {

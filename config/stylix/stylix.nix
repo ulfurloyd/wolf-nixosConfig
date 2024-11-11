@@ -46,8 +46,9 @@ in
     };
 
     cursor = {
-      package = pkgs.volantes-cursors;
-      name = "volantes-cursors";
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 12;
     };
   };
 }

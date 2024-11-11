@@ -35,6 +35,8 @@
     ncdu
     python3
     python311Packages.dbus-python
+    wowup-cf
+    dunst
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
