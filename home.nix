@@ -60,6 +60,11 @@ in
     enable = true;
   };
 
+  programs.emacs = {
+    enable = true;
+    extraPackages = epkgs: [ epkgs.base16-theme ];
+  };
+
   programs.spicetify = {
     enable = true;
     enabledExtensions = with spicePkgs.extensions; [ ];

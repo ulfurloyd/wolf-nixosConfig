@@ -29,6 +29,8 @@ in
       };
 
       # spicetify = { enable = true; };
+
+      emacs = { enable = true; };
       
     };
 
