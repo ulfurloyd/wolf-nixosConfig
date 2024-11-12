@@ -10,7 +10,6 @@
     '';
 
     initExtra = ''
-      
       setopt appendhistory
 
       bindkey '^f' autosuggest-accept
@@ -20,12 +19,16 @@
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
       zstyle ':completion:*' menu no
 
-      zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa $realpath'
-      zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'exa $realpath'
-
       [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
       unset ZSH_AUTOSUGGEST_USE_ASYNC
+    '';
+
+    initExtraBeforeCompInit = ''
+      bindkey -v
+
+      zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa $realpath'
+      zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'exa $realpath'
     '';
 
     history = {
@@ -49,6 +52,7 @@
             "depth:1"
           ];
         }
+        { name = "joshskidmore/zsh-fzf-history-search"; }
       ];
     };
   };
