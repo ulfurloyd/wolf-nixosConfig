@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./fastfetch/fastfetch.nix
+  ];
+}

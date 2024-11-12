@@ -6,7 +6,7 @@
     enableCompletion = true;
 
     initExtraFirst = ''
-      afetch
+      fastfetch
     '';
 
     initExtra = ''
