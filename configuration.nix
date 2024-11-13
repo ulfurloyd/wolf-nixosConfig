@@ -11,6 +11,7 @@ in
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./stylix
+      ./system
     ];
 
   time.hardwareClockInLocalTime = true;
@@ -273,6 +274,7 @@ in
     zsh
     zsh-powerlevel10k
     openrgb
+    quickemu
   ];
 
   services.hardware.openrgb = {

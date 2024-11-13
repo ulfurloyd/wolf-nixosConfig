@@ -1,4 +1,4 @@
-{pkgs, config, userSettings, ...}:
+{ pkgs, config, userSettings, ... }:
 {
   stylix = {
     enable = true;

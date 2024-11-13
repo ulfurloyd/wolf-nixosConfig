@@ -52,6 +52,7 @@
 
         specialArgs = {
           inherit inputs;
+          inherit userSettings;
         };
       };
     };
