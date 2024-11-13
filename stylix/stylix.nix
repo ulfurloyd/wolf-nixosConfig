@@ -1,8 +1,8 @@
-{pkgs, config, ...}:
+{pkgs, config, userSettings, ...}:
 {
   stylix = {
     enable = true;
-    image = ../wallpapers/bleak_cabin.png;
+    image = /home/${userSettings.username}/.dotfiles/themes/bleak-cabin/wallpaper.png;
     polarity = "dark";
   };
 }

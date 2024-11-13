@@ -16,7 +16,7 @@
     # Startup Programs
     startupPrograms = [
       "picom -f --backend glx"
-      "feh --bg-scale ~/.dotfiles/wallpapers/bleak_cabin.png"
+      "feh --bg-scale ~/.dotfiles/themes/bleak-cabin/wallpaper.png"
       "polybar"
       "nm-applet"
       "emacs --daemon 2> /dev/null"
@@ -160,7 +160,6 @@
       "super + period" = "playerctl next";
       "super + comma" = "playerctl previous";
       "super + p" = "playerctl play-pause";
-      # "" = "";
 
       # "" = "";
       # "" = "";

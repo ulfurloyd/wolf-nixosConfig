@@ -1,13 +1,12 @@
-{pkgs, config, ...}:
+{pkgs, config, userSettings, ...}:
 let
-  imagePath = "../../../themes/bleak-cabin/bleak_cabin.png";
+  imagePath = /home/${userSettings.username}/.dotfiles/themes/bleak-cabin/wallpaper.png;
 in
 {
   stylix = {
     enable = true;
 
-    # image = ../../wallpapers/river_to_castle_theme_blue.jpg;
-    image = ./. + imagePath;
+    image = imagePath;
 
     polarity = "dark";
 

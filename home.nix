@@ -5,10 +5,7 @@ let
 in
 {
 
-  imports = [
-    ./config/default.nix
-    ./utils/default.nix
-  ];
+  imports = [ ./home ];
 
   nixpkgs.config.allowUnfree = true;
 

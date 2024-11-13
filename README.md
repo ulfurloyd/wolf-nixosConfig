@@ -5,4 +5,5 @@
 
 ## long term
 - make this configuration reproducible
+- add config options for multiple systems
 - create install script for easy adoptability on any system with nix installed

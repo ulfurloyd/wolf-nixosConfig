@@ -19,7 +19,7 @@ let
     t = "tmux";
 
     gg = "lazygit";
-    tre = "tre -e automatic";
+    tree = "tre -e automatic";
     };
 in
 {

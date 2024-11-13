@@ -1,7 +1,7 @@
 { config, pkgs, stylix, userSettings, ... }:
 let
   stylixPalette = config.stylix.base16Scheme;
-  font = config.stylix.fonts.sansSerif.name;
+  font = config.stylix.fonts.monospace.name;
 in
 {
   services.polybar = {
@@ -97,8 +97,7 @@ in
         format-prefix = "";
         format-underline = "#${stylixPalette.base03}";
         format = "<label>";
-        exec = "~/.dotfiles/scripts/polybarSpotifyWrapper.sh";
-        # format-underline = "#dd0000";
+        exec = "/home/${userSettings.username}/.dotfiles/home/scripts/polybarSpotifyWrapper.sh";
         "click-left" = "playerctl --player=spotify play-pause";
         "click-right" = "playerctl --player=spotify next";
         "click-middle" = "playerctl --player=spotify previous";
