@@ -87,6 +87,9 @@
       # music client
       "super + s" = userSettings.musicPlayer;
 
+      # emacsclient window
+      "super + e" = "emacsclient -c";
+
       # bspwm hotkeys
 
       # quit/restart bspwm
