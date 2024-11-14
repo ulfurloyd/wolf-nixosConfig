@@ -1,21 +1,16 @@
 { config, pkgs, userSettings, inputs, ... }:
-
 let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
 in
 {
-
-  imports = [ ./home ];
-
   nixpkgs.config.allowUnfree = true;
 
   home.username = userSettings.username;
-  home.homeDirectory = "/home/wolf";
+  home.homeDirectory = "/home/${userSettings.username}";
 
   home.stateVersion = "24.05";
 
   home.packages = with pkgs; [
-    nodejs_22
     gh
     tmux
     kitty
@@ -50,9 +45,7 @@ in
     EDITOR = "nvim";
   };
 
-  programs.lazygit = {
-    enable = true;
-  };
+  programs.lazygit.enable = true;
 
   programs.emacs = {
     enable = true;
@@ -64,7 +57,7 @@ in
     enabledExtensions = with spicePkgs.extensions; [ ];
     # theme = {
     #   name = "base16-spotify";
-    #   src = pkgs.fetchFromGitHub {
+    #   src = pkgs.fetchFromGithub {
     #     owner = "Misterio77";
     #     repo = "base16-spotify";
     #     rev = "";

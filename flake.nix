@@ -1,5 +1,5 @@
 {
-  description = "My first flake";
+  description = "Modular flake for my desktop and laptop systems";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.05";
@@ -47,9 +47,27 @@
       };
     in {
     nixosConfigurations = {
-      wolfNix = lib.nixosSystem {
+      desktop = lib.nixosSystem {
         inherit system;
-        modules = [ inputs.stylix.nixosModules.stylix ./configuration.nix ];
+        modules = [ 
+          inputs.stylix.nixosModules.stylix
+          ./hosts/desktop/desktop.nix
+          ./hosts/common/common.nix
+        ];
+
+        specialArgs = {
+          inherit inputs;
+          inherit userSettings;
+        };
+      };
+
+      laptop = lib.nixosSystem {
+        inherit system;
+        modules = [ 
+          inputs.stylix.nixosModules.stylix
+          ./hosts/laptop/laptop.nix
+          ./hosts/common/common.nix
+        ];
 
         specialArgs = {
           inherit inputs;
@@ -59,7 +77,7 @@
     };
 
     homeConfigurations = {
-      wolf = home-manager.lib.homeManagerConfiguration {
+      desktop = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
           inherit inputs;
@@ -67,7 +85,23 @@
         };
         modules = [ 
           inputs.stylix.homeManagerModules.stylix
-	        ./home.nix
+	        ./hosts/desktop/home.nix
+          ./hosts/common/home.nix
+	        nixvim.homeManagerModules.nixvim
+          inputs.spicetify-nix.homeManagerModules.default
+        ];
+      };
+
+      laptop = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = {
+          inherit inputs;
+          inherit userSettings;
+        };
+        modules = [ 
+          inputs.stylix.homeManagerModules.stylix
+	        ./hosts/laptop/home.nix
+          ./hosts/common/home.nix
 	        nixvim.homeManagerModules.nixvim
           inputs.spicetify-nix.homeManagerModules.default
         ];
