@@ -9,6 +9,8 @@
 
     extraArgs = [ "-f" ];
 
+    inactiveOpacity = 0.8;
+
     settings = {
       blur = {
         method = "dual_kawase";
@@ -19,12 +21,17 @@
       blur-background-exclude = [
         "class_g = 'Polybar'"
       ];
+
+      corner-radius = 5;
     };
 
     wintypes = {
       dock = { blur = false; };
       toolbar = { blur = false; };
       dialog = { blur = false; };
+      notification = { blur = false; };
+      popup_menu = { blur = false; };
+      dropdown_menu = { blur = false; };
     };
   };
 }
