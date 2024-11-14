@@ -22,6 +22,13 @@
       [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
       unset ZSH_AUTOSUGGEST_USE_ASYNC
+
+      # extra line after every command, to work with starship's add_newline = false
+      precmd() {
+        precmd() {
+          echo
+        }
+      }
     '';
 
     initExtraBeforeCompInit = ''
@@ -45,13 +52,13 @@
         { name = "zsh-users/zsh-syntax-highlighting"; }
         { name = "zsh-users/zsh-completions"; }
         { name = "Aloxaf/fzf-tab"; }
-        { 
-          name = "romkatv/powerlevel10k"; 
-          tags = [ 
-            "as:theme"
-            "depth:1"
-          ];
-        }
+        # { 
+        #   name = "romkatv/powerlevel10k"; 
+        #   tags = [ 
+        #     "as:theme"
+        #     "depth:1"
+        #   ];
+        # }
         { name = "joshskidmore/zsh-fzf-history-search"; }
       ];
     };

@@ -1,16 +1,16 @@
-{ config, pkgs, ... }:
+{ userSettings, config, pkgs, ... }:
 
 {
   programs.kitty = {
     enable = true;
 
     settings = {
+      font = userSettings.font;
       font_family = "FiraCode-Regular";
       font_size = "13.0";
       enable_audio_bell = "no";
       confirm_os_window_close = "0";
-      # background_opacity = "0.6";
-      shell = "zsh";
+      shell = userSettings.shell;
       dynamic_background_opacity = "yes";
       tab_bar_style = "powerline";
     };
@@ -18,11 +18,11 @@
     keybindings = {
       ## LAYOUTS
       # layout selection
-      "alt+q>f"           = "goto_layout stack";
-      "alt+q>v"           = "goto_layout tall";
-      "alt+q>s"           = "goto_layout fat";
-      #-----------------------------------------------------#
+      "alt+f"           = "goto_layout stack";
+      "alt+v"           = "goto_layout tall";
+      "alt+s"           = "goto_layout fat";
 
+      #-----------------------------------------------------#
 
       ## TABS
       # tab selection
@@ -41,6 +41,10 @@
       "alt+t"                 = "new_tab";
       "alt+shift+w"           = "close_tab";
       "alt+shift+r"           = "set_tab_title";
+
+      # return to last accessed tab
+      "alt+tab"               = "goto_tab -1";
+
       #-----------------------------------------------------#
 
 
@@ -73,6 +77,8 @@
       ## opacity
       "alt+y>="          = "set_background_opacity +0.2";
       "alt+y>-"          = "set_background_opacity -0.2";
+
+      #-----------------------------------------------------#
     };
 
     extraConfig = ''

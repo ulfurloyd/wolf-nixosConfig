@@ -37,6 +37,7 @@
         username = "wolf";
         email = "eklavyasood@gmail.com";
         dotfilesDir = "~/.dotfiles";
+        shell = "zsh";
         wm = "bspwm";
         browser = "zen";
         term = "kitty";

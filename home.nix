@@ -38,10 +38,6 @@ in
     python311Packages.dbus-python
     wowup-cf
     whatsapp-for-linux
-    nitch
-    afetch
-    bfetch
-    fetchutils
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
