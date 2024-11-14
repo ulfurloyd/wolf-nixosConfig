@@ -191,7 +191,6 @@ in
     nh
     zsh
     zsh-powerlevel10k
-    quickemu
   ];
 
   programs.nh = {
