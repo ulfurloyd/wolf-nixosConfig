@@ -10,6 +10,7 @@
   environment.systemPackages = with pkgs; [
     virt-manager
     virt-viewer
+    quickemu
     spice spice-gtk
     spice-protocol
     win-virtio
