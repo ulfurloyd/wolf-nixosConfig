@@ -11,7 +11,7 @@ in
     polarity = "dark";
 
     opacity = {
-      terminal = 0.8;
+      terminal = 0.6;
     };
 
     targets = {

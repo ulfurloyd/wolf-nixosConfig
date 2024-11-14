@@ -264,7 +264,6 @@ in
     inputs.zen-browser.packages."${system}".default
     gnumake
     feh
-    picom
     sxhkd
     alsa-utils
     xorg.xev

@@ -22,6 +22,14 @@
     }
     {
       mode = "n";
+      key = "<leader>pg";
+      action = ":Telescope live_grep<CR>";
+      options = {
+        desc = "Telescope Live Grep";
+      };
+    }
+    {
+      mode = "n";
       key = "<leader>tp";
       action = ":TransparentToggle<CR>";
       options = {

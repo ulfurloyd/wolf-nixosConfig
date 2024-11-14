@@ -38,6 +38,7 @@ in
     python311Packages.dbus-python
     wowup-cf
     whatsapp-for-linux
+    spotify
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -59,7 +60,7 @@ in
   };
 
   programs.spicetify = {
-    enable = true;
+    enable = false;
     enabledExtensions = with spicePkgs.extensions; [ ];
     # theme = {
     #   name = "base16-spotify";
