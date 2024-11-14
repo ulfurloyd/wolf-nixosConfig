@@ -52,6 +52,14 @@
         desc = "LazyGit";
       };
     }
+    {
+      mode = "n";
+      key = "<leader>mp";
+      action = ":MarkdownPreviewToggle<CR>";
+      options = {
+        desc = "Markdown Preview Toggle";
+      };
+    }
     ];
   };
 }

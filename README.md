@@ -1,9 +1,6 @@
-# my nixos configuration
+### my nixos configuration
 - using NixOS, Nix-Flakes and Home Manager
-- modularity as a core structure
-- working on my bspwm environment (polybar)
+- two hosts, #desktop and #laptop for both my systems (you guessed it, a desktop and a laptop)
+- still a work in progress, tons of work to do
 
-## long term
-- make this configuration reproducible
-- add config options for multiple systems
-- create install script for easy adoptability on any system with nix installed
+![Screenshot](./Screenshot.png)
