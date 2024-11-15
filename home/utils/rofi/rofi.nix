@@ -1,4 +1,4 @@
-{ lib, userSettings, ... }:
+{ lib, userSettings, pkgs, ... }:
 {
   programs.rofi = {
     enable = true;
@@ -6,9 +6,14 @@
     cycle = true;
     font = lib.mkForce "${userSettings.font} 13";
 
+    plugins = with pkgs; [ 
+      rofi-emoji
+    ];
+
     extraConfig = {
-      display-drun = "APPS";
-      display-run = "RUN";
+      display-drun = "Apps";
+      display-run = "Run";
+      display-emoji = "Emoji";
       display-filebrowser = "FILES";
       display-window = "WINDOW";
 	    drun-display-format = "{name}";

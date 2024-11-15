@@ -71,8 +71,8 @@
       # terminal
       "super + Return" = userSettings.term;
 
-      # run launcher
-      "super + {_, shift + } @space" = "rofi -show {drun,run} -show-icons";
+      # rofi
+      "super + {_, shift +, alt +} @space" = "rofi -show {drun,run,emoji} -show-icons";
 
       # Reset sxhkd
       "super + Escape" = "pkill -USR1 -x sxhkd";
