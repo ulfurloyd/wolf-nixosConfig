@@ -2,7 +2,7 @@
 {
   stylix = {
     enable = true;
-    image = /home/${userSettings.username}/.dotfiles/themes/bleak-cabin/wallpaper.png;
+    image = /home/${userSettings.username}/.dotfiles/themes/${userSettings.theme}/wallpaper.png;
     polarity = "dark";
   };
 }

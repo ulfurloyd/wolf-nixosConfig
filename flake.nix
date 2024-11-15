@@ -38,6 +38,7 @@
         email = "eklavyasood@gmail.com";
         dotfilesDir = "~/.dotfiles";
         shell = "zsh";
+        theme = "bleak-cabin";
         wm = "bspwm";
         browser = "zen";
         term = "kitty";
