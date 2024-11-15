@@ -21,19 +21,6 @@ in
 
   # Systemd services
   systemd.services = {
-    swapEscape = {
-      enable = true;
-      unitConfig = {
-        Description = "Autostart Kanata as superuser";
-      };
-
-      script = ''
-        /run/current-system/sw/bin/kanata -c /home/wolf/.config/kanata/kanata.kbd
-      '';
-
-      wantedBy = [ "multi-user.target" ];
-    };
-
     seatd = {
       enable = true;
 
@@ -90,6 +77,7 @@ in
       xkb = {
         layout = "us";
         variant = "";
+        options = "caps:swapescape";
       };
 
       displayManager = {
@@ -173,7 +161,6 @@ in
     ly
     gcc
     unzip
-    kanata
     git
     vim
     neovim
