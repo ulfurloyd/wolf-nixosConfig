@@ -34,6 +34,7 @@ in
     wowup-cf
     whatsapp-for-linux
     spotify
+    scrot
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
