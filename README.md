@@ -15,11 +15,11 @@
   attractive progress updates during rebuilds
 - rebuilding system changes:
 ```
-nh os switch -H desktop     # same as nixos-rebuild switch --flake .#desktop
+nh os switch -H desktop     # same as nixos-rebuild switch --flake .#<host>
 ```
 - rebuilding home changes:
 ```
-nh home switch -c desktop   # same as home-manager switch --flake .#desktop
+nh home switch -c desktop   # same as home-manager switch --flake .#<host>
 ```
 <hr>
 

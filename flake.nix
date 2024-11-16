@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -38,7 +40,7 @@
         email = "eklavyasood@gmail.com";
         dotfilesDir = "~/.dotfiles";
         shell = "zsh";
-        theme = "white-black-red";
+        theme = "bleak-cabin";
         wm = "bspwm";
         browser = "zen";
         term = "kitty";

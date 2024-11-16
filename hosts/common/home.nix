@@ -1,4 +1,4 @@
-{ config, pkgs, userSettings, inputs, ... }:
+{ config, pkgs, pkgsUnstable, userSettings, inputs, ... }:
 let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
 in
@@ -33,8 +33,8 @@ in
     python311Packages.dbus-python
     wowup-cf
     whatsapp-for-linux
-    spotify
     scrot
+    gowall
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -54,7 +54,8 @@ in
   };
 
   programs.spicetify = {
-    enable = false;
+    enable = true;
+    spicetifyPackage = inputs.nixpkgs-unstable.legacyPackages."${pkgs.system}".spicetify-cli;
     enabledExtensions = with spicePkgs.extensions; [ ];
     # theme = {
     #   name = "base16-spotify";
