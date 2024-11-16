@@ -19,7 +19,7 @@ nh os switch -H desktop     # same as nixos-rebuild switch --flake .#desktop
 ```
 - rebuilding home changes:
 ```
-nh home switch -c desktop   # same as nixos-rebuild switch --flake .#desktop
+nh home switch -c desktop   # same as home-manager switch --flake .#desktop
 ```
 <hr>
 
