@@ -6,5 +6,7 @@
     ./polybar/polybar.nix
     ./rofi/rofi.nix
     ./starship/starship.nix
+    ./tofi/tofi.nix
+    ./wofi/wofi.nix
   ];
 }

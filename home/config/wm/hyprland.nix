@@ -1,12 +1,23 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
   wayland.windowManager.hyprland = {
     enable = true;
+    systemd.enable = true;
 
     extraConfig = ''
+      # disable this random monitor that i have no clue about
+      monitor = Unknown-1, disable
+
+      input {
+        # swap capslock and escape
+        kb_options = caps:swapescape
+      }
+
+      env = LIBGA_DRIVER_NAME,nvidia
+      env = __GLX_VENDOR_LIBRARY_NAME,nvidia
       cursor {
-        no_hardware_cursors = false;
+        no_hardware_cursors = true
       }
 
       exec-once = dunst
@@ -16,17 +27,19 @@
     xwayland.enable = true;
 
     settings = {
-      "monitor" = ",1920x1080@144,auto,1";
+      "monitor" = "HDMI-A-1,1920x1080@144,auto,1";
       "$mod" = "SUPER";
 
       bind = [
-        "$mod, RETURN, exec, kitty"
+        "$mod, RETURN, exec, ${userSettings.term}"
         "$mod, w, killactive"
         "$mod, f, fullscreen"
 
+        "$mod, b, exec, ${userSettings.browser}"
+
         "$mod, t, togglefloating"
         "$mod SHIFT, j, togglesplit"
-        "$mod, SPACE, exec, rofi -show drun -show-icons"
+        "$mod, SPACE, exec, wofi --show drun"
 
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"

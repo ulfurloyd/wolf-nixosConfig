@@ -116,6 +116,9 @@ in
   # Enable Hyprland
   programs.hyprland.enable = true;
 
+  # Enable RiverWM
+  programs.river.enable = true;
+
   fonts.packages = with pkgs; [
     nerdfonts
     fira

@@ -93,7 +93,7 @@
       # bspwm hotkeys
 
       # quit/restart bspwm
-      "super + alt + {q, r}" = "bspc {quit,wm} -r";
+      "super + alt + {q, r}" = "bspc {quit,wm -r}";
 
       # close and kill
       "super + {_, shift + } w" = "bspc node -{c, k}";

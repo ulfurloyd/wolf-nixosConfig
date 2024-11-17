@@ -1,7 +1,8 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./hyprland.nix
     ./bspwm.nix
+    ./hyprland.nix
+    ./river.nix
   ];
 }

@@ -35,6 +35,7 @@ in
     whatsapp-for-linux
     scrot
     gowall
+    egl-wayland
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
