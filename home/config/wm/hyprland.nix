@@ -20,8 +20,14 @@
         no_hardware_cursors = true
       }
 
+      bindm = $mod, mouse:272, movewindow
+      bindm = $mod, mouse:273, resizewindow
+
+
+
       exec-once = dunst
-      exec-once = waybar &
+      # exec-once = waybar &
+      exec-once = hyprpanel
       exec-once = hyprpaper
     '';
 
@@ -80,6 +86,10 @@
         "$mod SHIFT, 8, movetoworkspace, 8"
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
+
+        "$mod, equal, exec, pactl set-sink-volume 0 +5%"
+        "$mod, minus, exec, pactl set-sink-volume 0 -5%"
+        "$mod, plus, exec, pactl set-sink-mute 0 toggle"
       ];
     };
   };

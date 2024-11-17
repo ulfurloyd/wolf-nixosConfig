@@ -7,6 +7,7 @@
     ./rofi/rofi.nix
     ./starship/starship.nix
     ./tofi/tofi.nix
+    ./waybar/waybar.nix
     ./wofi/wofi.nix
   ];
 }

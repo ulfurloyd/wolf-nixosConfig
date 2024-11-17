@@ -37,6 +37,8 @@ in
     gowall
     egl-wayland
     hyprpaper
+    inputs.hyprpanel.packages.${pkgs.system}.default
+    inputs.matugen.packages.${pkgs.system}.default
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

@@ -8,6 +8,9 @@
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    matugen.url = "github:InioX/Matugen";
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+
     stylix = {
       url = "github:danth/stylix/release-24.05";
       inputs = {
