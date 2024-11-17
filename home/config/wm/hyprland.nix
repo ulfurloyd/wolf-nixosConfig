@@ -22,6 +22,7 @@
 
       exec-once = dunst
       exec-once = waybar &
+      exec-once = hyprpaper
     '';
 
     xwayland.enable = true;
@@ -40,6 +41,7 @@
         "$mod, t, togglefloating"
         "$mod SHIFT, j, togglesplit"
         "$mod, SPACE, exec, wofi --show drun"
+        "SUPER_SHIFT, SPACE, exec, wofi --show run"
 
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
@@ -78,9 +80,18 @@
         "$mod SHIFT, 8, movetoworkspace, 8"
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
-
-        "$mod, B, exec, firefox"
       ];
+    };
+  };
+
+  services.hyprpaper = {
+    enable = true;
+
+    settings = {
+      preload = [
+        "/home/${userSettings.username}/.dotfiles/themes/${userSettings.theme}/wallpaper.png"
+      ];
+      wallpaper = [ " , /home/${userSettings.username}/.dotfiles/themes/${userSettings.theme}/wallpaper.png" ];
     };
   };
 }

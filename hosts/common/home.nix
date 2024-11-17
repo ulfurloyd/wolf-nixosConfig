@@ -36,6 +36,7 @@ in
     scrot
     gowall
     egl-wayland
+    hyprpaper
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
