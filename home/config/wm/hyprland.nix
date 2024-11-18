@@ -23,11 +23,10 @@
       bindm = $mod, mouse:272, movewindow
       bindm = $mod, mouse:273, resizewindow
 
-
-
       exec-once = dunst
       exec-once = waybar &
-      exec-once = hyprpaper
+      exec-once = swww-daemon
+      exec = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.theme}/wallpaper.png -t random --transition-duration 2
     '';
 
     xwayland.enable = true;
@@ -107,17 +106,6 @@
         "$mod, s, exec, scratchpad"
         "$mod SHIFT, s, exec, scratchpad -g -m 'wofi -d'"
       ];
-    };
-  };
-
-  services.hyprpaper = {
-    enable = true;
-
-    settings = {
-      preload = [
-        "/home/${userSettings.username}/.dotfiles/themes/${userSettings.theme}/wallpaper.png"
-      ];
-      wallpaper = [ " , /home/${userSettings.username}/.dotfiles/themes/${userSettings.theme}/wallpaper.png" ];
     };
   };
 }

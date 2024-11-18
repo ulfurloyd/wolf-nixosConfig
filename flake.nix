@@ -27,6 +27,7 @@
 
     wofi-power-menu.url = "github:szaffarano/wofi-power-menu";
 
+    swww.url = "github:LGFae/swww";
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
