@@ -86,9 +86,15 @@
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
 
+        # volume controls
         "$mod, equal, exec, pactl set-sink-volume 0 +5%"
         "$mod, minus, exec, pactl set-sink-volume 0 -5%"
         "$mod, plus, exec, pactl set-sink-mute 0 toggle"
+        
+        # media controls
+        "$mod, period, exec, playerctl next"
+        "$mod, comma, exec, playerctl previous"
+        "$mod, p, exec, playerctl play-pause"
 
         # grimblast screenshots
         "$mod SHIFT, f12, exec, grimblast --notify copysave screen"
