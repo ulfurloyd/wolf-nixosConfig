@@ -36,6 +36,9 @@ more themes will be implemented whenever i stop being lazy about it.
 - bleak-cabin
 ![Screenshot](./screenshots/hypr-bleak-cabin.png)
 
+- white-black-red
+![Screenshot](./screenshots/hypr-white-black-red.png)
+
 ##### bspwm
 - bleak-cabin
 ![Screenshot](./screenshots/bspwm-bleak-cabin.png)
