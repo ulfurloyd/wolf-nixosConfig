@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, userSettings, ... }:
 let
   cfg = config.services.seatd;
 in
@@ -14,6 +14,7 @@ in
   environment.sessionVariables = {
     # Hint electron apps to use wayland
     NIXOS_OZONE_WL = "1";
+    XDG_SCREENSHOTS_DIR = "$HOME/Pictures/Screenshots";
   };
 
   # Enable networking

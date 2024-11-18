@@ -26,8 +26,7 @@
 
 
       exec-once = dunst
-      # exec-once = waybar &
-      exec-once = hyprpanel
+      exec-once = waybar &
       exec-once = hyprpaper
     '';
 
@@ -90,6 +89,9 @@
         "$mod, equal, exec, pactl set-sink-volume 0 +5%"
         "$mod, minus, exec, pactl set-sink-volume 0 -5%"
         "$mod, plus, exec, pactl set-sink-mute 0 toggle"
+
+        "$mod SHIFT, f12, exec, grimblast --notify copysave screen"
+        "$mod, f12, exec, grimblast --notify copysave area"
       ];
     };
   };

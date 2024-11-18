@@ -12,6 +12,7 @@ in
 
     opacity = {
       terminal = 0.6;
+      desktop = 0.6;
     };
 
     targets = {
@@ -25,6 +26,10 @@ in
       nixvim = {
         enable = true;
         # plugin = "base16-nvim";
+      };
+
+      waybar = {
+        enableRightBackColors = true;
       };
 
       # spicetify = { enable = true; };

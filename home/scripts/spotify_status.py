@@ -19,25 +19,25 @@ parser.add_argument(
     metavar='custom format',
     dest='custom_format'
 )
-parser.add_argument(
-    '-p',
-    '--playpause',
-    type=str,
-    metavar='play-pause indicator',
-    dest='play_pause'
-)
+# parser.add_argument(
+#     '-p',
+#     '--playpause',
+#     type=str,
+#     metavar='play-pause indicator',
+#     dest='play_pause'
+# )
 parser.add_argument(
     '--font',
     type=str,
     metavar='the index of the font to use for the main label',
     dest='font'
 )
-parser.add_argument(
-    '--playpause-font',
-    type=str,
-    metavar='the index of the font to use to display the playpause indicator',
-    dest='play_pause_font'
-)
+# parser.add_argument(
+#     '--playpause-font',
+#     type=str,
+#     metavar='the index of the font to use to display the playpause indicator',
+#     dest='play_pause_font'
+# )
 parser.add_argument(
     '-q',
     '--quiet',
@@ -68,13 +68,14 @@ def truncate(name, trunclen):
 
 
 # Default parameters
-output = fix_string(u'{play_pause} {artist}: {song}')
+# output = fix_string(u'{play_pause} {artist}: {song}')
+output = fix_string(u'{artist}: {song}')
 trunclen = 35
-play_pause = fix_string(u'\u25B6,\u23F8') # first character is play, second is paused
+# play_pause = fix_string(u'\u25B6,\u23F8') # first character is play, second is paused
 
 label_with_font = '%{{T{font}}}{label}%{{T-}}'
 font = args.font
-play_pause_font = args.play_pause_font
+# play_pause_font = args.play_pause_font
 
 quiet = args.quiet
 
@@ -83,8 +84,8 @@ if args.trunclen is not None:
     trunclen = args.trunclen
 if args.custom_format is not None:
     output = args.custom_format
-if args.play_pause is not None:
-    play_pause = args.play_pause
+# if args.play_pause is not None:
+#     play_pause = args.play_pause
 
 try:
     session_bus = dbus.SessionBus()
@@ -103,17 +104,17 @@ try:
 
     # Handle play/pause label
 
-    play_pause = play_pause.split(',')
+    # play_pause = play_pause.split(',')
 
-    if status == 'Playing':
-        play_pause = play_pause[0]
-    elif status == 'Paused':
-        play_pause = play_pause[1]
-    else:
-        play_pause = str()
+    # if status == 'Playing':
+    #     play_pause = play_pause[0]
+    # elif status == 'Paused':
+    #     play_pause = play_pause[1]
+    # else:
+    #     play_pause = str()
 
-    if play_pause_font:
-        play_pause = label_with_font.format(font=play_pause_font, label=play_pause)
+    # if play_pause_font:
+    #     play_pause = label_with_font.format(font=play_pause_font, label=play_pause)
 
     # Handle main label
 
@@ -132,7 +133,7 @@ try:
         # Add 4 to trunclen to account for status symbol, spaces, and other padding characters
         print(truncate(output.format(artist=artist, 
                                      song=song, 
-                                     play_pause=play_pause, 
+                                     # play_pause=play_pause, 
                                      album=album), trunclen + 4))
 
 except Exception as e:
