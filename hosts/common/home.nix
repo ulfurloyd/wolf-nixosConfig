@@ -40,6 +40,7 @@ in
     grim
     slurp
     grimblast
+    inputs.hyprland-contrib.packages.${pkgs.system}.scratchpad
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

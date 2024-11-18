@@ -29,7 +29,7 @@ in
       };
 
       waybar = {
-        enableRightBackColors = true;
+        enableRightBackColors = false;
       };
 
       # spicetify = { enable = true; };

@@ -22,10 +22,13 @@
     };
 
     wezterm.url = "github:wez/wezterm?dir=nix";
-
     zen-browser.url = "github:MarceColl/zen-browser-flake";
-
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 

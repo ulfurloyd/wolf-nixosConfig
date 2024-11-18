@@ -90,8 +90,13 @@
         "$mod, minus, exec, pactl set-sink-volume 0 -5%"
         "$mod, plus, exec, pactl set-sink-mute 0 toggle"
 
+        # grimblast screenshots
         "$mod SHIFT, f12, exec, grimblast --notify copysave screen"
         "$mod, f12, exec, grimblast --notify copysave area"
+
+        # scratchpad
+        "$mod, s, exec, scratchpad"
+        "$mod SHIFT, s, exec, scratchpad -g -m 'wofi -d'"
       ];
     };
   };

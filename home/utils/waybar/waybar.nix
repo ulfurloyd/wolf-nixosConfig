@@ -81,10 +81,14 @@
         background: transparent;
       }
 
+      #window {
+        border-radius: 2px;
+      }
+
       #tray {
           margin: 0 2px 0 8px;
           padding: 2px;
-        }
+      }
     '';
   };
 }
