@@ -4,6 +4,7 @@
 - two hosts, #desktop and #laptop for both my systems (you guessed it, a desktop and a laptop)
 - massive work in progress, but did work in a VM with some minor configuration changes
   (GPU drivers)
+- NEW: moved to hyprland and supporting utilities like waybar and wofi
 <hr>
 
 #### how it works
@@ -31,8 +32,13 @@ and applies them to most applications.
 
 more themes will be implemented whenever i stop being lazy about it.
 
+##### hyprland
 - bleak-cabin
-![Screenshot](./screenshots/bleak-cabin.png)
+![Screenshot](./screenshots/hypr-bleak-cabin.png)
+
+##### bspwm
+- bleak-cabin
+![Screenshot](./screenshots/bspwm-bleak-cabin.png)
 
 - white-black-red
-![Screenshot](./screenshots/white-black-red.png)
+![Screenshot](./screenshots/bspwm-white-black-red.png)

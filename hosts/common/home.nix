@@ -41,6 +41,7 @@ in
     slurp
     grimblast
     inputs.hyprland-contrib.packages.${pkgs.system}.scratchpad
+    inputs.wofi-power-menu.packages.${pkgs.system}.wofi-power-menu
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

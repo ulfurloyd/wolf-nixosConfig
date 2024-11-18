@@ -86,6 +86,9 @@
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
 
+        # power menu
+        "$mod SHIFT, P, exec, wofi-power-menu"
+
         # volume controls
         "$mod, equal, exec, pactl set-sink-volume 0 +5%"
         "$mod, minus, exec, pactl set-sink-volume 0 -5%"
