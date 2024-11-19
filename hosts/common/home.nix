@@ -40,6 +40,7 @@
     inputs.swww.packages.${pkgs.system}.swww
     legcord
     gimp
+    devenv
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
