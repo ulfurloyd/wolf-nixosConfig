@@ -11,6 +11,7 @@
     ./markview.nix
     ./neo-tree.nix
     ./neocord.nix
+    ./nvim-snippets.nix
     ./oil.nix
     ./startify.nix
     ./telescope.nix

@@ -1,7 +1,8 @@
 {
   programs.nixvim = {
     plugins = {
-      cmp-emoji= {enable = true;};
+      cmp-emoji.enable = true;
+      luasnip.enable = true;
 
       cmp = {
         enable = true;
@@ -13,9 +14,11 @@
             fetchingTimeout = 200;
             maxViewEntries = 30;
           };
+
           snippet = {
-            expand = "luasnip";
+            expand = "function(args) require('luasnip').lsp_expand(args.body) end";
           };
+
           formatting = {
             fields = [
               "kind"
@@ -23,25 +26,25 @@
               "menu"
             ];
           };
-          source = [
-          { name = "nvim_lsp"; }
-          { name = "emoji"; }
-          {
-            name = "buffer";
-            option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-            keywordLength = 3;
-          }
-          { 
-            name = "path";
-            keywordLength = 3;
-          }
-          {
-            name = "luasnip";
-            keywordLength = 3;
-          }
-          { name = "rg"; }
-          { name = "nvim_lua"; }
-          { name = "git"; }
+          sources = [
+            { name = "nvim_lsp"; }
+            { name = "emoji"; }
+            {
+              name = "buffer";
+              option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+              keywordLength = 3;
+            }
+            { 
+              name = "path";
+              keywordLength = 3;
+            }
+            {
+              name = "luasnip";
+              keywordLength = 3;
+            }
+            { name = "rg"; }
+            { name = "nvim_lua"; }
+            { name = "git"; }
           ];
 
           window = {

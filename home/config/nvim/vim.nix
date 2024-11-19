@@ -9,7 +9,6 @@
   ];
 
   programs.nixvim = {
-
     enable = true;
 
     # config options for neovim
