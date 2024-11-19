@@ -47,6 +47,10 @@
         desktop = "^3";
       };
 
+      "legcord" = {
+        desktop = "^3";
+      };
+
       "spotify" = {
         desktop = "^10";
       };

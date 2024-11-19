@@ -99,7 +99,7 @@
         "$mod, p, exec, playerctl play-pause"
 
         # Discord
-        "$mod, d, exec, vesktop"
+        "$mod, d, exec, legcord"
 
         # Grimblast Screenshots
         "$mod SHIFT, f12, exec, grimblast --notify copysave screen"
@@ -113,6 +113,7 @@
       windowrule = [
         "workspace 2, ${userSettings.browser}"
         "workspace 3, vesktop"
+        "workspace 3, legcord"
         "workspace 6, whatsapp-for-linux"
       ];
     };
