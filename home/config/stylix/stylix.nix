@@ -51,7 +51,7 @@ in
 
       monospace = {
         package = pkgs.fira-code;
-        name = "Fira Monospace";
+        name = "Fira Code";
       };
 
       emoji = {
