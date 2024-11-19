@@ -6,6 +6,8 @@
   # add user to libvirtd group
   users.users.wolf.extraGroups = [ "libvirtd" ];
 
+  virtualisation.vmware.host.enable = true;
+
   # install necessary packages
   environment.systemPackages = with pkgs; [
     virt-manager

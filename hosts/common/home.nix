@@ -39,6 +39,7 @@
     inputs.wofi-power-menu.packages.${pkgs.system}.wofi-power-menu
     inputs.swww.packages.${pkgs.system}.swww
     legcord
+    gimp
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

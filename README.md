@@ -59,6 +59,12 @@ more themes will be implemented whenever i stop being lazy about it.
 - white-black-red
 ![Screenshot](./screenshots/hypr-white-black-red.png)
 
+- abstract-blue
+![Screenshot](./screenshots/hypr-abstract-blue.png)
+
+- starry-night
+![Screenshot](./screenshots/hypr-starry-night.png)
+
 ##### bspwm
 - bleak-cabin
 ![Screenshot](./screenshots/bspwm-bleak-cabin.png)
