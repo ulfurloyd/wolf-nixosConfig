@@ -52,7 +52,6 @@ and applies them to most applications.
 
 more themes will be implemented whenever i stop being lazy about it.
 
-##### hyprland
 - bleak-cabin
 ![Screenshot](./screenshots/hypr-bleak-cabin.png)
 
@@ -65,12 +64,8 @@ more themes will be implemented whenever i stop being lazy about it.
 - starry-night
 ![Screenshot](./screenshots/hypr-starry-night.png)
 
-##### bspwm
-- bleak-cabin
-![Screenshot](./screenshots/bspwm-bleak-cabin.png)
-
-- white-black-red
-![Screenshot](./screenshots/bspwm-white-black-red.png)
+- mount-fuji
+![Screenshot](./screenshots/hypr-mount-fuji.png)
 
 <hr>
 

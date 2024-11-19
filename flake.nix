@@ -46,7 +46,7 @@
         email = "eklavyasood@gmail.com";
         dotfilesDir = "~/.dotfiles";
         shell = "zsh";
-        theme = "starry-night";
+        theme = "mount-fuji";
         wm = "bspwm";
         browser = "zen";
         term = "kitty";
