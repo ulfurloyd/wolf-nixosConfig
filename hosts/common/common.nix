@@ -14,6 +14,7 @@ in
   environment.sessionVariables = {
     # Hint electron apps to use wayland
     NIXOS_OZONE_WL = "1";
+
     XDG_SCREENSHOTS_DIR = "$HOME/Pictures/Screenshots";
   };
 
@@ -130,6 +131,7 @@ in
   # Enable sound with pipewire
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  security.pam.services.hyprlock = {};
 
   users.groups.seat.name = "seat";
 

@@ -9,7 +9,6 @@
 
   home.packages = with pkgs; [
     gh
-    tmux
     kitty
     nerdfonts
     fira

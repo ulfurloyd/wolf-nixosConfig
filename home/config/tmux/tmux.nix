@@ -2,7 +2,7 @@
 
 {
   programs.tmux = {
-    enable = true;
+    enable = false;
     terminal = "screen-256color";
 
     shell = "${pkgs.zsh}/bin/zsh";

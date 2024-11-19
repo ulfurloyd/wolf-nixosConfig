@@ -1,5 +1,5 @@
 {
   programs.tofi = {
-    enable = true;
+    enable = false;
   };
 }
