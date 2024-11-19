@@ -1,0 +1,7 @@
+{
+  imports = [
+    ./emacs
+    ./lazygit
+    ./spotify
+  ];
+}
