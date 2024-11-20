@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
-  imports = [ ../../home ];
+  imports = [
+    ../../home
+    ../../home/stylix/laptop
+  ];
 
   home.packages = with pkgs; [
   ];

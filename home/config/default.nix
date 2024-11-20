@@ -4,7 +4,6 @@
     ./term
     ./shell
     ./nvim
-    ./stylix
     ./wm
   ];
 }

@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
-  imports = [ ../../home ];
+  imports = [
+    ../../home
+    ../../home/stylix/desktop
+  ];
 
   home.packages = with pkgs; [
     nodejs_22
