@@ -17,5 +17,6 @@
     ./telescope.nix
     ./transparent.nix
     ./treesitter.nix
+    ./which-key.nix
   ];
 }

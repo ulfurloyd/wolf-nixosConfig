@@ -14,14 +14,6 @@
     }
     {
       mode = "n";
-      key = "<C-o>";
-      action = ":Telescope buffers<CR>";
-      options = {
-        desc = "Telescope buffer list";
-      };
-    }
-    {
-      mode = "n";
       key = "<leader>pg";
       action = ":Telescope live_grep<CR>";
       options = {

@@ -46,7 +46,7 @@
             desc = "Live Grep";
           };
         };
-        "<leader>bb" = {
+        "<C-o>" = {
           action = "buffers";
           options = {
             desc = "Buffers";
