@@ -9,6 +9,9 @@ let
     ani = "ani-cli";
     myscrot = "scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png";
 
+    # yazi
+    y = "yazi";
+
     # fuzzy finder
     vif = "nvim $(fzf)";
 

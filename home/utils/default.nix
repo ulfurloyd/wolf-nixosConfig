@@ -10,5 +10,6 @@
     ./tofi/tofi.nix
     ./waybar/waybar.nix
     ./wofi/wofi.nix
+    ./yazi
   ];
 }
