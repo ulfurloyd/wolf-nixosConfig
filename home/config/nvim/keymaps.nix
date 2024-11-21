@@ -14,7 +14,7 @@
     }
     {
       mode = "n";
-      key = "<leader>pv";
+      key = "<C-o>";
       action = ":Telescope buffers<CR>";
       options = {
         desc = "Telescope buffer list";

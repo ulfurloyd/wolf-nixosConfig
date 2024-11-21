@@ -1,4 +1,9 @@
 { config, pkgs, pkgsUnstable, userSettings, inputs, ... }:
+let
+  scratchpad = inputs.hyprland-contrib.packages.${pkgs.system}.scratchpad;
+  wofi-power-menu = inputs.wofi-power-menu.packages.${pkgs.system}.wofi-power-menu;
+  swww = inputs.swww.packages.${pkgs.system}.swww;
+in
 {
   nixpkgs.config.allowUnfree = true;
 
@@ -35,9 +40,9 @@
     grim
     slurp
     grimblast
-    inputs.hyprland-contrib.packages.${pkgs.system}.scratchpad
-    inputs.wofi-power-menu.packages.${pkgs.system}.wofi-power-menu
-    inputs.swww.packages.${pkgs.system}.swww
+    scratchpad
+    wofi-power-menu
+    swww
     legcord
     gimp
     devenv
