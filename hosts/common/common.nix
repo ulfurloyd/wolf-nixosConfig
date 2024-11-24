@@ -153,6 +153,7 @@ in
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
   };
+  programs.gamemode.enable = true;
 
   # Allow unfree software
   nixpkgs.config.allowUnfree = true;
@@ -183,6 +184,7 @@ in
     nh
     zsh
     zsh-powerlevel10k
+    protonup-qt
   ];
 
   programs.nh = {
