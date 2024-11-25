@@ -20,7 +20,6 @@ in
 
       rofi = {
         enable = true;
-        # fontSize = 14; # this option doesn't exist yet
       };
 
       nixvim = {
@@ -32,7 +31,7 @@ in
         enableRightBackColors = false;
       };
 
-      # spicetify = { enable = true; };
+      spicetify = { enable = true; };
 
       emacs = { enable = true; };
       

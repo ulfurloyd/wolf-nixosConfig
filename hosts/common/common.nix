@@ -66,7 +66,8 @@ in
   # Display Managers, Desktop Managers, Window Managers
   services = {
     displayManager = {
-      sddm.enable = true;
+      sddm.enable = false;
+      ly.enable = true;
     };
 
     desktopManager = {
