@@ -3,6 +3,8 @@
 - massive work in progress, but did work in a VM with some minor configuration changes
   (GPU drivers)
 - NEW: moved to hyprland and supporting utilities like waybar and wofi
+- TODO: figure out a simple installation script that automates the entire process, including
+  hostname change
 <hr>
 
 #### how it works
@@ -14,11 +16,11 @@
   attractive progress updates during rebuilds
 - rebuilding system changes:
 ```bash
-nh os switch -H desktop     # same as nixos-rebuild switch --flake .#<host>
+nh os switch -H <host>      # same as nixos-rebuild switch --flake .#<host>
 ```
 - rebuilding home changes:
 ```bash
-nh home switch -c desktop   # same as home-manager switch --flake .#<host>
+nh home switch -c <host>    # same as home-manager switch --flake .#<host>
 ```
 
 <hr>
@@ -29,6 +31,7 @@ nh home switch -c desktop   # same as home-manager switch --flake .#<host>
   probably missing some integral steps, because i made this system
   over time instead of at once.
 1. have a working nixOS installation.
+2. `nix-shell -p git # vim if you need a good text editor`
 2. `mkdir ~/.dotfiles`
 3. `git clone https://github.com/eklavyasood/wolf-nixConfig.git ~/.dotfiles`
 4. `cd ~/.dotfiles`
@@ -38,9 +41,7 @@ nh home switch -c desktop   # same as home-manager switch --flake .#<host>
 6. modify `flake.nix` and change `userSettings` options to whatever you want for your
    setup.
 7. `sudo nixos-rebuild switch --flake .#<host>`
-8. hope it doesn't fail.
-9. `home-manager switch --flake .#<host>`
-10. hope it doesn't fail.
+8. `home-manager switch --flake .#<host>`
 
 <hr>
 
