@@ -7,10 +7,10 @@
         servers = {
           html.enable = true;
           cssls.enable = true;
-          lua-ls.enable = true;
+          lua_ls.enable = true;
           bashls.enable = true;
           clangd.enable = true;
-          tsserver.enable = true;
+          ts_ls.enable = true;
           pyright.enable = true;
           nixd.enable = true;
         };

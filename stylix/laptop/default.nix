@@ -2,7 +2,7 @@
 {
   stylix = {
     enable = true;
-    image = /home/${userSettings.username}/.dotfiles/themes/${userSettings.laptopTheme}/wallpaper.png;
+    image = ../../themes/${userSettings.laptopTheme}/wallpaper.png;
     polarity = "dark";
   };
 }

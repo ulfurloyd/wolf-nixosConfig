@@ -1,6 +1,6 @@
 {pkgs, config, userSettings, ...}:
 let
-  imagePath = /home/${userSettings.username}/.dotfiles/themes/${userSettings.laptopTheme}/wallpaper.png;
+  imagePath = ../../../themes/${userSettings.laptopTheme}/wallpaper.png;
 in
 {
   stylix = {

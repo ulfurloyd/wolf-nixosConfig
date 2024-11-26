@@ -2,6 +2,7 @@
   imports = [
     ./dunst/dunst.nix
     ./fastfetch/fastfetch.nix
+    ./fuzzel
     ./picom/picom.nix
     ./polybar/polybar.nix
     ./rofi/rofi.nix
