@@ -32,16 +32,16 @@ nh home switch -c <host>    # same as home-manager switch --flake .#<host>
   over time instead of at once.
 1. have a working nixOS installation.
 2. `nix-shell -p git # vim if you need a good text editor`
-2. `mkdir ~/.dotfiles`
-3. `git clone https://github.com/eklavyasood/wolf-nixConfig.git ~/.dotfiles`
-4. `cd ~/.dotfiles`
-5. either generate `hardware-configuration.nix` or copy your own from
+3. `mkdir ~/.dotfiles`
+4. `git clone https://github.com/eklavyasood/wolf-nixConfig.git ~/.dotfiles`
+5. `cd ~/.dotfiles`
+6. either generate `hardware-configuration.nix` or copy your own from
    `/etc/nixos/hardware-configuration.nix` into
    `hosts/<your host here>/hardware-configuration.nix`
-6. modify `flake.nix` and change `userSettings` options to whatever you want for your
+7. modify `flake.nix` and change `userSettings` options to whatever you want for your
    setup.
-7. `sudo nixos-rebuild switch --flake .#<host>`
-8. `home-manager switch --flake .#<host>`
+8. `sudo nixos-rebuild switch --flake .#<host>`
+9. `home-manager switch --flake .#<host>`
 
 <hr>
 
