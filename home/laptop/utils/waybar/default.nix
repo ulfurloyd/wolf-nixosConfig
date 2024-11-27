@@ -17,7 +17,19 @@
 
         modules-left = [ "hyprland/workspaces" "hyprland/window" ];
         modules-center = [ "custom/spotify" ];
-        modules-right = [ "tray" "disk" "memory" "cpu" "clock" ];
+        modules-right = [ "tray" "network" "group/hardware" "battery" "clock" ];
+
+        "group/hardware" = {
+          orientation = "horizontal";
+          drawer = {
+            "transition-duration" = 500;
+          };
+          modules = [
+            "cpu"
+            "disk"
+            "memory"
+          ];
+        };
 
         "disk" = {
           "intervel" = 30;
@@ -62,7 +74,7 @@
         "custom/spotify" = {
           "format" = "  {}";
           "max-length" = 50;
-          "exec" = "/home/${userSettings.username}/.dotfiles/home/scripts/polybarSpotifyWrapper.sh";
+          "exec" = "/home/${userSettings.username}/.dotfiles/home/common/scripts/polybarSpotifyWrapper.sh";
           "on-click" = "playerctl play-pause";
           "on-scroll-up" = "playerctl next";
           "on-scroll-down" = "playerctl previous";
@@ -72,6 +84,39 @@
         "tray" = {
           "icon-size" = 18;
           "spacing" = 10;
+        };
+
+        "network" = {
+          "format" = "{ifname}";
+          "format-wifi" = "   {signalStrength}%";
+          "format-ethernet" = "  {ipaddr}";
+          "format-disconnected" = ""; # An empty format will hide the module
+          "tooltip-format" = " {ifname} via {gwaddri}";
+          "tooltip-format-wifi" = "   {essid} ({signalStrength}%)";
+          "tooltip-format-ethernet" = "  {ifname} ({ipaddr}/{cidr})";
+          "tooltip-format-disconnected" = "Disconnected";
+          "max-length" = 50;
+        };
+
+        "battery" = {
+          "states" = {
+            "good" = 95;
+            "warning" = 30;
+            "critical" = 15;
+          };
+          "format" = "{icon}   {capacity}%";
+          "format-charging" = "  {capacity}%";
+          "format-plugged" = "  {capacity}%";
+          "format-alt" = "{icon}  {time}";
+          # "format-good" = ""; # An empty format will hide the module
+          # "format-full" = "";
+          "format-icons" = [
+            " "
+            " "
+            " "
+            " "
+            " "
+          ];
         };
       };
     };

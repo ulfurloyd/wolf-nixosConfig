@@ -17,7 +17,20 @@
 
         modules-left = [ "hyprland/workspaces" "hyprland/window" ];
         modules-center = [ "custom/spotify" ];
-        modules-right = [ "tray" "disk" "memory" "cpu" "clock" ];
+        modules-right = [ "tray" "group/hardware" "clock" ];
+
+        "group/hardware" = {
+          orientation = "horizontal";
+          drawer = {
+            "transition-duration" = 500;
+          };
+          modules = [
+            "cpu"
+            "disk"
+            "memory"
+          ];
+        };
+
 
         "disk" = {
           "intervel" = 30;

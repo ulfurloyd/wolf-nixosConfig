@@ -12,6 +12,11 @@
       input {
         # swap capslock and escape
         kb_options = caps:swapescape
+        numlock_by_default = true;
+        touchpad {
+          natural_scroll = true
+          scroll_factor = 2.0
+        }
       }
 
       cursor {
@@ -83,18 +88,23 @@
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
 
+        # Brightness Buttons
+        ", XF86MonBrightnessUp, exec, brightnessctl -q s +5%"
+        ", XF86MonBrightnessDown, exec, brightnessctl -q s 5%-"
+
+        # Volume Buttons
+        ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
+        ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+
+        # Media Controls
+        ", XF86AudioPlay, exec, playerctl play-pause"
+        ", XF86AudioPause, exec, playerctl pause"
+        ", XF86AudioNext, exec, playerctl next"
+        ", XF86AudioPrev, exec, playerctl previous"
+
         # Power Menu
         "$mod SHIFT, P, exec, wofi-power-menu"
-
-        # Volume Controls
-        "$mod, equal, exec, pactl set-sink-volume 0 +5%"
-        "$mod, minus, exec, pactl set-sink-volume 0 -5%"
-        "$mod, plus, exec, pactl set-sink-mute 0 toggle"
-        
-        # Media Controls
-        "$mod, period, exec, playerctl next"
-        "$mod, comma, exec, playerctl previous"
-        "$mod, p, exec, playerctl play-pause"
 
         # Discord
         "$mod, d, exec, legcord"
