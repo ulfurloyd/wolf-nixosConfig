@@ -32,7 +32,7 @@ in
         enableRightBackColors = false;
       };
 
-      # spicetify = { enable = true; };
+      spicetify = { enable = true; };
 
       emacs = { enable = true; };
       

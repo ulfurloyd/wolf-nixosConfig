@@ -9,7 +9,7 @@
     ./starship/starship.nix
     ./swaylock
     ./tofi/tofi.nix
-    ./waybar/waybar.nix
+    # ./waybar/waybar.nix
     ./wofi/wofi.nix
     ./yazi
   ];
