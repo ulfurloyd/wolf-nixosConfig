@@ -14,8 +14,6 @@
         kb_options = caps:swapescape
       }
 
-      env = LIBGA_DRIVER_NAME,nvidia
-      env = __GLX_VENDOR_LIBRARY_NAME,nvidia
       cursor {
         no_hardware_cursors = true
       }
@@ -26,13 +24,13 @@
       exec-once = dunst
       exec-once = waybar &
       exec-once = swww-daemon
-      exec = swww img ../../../themes/${userSettings.desktopTheme}/wallpaper.png -t random --transition-duration 2
+      exec = swww img ../../../../themes/${userSettings.laptopTheme}/wallpaper.png -t random --transition-duration 2
     '';
 
     xwayland.enable = true;
 
     settings = {
-      "monitor" = "HDMI-A-1,1920x1080@144,auto,1";
+      "monitor" = "eDP-1,1920x1080@144,auto,1.2";
       "$mod" = "SUPER";
 
       bind = [

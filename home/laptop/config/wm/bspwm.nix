@@ -16,7 +16,7 @@
     # Startup Programs
     startupPrograms = [
       "picom"
-      "feh --bg-scale ~/.dotfiles/themes/${userSettings.desktopTheme}/wallpaper.png"
+      "feh --bg-scale ~/.dotfiles/themes/${userSettings.laptopTheme}/wallpaper.png"
       "polybar"
       "nm-applet"
       "emacs --daemon 2> /dev/null"
