@@ -62,7 +62,7 @@
         "custom/spotify" = {
           "format" = "  {}";
           "max-length" = 50;
-          "exec" = "/home/${userSettings.username}/.dotfiles/home/scripts/polybarSpotifyWrapper.sh";
+          "exec" = "/home/${userSettings.username}/.dotfiles/home/common/scripts/polybarSpotifyWrapper.sh";
           "on-click" = "playerctl play-pause";
           "on-scroll-up" = "playerctl next";
           "on-scroll-down" = "playerctl previous";

@@ -1,0 +1,7 @@
+{
+  imports = [
+    ./polybar
+    ./waybar
+    ./wofi
+  ];
+}

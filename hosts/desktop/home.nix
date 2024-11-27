@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../home
-    ../../home/stylix/desktop
+    ../../home/desktop
+    ../../home/common
   ];
 
   home.packages = with pkgs; [

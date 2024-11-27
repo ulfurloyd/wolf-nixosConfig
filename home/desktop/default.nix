@@ -1,7 +1,9 @@
 {
   imports = [
     ./config
-    ./software
+    ./stylix
     ./utils
   ];
 }
+
+
