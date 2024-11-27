@@ -9,6 +9,13 @@
       # disable this random monitor that i have no clue about
       monitor = Unknown-1, disable
 
+      general {
+        gaps_in = 6
+        gaps_out = 8
+        border_size = 2
+        layout = dwindle
+      }
+
       input {
         # swap capslock and escape
         kb_options = caps:swapescape
@@ -123,6 +130,7 @@
         "workspace 3, vesktop"
         "workspace 3, legcord"
         "workspace 6, whatsapp-for-linux"
+        "workspace 10, spotify"
       ];
     };
   };
