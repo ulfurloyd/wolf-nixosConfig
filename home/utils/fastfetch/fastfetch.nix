@@ -1,13 +1,13 @@
 { userSettings, ... }:
 let
   eva = {
-    path = "../../../home/utils/fastfetch/images/eva01.png";
+    path = ./images/eva01.png;
     width = 30;
     height = 20;
   };
 
   widowmaker = {
-    path = "../../../home/utils/fastfetch/images/widowmaker.png";
+    path = ./images/widowmaker.png;
     width = 32;
     height = 20;
   };
