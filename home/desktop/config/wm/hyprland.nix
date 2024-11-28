@@ -31,7 +31,7 @@
       exec-once = dunst
       exec-once = waybar &
       exec-once = swww-daemon
-      exec = swww img ../../../../themes/${userSettings.desktopTheme}/wallpaper.png -t random --transition-duration 2
+      exec = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.desktopTheme}/wallpaper.png -t random --transition-duration 2
     '';
 
     xwayland.enable = true;

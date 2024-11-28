@@ -1,4 +1,4 @@
-{ config, pkgs, userSettings, ... }:
+{ userSettings, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -34,7 +34,7 @@
       exec-once = dunst
       exec-once = waybar &
       exec-once = swww-daemon
-      exec = swww img ../../../../themes/${userSettings.laptopTheme}/wallpaper.png -t random --transition-duration 2
+      exec = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.laptopTheme}/wallpaper.png -t random --transition-duration 2
     '';
 
     xwayland.enable = true;
@@ -122,6 +122,12 @@
         "$mod, s, exec, scratchpad"
         "$mod SHIFT, s, exec, scratchpad -g -m 'wofi -d'"
       ];
+
+      # touchpad gestures
+      gestures = {
+        "workspace_swipe" = true;
+        "workspace_swipe_fingers" = 3;
+      };
 
       windowrule = [
         "workspace 2, ${userSettings.browser}"

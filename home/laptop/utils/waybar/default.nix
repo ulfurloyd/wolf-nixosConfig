@@ -17,7 +17,7 @@
 
         modules-left = [ "hyprland/workspaces" "hyprland/window" ];
         modules-center = [ "custom/spotify" ];
-        modules-right = [ "tray" "network" "group/hardware" "battery" "clock" ];
+        modules-right = [ "tray" "pulseaudio" "network" "group/hardware" "battery" "clock" ];
 
         "group/hardware" = {
           orientation = "horizontal";
@@ -29,6 +29,30 @@
             "disk"
             "memory"
           ];
+        };
+
+        "pulseaudio" = {
+          "scroll-step" = 5;
+          "format" = "{icon}  {volume}%";
+          "format-bluetooth" = "{volume}% {icon} {format_source}";
+          "format-bluetooth-muted" = " {icon} {format_source}";
+          "format-muted" = " {format_source}";
+          "format-source" = "{volume}% ";
+          "format-source-muted" = " ";
+          "format-icons" = {
+            "headphone" = "";
+            "hands-free" = "";
+            "headset" = "";
+            "phone" = "";
+            "portable" = "";
+            "car" = "";
+            "default" = [
+              ""
+              " "
+              " "
+            ];
+          };
+          "on-click" = "pavucontrol";
         };
 
         "disk" = {
