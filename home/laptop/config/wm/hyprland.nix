@@ -31,6 +31,7 @@
       bindm = $mod, mouse:272, movewindow
       bindm = $mod, mouse:273, resizewindow
 
+      exec-once = nm-applet --indicator
       exec-once = dunst
       exec-once = waybar &
       exec-once = swww-daemon

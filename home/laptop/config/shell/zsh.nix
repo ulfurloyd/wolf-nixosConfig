@@ -38,6 +38,10 @@
       zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'exa $realpath'
     '';
 
+    envExtra = ''
+      skip_global_compinit=1
+    '';
+
     history = {
       size = 5000;
       share = true;

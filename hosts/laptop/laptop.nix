@@ -6,6 +6,10 @@
     ../../system
   ];
 
+  environment.systemPackages = with pkgs; [
+    networkmanagerapplet
+  ];
+
   networking.hostName = "wolfNixLap";
 
   services.power-profiles-daemon.enable = false;
