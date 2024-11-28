@@ -4,6 +4,10 @@ let
 in
 {
 
+  imports = [
+    ../../modules/common
+  ];
+
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -80,7 +84,6 @@ in
       xkb = {
         layout = "us";
         variant = "";
-        options = "caps:swapescape";
       };
 
       displayManager = {

@@ -17,12 +17,10 @@
       }
 
       input {
-        # swap capslock and escape
-        kb_options = caps:swapescape
         numlock_by_default = true;
         touchpad {
           natural_scroll = true
-          scroll_factor = 2.0
+          scroll_factor = 1.6
         }
       }
 
