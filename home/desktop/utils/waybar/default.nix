@@ -17,7 +17,7 @@
 
         modules-left = [ "hyprland/workspaces" "hyprland/window" ];
         modules-center = [ "custom/spotify" ];
-        modules-right = [ "tray" "group/hardware" "clock" ];
+        modules-right = [ "tray" "pulseaudio" "network" "group/hardware" "clock" ];
 
         "group/hardware" = {
           orientation = "horizontal";
@@ -31,6 +31,29 @@
           ];
         };
 
+        "pulseaudio" = {
+          "scroll-step" = 5;
+          "format" = "{icon}  {volume}%";
+          "format-bluetooth" = "{volume}% {icon} {format_source}";
+          "format-bluetooth-muted" = " {icon} {format_source}";
+          "format-muted" = " {format_source}";
+          "format-source" = "{volume}% ";
+          "format-source-muted" = " ";
+          "format-icons" = {
+            "headphone" = "";
+            "hands-free" = "";
+            "headset" = "";
+            "phone" = "";
+            "portable" = "";
+            "car" = "";
+            "default" = [
+              ""
+              " "
+              " "
+            ];
+          };
+          "on-click" = "pavucontrol";
+        };
 
         "disk" = {
           "intervel" = 30;
@@ -85,6 +108,18 @@
         "tray" = {
           "icon-size" = 18;
           "spacing" = 10;
+        };
+
+        "network" = {
+          "format" = "{ifname}";
+          "format-wifi" = "   {signalStrength}%";
+          "format-ethernet" = "  {ipaddr}";
+          "format-disconnected" = ""; # An empty format will hide the module
+          "tooltip-format" = " {ifname} via {gwaddri}";
+          "tooltip-format-wifi" = "   {essid} ({signalStrength}%)";
+          "tooltip-format-ethernet" = "  {ifname} ({ipaddr}/{cidr})";
+          "tooltip-format-disconnected" = "Disconnected";
+          "max-length" = 50;
         };
       };
     };
