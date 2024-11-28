@@ -90,7 +90,8 @@
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
 
-        # Power Menu
+        # Power Menu and Hyprlock
+        "$mod, P, exec, hyprlock"
         "$mod SHIFT, P, exec, wofi-power-menu"
 
         # Volume Controls

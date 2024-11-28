@@ -109,7 +109,8 @@
         ", XF86AudioNext, exec, playerctl next"
         ", XF86AudioPrev, exec, playerctl previous"
 
-        # Power Menu
+        # Power Menu and Hyprlock
+        "$mod, P, exec, hyprlock"
         "$mod SHIFT, P, exec, wofi-power-menu"
 
         # Discord

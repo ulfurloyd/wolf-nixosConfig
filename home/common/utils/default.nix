@@ -3,6 +3,7 @@
     ./dunst
     ./fastfetch
     ./fuzzel
+    ./hyprlock
     ./picom
     ./rofi
     ./starship
