@@ -8,8 +8,9 @@
 
   networking.hostName = "wolfNixLap";
 
+  services.power-profiles-daemon.enable = false;
   services.auto-cpufreq = {
-    enable = false;
+    enable = true;
     settings = {
       battery = { 
         governor = "powersave";
