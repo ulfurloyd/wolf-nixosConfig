@@ -111,8 +111,7 @@
         ", XF86AudioPrev, exec, playerctl previous"
 
         # Power Menu and Hyprlock
-        "$mod, P, exec, hyprlock"
-        "$mod SHIFT, P, exec, wofi-power-menu"
+        "$mod, P, exec, wlogout"
 
         # Discord
         "$mod, d, exec, legcord"

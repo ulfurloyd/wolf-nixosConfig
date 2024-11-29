@@ -26,8 +26,6 @@
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
-    wofi-power-menu.url = "github:szaffarano/wofi-power-menu";
-
     swww.url = "github:LGFae/swww";
     hyprland-contrib = {
       url = "github:hyprwm/contrib";

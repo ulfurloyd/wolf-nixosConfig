@@ -1,7 +1,6 @@
 { config, pkgs, pkgsUnstable, userSettings, inputs, ... }:
 let
   scratchpad = inputs.hyprland-contrib.packages.${pkgs.system}.scratchpad;
-  wofi-power-menu = inputs.wofi-power-menu.packages.${pkgs.system}.wofi-power-menu;
   swww = inputs.swww.packages.${pkgs.system}.swww;
 in
 {
@@ -41,7 +40,6 @@ in
     slurp
     grimblast
     scratchpad
-    wofi-power-menu
     swww
     legcord
     gimp

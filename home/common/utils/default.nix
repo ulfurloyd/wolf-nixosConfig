@@ -9,6 +9,7 @@
     ./starship
     ./swaylock
     ./tofi
+    ./wlogout
     ./wofi
     ./yazi
   ];
