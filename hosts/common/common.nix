@@ -22,9 +22,6 @@ in
     XDG_SCREENSHOTS_DIR = "$HOME/Pictures/Screenshots";
   };
 
-  # Enable networking
-  networking.networkmanager.enable = true;
-
   # Systemd services
   systemd.services = {
     seatd = {
