@@ -1,5 +1,6 @@
 {
   imports = [
+    ./bat
     ./dunst
     ./fastfetch
     ./fuzzel

@@ -12,6 +12,13 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  environment.etc."systemd/logind.conf".text = ''
+    [Login]
+    HandleHibernateKey=hibernate
+    HibernateMode=suspend
+    HibernateState=disk
+  '';
+
   # Shells
   environment.shells = with pkgs; [ bash zsh ];
 
