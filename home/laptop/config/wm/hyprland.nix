@@ -24,6 +24,10 @@
         }
       }
 
+      decoration {
+        rounding = 5
+      }
+
       cursor {
         no_hardware_cursors = true
       }
