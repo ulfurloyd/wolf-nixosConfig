@@ -5,14 +5,15 @@
         enable = true;
 
         servers = {
-          html.enable = true;
-          cssls.enable = true;
-          lua_ls.enable = true;
           bashls.enable = true;
           clangd.enable = true;
-          ts_ls.enable = true;
-          pyright.enable = true;
+          cmake.enable = true;
+          cssls.enable = true;
+          html.enable = true;
+          lua_ls.enable = true;
           nixd.enable = true;
+          pyright.enable = true;
+          ts_ls.enable = true;
         };
         keymaps = {
           silent = true;
