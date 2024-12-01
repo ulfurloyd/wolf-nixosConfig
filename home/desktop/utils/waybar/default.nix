@@ -99,9 +99,9 @@
           "format" = "  {}";
           "max-length" = 50;
           "exec" = "/home/${userSettings.username}/.dotfiles/home/common/scripts/polybarSpotifyWrapper.sh";
-          "on-click" = "playerctl play-pause";
-          "on-scroll-up" = "playerctl next";
-          "on-scroll-down" = "playerctl previous";
+          "on-click" = "playerctl play-pause --player=spotify";
+          "on-scroll-up" = "playerctl next --player=spotify";
+          "on-scroll-down" = "playerctl previous --player=spotify";
           "exec-if" = "pgrep spotfiy";
         };
 
