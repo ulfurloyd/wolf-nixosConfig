@@ -96,7 +96,7 @@
         "$mod SHIFT, 0, movetoworkspace, 10"
 
         # Power Menu and Hyprlock
-        "$mod, P, exec, wlogout"
+        "$mod SHIFT, P, exec, wlogout"
 
         # Volume Controls
         "$mod, equal, exec, pactl set-sink-volume 0 +5%"
