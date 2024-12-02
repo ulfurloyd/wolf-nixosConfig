@@ -3,6 +3,7 @@
   imports = [
     ./comment.nix
     ./completions.nix
+    ./dap.nix
     ./harpoon.nix
     ./image-nvim.nix
     ./lazygit.nix

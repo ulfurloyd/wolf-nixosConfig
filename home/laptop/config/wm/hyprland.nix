@@ -46,7 +46,7 @@
     xwayland.enable = true;
 
     settings = {
-      "monitor" = "eDP-1,1920x1080@144,auto,1.2";
+      "monitor" = "eDP-1,1920x1080@144,auto,1";
       "$mod" = "SUPER";
 
       bind = [

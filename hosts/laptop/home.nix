@@ -7,5 +7,6 @@
 
   home.packages = with pkgs; [
     brightnessctl
+    android-studio
   ];
 }
