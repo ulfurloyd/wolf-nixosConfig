@@ -1,18 +1,31 @@
+{ pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    gdb
+  ];
+
   programs.nixvim.plugins.dap = {
     enable = true;
 
+    adapters = {
+      executables = {
+        gdb = {
+          command = "${pkgs.gdb}/bin/gdb";
+        };
+      };
+    };
+
     configurations = {
-      c = [
+      cpp = [
         {
-        name = "Launch";
-        type = "gdb";
-        request = "launch";
+          name = "Launch";
+          type = "gdb";
+          request = "launch";
         }
         {
-        name = "Select and attach to process";
-        type = "gdb";
-        request = "attach";
+          name = "Select and attach to process";
+          type = "gdb";
+          request = "attach";
         }
       ];
     };
