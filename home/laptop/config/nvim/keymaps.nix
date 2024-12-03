@@ -52,6 +52,30 @@
           desc = "Markdown Preview Toggle";
         };
       }
+      {
+        mode = "n";
+        key = "<leader>db";
+        action = ":lua require('dap').toggle_breakpoint()<CR>";
+        options = {
+          desc = "Toggle Debugger Breakpoint";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>dc";
+        action = ":lua require('dap').toggle_breakpoint()<CR>";
+        options = {
+          desc = "Continue Debugger";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>du";
+        action = ":lua require('dapui').toggle()<CR>";
+        options = {
+          desc = "Toggle Dap-UI";
+        };
+      }
     ];
   };
 }
