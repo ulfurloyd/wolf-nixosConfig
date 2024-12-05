@@ -107,6 +107,9 @@
         ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
         ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%"
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        "$mod, equal, exec, pactl set-sink-volume 0 +5%"
+        "$mod, minus, exec, pactl set-sink-volume 0 -5%"
+        "$mod, m, exec, pactl set-sink-mute 0 toggle"
 
         # Media Controls
         ", XF86AudioPlay, exec, playerctl play-pause"
