@@ -10,7 +10,7 @@
       }
       {
         label = "hibernate";
-        action = "systemctl hibernate";
+        action = "systemctl suspend-then-hibernate";
         text = "Hibernate";
         keybind = "h";
       }

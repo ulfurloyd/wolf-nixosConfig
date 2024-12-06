@@ -17,7 +17,13 @@
 
         modules-left = [ "hyprland/workspaces" "hyprland/window" ];
         modules-center = [ "custom/spotify" ];
-        modules-right = [ "tray" "pulseaudio" "network" "group/hardware" "battery" "clock" ];
+        modules-right = [ "tray" "custom/wttr" "pulseaudio" "network" "group/hardware" "battery" "clock" ];
+
+        "custom/wttr" = {
+          "format" = "{} ";
+          "interval" = 300;
+          "exec" = "/home/${userSettings.username}/.dotfiles/home/common/scripts/wttrin.sh";
+        };
 
         "group/hardware" = {
           orientation = "horizontal";
