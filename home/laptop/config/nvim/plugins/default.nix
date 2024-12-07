@@ -13,6 +13,7 @@
     ./neo-tree.nix
     ./neocord.nix
     ./nvim-snippets.nix
+    ./obsidian.nix
     ./oil.nix
     ./startify.nix
     ./telescope.nix
