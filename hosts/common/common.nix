@@ -193,6 +193,10 @@ in
     zsh
     zsh-powerlevel10k
     protonup-qt
+    gnupg
+    pinentry-curses
+    pass
+    passExtensions.pass-import
   ];
 
   programs.nh = {
