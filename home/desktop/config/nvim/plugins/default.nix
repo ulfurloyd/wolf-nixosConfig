@@ -3,6 +3,7 @@
   imports = [
     ./comment.nix
     ./completions.nix
+    ./dap.nix
     ./harpoon.nix
     ./image-nvim.nix
     ./lazygit.nix
@@ -12,6 +13,7 @@
     ./neo-tree.nix
     ./neocord.nix
     ./nvim-snippets.nix
+    ./obsidian.nix
     ./oil.nix
     ./startify.nix
     ./telescope.nix
