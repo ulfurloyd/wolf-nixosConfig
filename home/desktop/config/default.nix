@@ -3,7 +3,6 @@
   imports = [
     ./term
     ./shell
-    ./nvim
     ./wm
   ];
 }
