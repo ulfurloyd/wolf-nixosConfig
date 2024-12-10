@@ -1,4 +1,4 @@
-{ userSettings, ... }:
+{ userSettings, pkgs, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -147,4 +147,8 @@
       ];
     };
   };
+
+  home.packages = with pkgs; [
+    xdg-desktop-portal-hyprland
+  ];
 }
