@@ -79,6 +79,10 @@
       "alt+y>-"          = "set_background_opacity -0.2";
 
       #-----------------------------------------------------#
+      
+      "ctrl+shift+n"     = "no_op";
+      "ctrl+shift+p"     = "no_op";
+
     };
 
     extraConfig = ''
