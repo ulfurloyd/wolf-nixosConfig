@@ -4,5 +4,6 @@
     ./lazygit
     ./mpv
     ./spotify
+    ./thunderbird
   ];
 }

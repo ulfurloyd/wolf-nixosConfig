@@ -39,7 +39,7 @@
       exec-once = dunst
       exec-once = waybar &
       exec-once = swww-daemon
-      exec-once = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.laptopTheme}/wallpaper.png -t random --transition-duration 2
+      # exec-once = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.laptopTheme}/wallpaper.png -t random --transition-duration 2
       exec = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.laptopTheme}/wallpaper.png -t random --transition-duration 2
     '';
 
@@ -57,7 +57,7 @@
         "$mod, b, exec, ${userSettings.browser}"
 
         "$mod, t, togglefloating"
-        "$mod SHIFT, j, togglesplit"
+        "$mod Control_L, j, togglesplit"
         "$mod, SPACE, exec, wofi --show drun"
         "SUPER_SHIFT, SPACE, exec, wofi --show run"
 
