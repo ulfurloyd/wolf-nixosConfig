@@ -34,6 +34,7 @@
 
       exec-once = dunst
       exec-once = waybar &
+      exec-once = steam
       exec-once = swww-daemon
       exec-once = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.desktopTheme}/wallpaper.png -t random --transition-duration 2
       exec = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.desktopTheme}/wallpaper.png -t random --transition-duration 2
