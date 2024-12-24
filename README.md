@@ -53,6 +53,12 @@ and applies them to most applications.
 
 more themes will be implemented whenever i stop being lazy about it.
 
+- gravesite-plain
+![Screenshot](./screenshots/gravesite-plain.png)
+
+- mount-fuji
+![Screenshot](./screenshots/hypr-mount-fuji.png)
+
 - bleak-cabin
 ![Screenshot](./screenshots/hypr-bleak-cabin.png)
 
@@ -64,9 +70,6 @@ more themes will be implemented whenever i stop being lazy about it.
 
 - starry-night
 ![Screenshot](./screenshots/hypr-starry-night.png)
-
-- mount-fuji
-![Screenshot](./screenshots/hypr-mount-fuji.png)
 
 <hr>
 
