@@ -103,7 +103,7 @@
         # Volume Controls
         "$mod, equal, exec, pactl set-sink-volume 0 +5%"
         "$mod, minus, exec, pactl set-sink-volume 0 -5%"
-        "$mod, plus, exec, pactl set-sink-mute 0 toggle"
+        "$mod, m, exec, pactl set-sink-mute 0 toggle"
         
         # Media Controls
         "$mod, period, exec, playerctl next"
