@@ -34,6 +34,7 @@
 
       exec-once = dunst
       exec-once = waybar &
+      exec-once = emacs --daemon
       exec-once = steam
       exec-once = swww-daemon
       exec-once = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.desktopTheme}/wallpaper.png -t random --transition-duration 2
@@ -109,6 +110,9 @@
         "$mod, comma, exec, playerctl previous"
         "$mod, p, exec, playerctl play-pause"
 
+        # Emacs Client window
+        "$mod, e, exec, emacsclient -c"
+
         # Discord
         "$mod, d, exec, legcord"
 
@@ -126,6 +130,7 @@
         "workspace 3, vesktop"
         "workspace 3, legcord"
         "workspace 6, whatsapp-for-linux"
+        "workspace 10, spotify"
       ];
     };
   };

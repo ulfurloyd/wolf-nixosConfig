@@ -38,6 +38,7 @@
       exec-once = nm-applet --indicator
       exec-once = dunst
       exec-once = waybar &
+      exec-once = emacs --daemon
       exec-once = swww-daemon
       # exec-once = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.laptopTheme}/wallpaper.png -t random --transition-duration 2
       exec = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.laptopTheme}/wallpaper.png -t random --transition-duration 2
@@ -116,6 +117,9 @@
         ", XF86AudioPause, exec, playerctl pause"
         ", XF86AudioNext, exec, playerctl next"
         ", XF86AudioPrev, exec, playerctl previous"
+
+        # Emacs Client window
+        "$mod, e, exec, emacsclient -c"
 
         # Power Menu and Hyprlock
         "$mod, P, exec, wlogout"
