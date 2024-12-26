@@ -46,7 +46,7 @@
         dotfilesDir = "~/.dotfiles";
         shell = "zsh";
         desktopTheme = "gravesite-plain";
-        laptopTheme = "mount-fuji";
+        laptopTheme = "gravesite-plain";
         wm = "bspwm";
         browser = "zen";
         term = "kitty";
