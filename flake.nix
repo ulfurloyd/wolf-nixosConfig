@@ -21,7 +21,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ghostty.url = "github:ghostty-org/ghostty";
+    ghostty-pkg.url = "github:ghostty-org/ghostty";
+    ghostty.url = "github:clo4/ghostty-hm-module";
+
     fastanime.url = "github:Benexl/FastAnime";
     wezterm.url = "github:wez/wezterm?dir=nix";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
@@ -99,6 +101,7 @@
           ./hosts/common/home.nix
 	        nixvim.homeManagerModules.nixvim
           inputs.spicetify-nix.homeManagerModules.default
+          inputs.ghostty.homeModules.default
         ];
       };
 
@@ -114,6 +117,7 @@
           ./hosts/common/home.nix
 	        nixvim.homeManagerModules.nixvim
           inputs.spicetify-nix.homeManagerModules.default
+          inputs.ghostty.homeModules.default
         ];
       };
     };
