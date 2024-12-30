@@ -45,6 +45,7 @@ in
     gimp
     devenv
     inputs.fastanime.packages."${system}".default
+    inputs.ghostty.packages."${system}".default
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

@@ -21,6 +21,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    ghostty.url = "github:ghostty-org/ghostty";
     fastanime.url = "github:Benexl/FastAnime";
     wezterm.url = "github:wez/wezterm?dir=nix";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
@@ -49,7 +50,7 @@
         laptopTheme = "gravesite-plain";
         wm = "bspwm";
         browser = "zen";
-        term = "kitty";
+        term = "ghostty";
         editor = "nvim";
         musicPlayer = "spotify";
         font = "Fira Serif";
