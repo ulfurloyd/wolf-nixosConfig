@@ -26,7 +26,7 @@
 
     fastanime.url = "github:Benexl/FastAnime";
     wezterm.url = "github:wez/wezterm?dir=nix";
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     swww.url = "github:LGFae/swww";
