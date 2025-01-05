@@ -5,10 +5,6 @@
     autosuggestion.enable = true;
     enableCompletion = true;
 
-    initExtraFirst = ''
-      fastfetch
-    '';
-
     initExtra = ''
       setopt appendhistory
 

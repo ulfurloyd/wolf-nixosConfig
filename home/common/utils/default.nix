@@ -1,5 +1,6 @@
 {
   imports = [
+    ./anyrun
     ./bat
     ./dunst
     ./fastfetch

@@ -24,6 +24,11 @@
     ghostty-pkg.url = "github:ghostty-org/ghostty";
     ghostty.url = "github:clo4/ghostty-hm-module";
 
+    anyrun = {
+      url = "github:anyrun-org/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     fastanime.url = "github:Benexl/FastAnime";
     wezterm.url = "github:wez/wezterm?dir=nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
@@ -37,7 +42,7 @@
 
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nixvim,  ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager, nixvim,  anyrun, ... }:
     let
       pkgs = nixpkgs.legacyPackages.${system};
       system = "x86_64-linux";
@@ -52,7 +57,7 @@
         laptopTheme = "gravesite-plain";
         wm = "bspwm";
         browser = "zen";
-        term = "ghostty";
+        term = "kitty";
         editor = "nvim";
         musicPlayer = "spotify";
         font = "Fira Serif";
@@ -102,6 +107,7 @@
 	        nixvim.homeManagerModules.nixvim
           inputs.spicetify-nix.homeManagerModules.default
           inputs.ghostty.homeModules.default
+          inputs.anyrun.homeManagerModules.default
         ];
       };
 
@@ -118,6 +124,7 @@
 	        nixvim.homeManagerModules.nixvim
           inputs.spicetify-nix.homeManagerModules.default
           inputs.ghostty.homeModules.default
+          inputs.anyrun.homeManagerModules.default
         ];
       };
     };

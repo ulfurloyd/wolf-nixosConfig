@@ -12,6 +12,7 @@ in
 
     opacity = {
       terminal = 0.6;
+      applications = 0.9;
       desktop = 0.6;
     };
 
@@ -24,6 +25,7 @@ in
 
       nixvim = {
         enable = true;
+        transparentBackground.main = true;
         # plugin = "base16-nvim";
       };
 
