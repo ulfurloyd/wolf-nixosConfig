@@ -2,12 +2,8 @@
 {
   programs.emacs = {
     enable = true;
+    package = pkgs.emacs-gtk;
     extraPackages = epkgs: [epkgs.vterm ];
   };
   
-#   home.packages = with pkgs; [ 
-#     libvterm
-#     libtool
-#     cmake
-#   ];
 }
