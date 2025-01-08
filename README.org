@@ -14,6 +14,7 @@
   - [[#abstract-blue][abstract-blue]]
   - [[#starry-night][starry-night]]
 - [[#programs-used][Programs used]]
+  - [[#general][General]]
   - [[#hyprland][Hyprland]]
   - [[#bspwm][bspwm]]
 
@@ -73,18 +74,25 @@ them to most applications.
 More themes get added whenever I feel inspired.
 
 ** gravesite-plain
+[[./screenshots/gravesite-plain.png]]
 
 ** mount-fuji
+[[./screenshots/hypr-mount-fuji.png]]
 
 ** bleak-cabin
+[[./screenshots/hypr-bleak-cabin.png]]
 
 ** white-black-red
+[[./screenshots/hypr-white-black-red.png]]
 
 ** abstract-blue
+[[./screenshots/hypr-abstract-blue.png]]
 
 ** starry-night
+[[./screenshots/hypr-starry-night.png]]
 
 * Programs used
+** General
 - [[https://nixos.org/][NixOS]]
 - [[https://nixos.wiki/wiki/flakes][Nix-Flakes]]
 - [[https://nix-community.github.io/home-manager/][Home Manager]]
