@@ -1,0 +1,111 @@
+#+TITLE: My NixOS Configuration
+#+AUTHOR: Eklavya Sood
+#+STARTUP: showeverything
+
+* Table of Contents :toc:
+- [[#wolf-nixos][wolf-nixos]]
+- [[#how-it-works][How it works]]
+- [[#installation][Installation]]
+- [[#theme-previews][Theme previews]]
+  - [[#gravesite-plain][gravesite-plain]]
+  - [[#mount-fuji][mount-fuji]]
+  - [[#bleak-cabin][bleak-cabin]]
+  - [[#white-black-red][white-black-red]]
+  - [[#abstract-blue][abstract-blue]]
+  - [[#starry-night][starry-night]]
+- [[#programs-used][Programs used]]
+  - [[#hyprland][Hyprland]]
+  - [[#bspwm][bspwm]]
+
+* wolf-nixos
+- Two Hosts, #desktop and #laptop for both my systems (you guessed it, a desktop
+and a laptop)
+- Massive work in progress, but it /did/ work in a VM with minor configuration
+changes (GPU Drivers)
+- TODO figure out a simple installation script that automates the entire
+process, including hostname change
+
+* How it works
+- The flake (flake.nix) is the core of the system, responsible for creating
+the #desktop and #laptop hosts.
+- The hosts directory contains confguration relevant for both hosts separately,
+as well as modules common to both hosts.
+- I use *nh*, a wrapper around standard NixOS tools that provides attractive
+progress updates during rebuilds.
+- rebuilding system changes:
+
+  #+begin_src bash
+    
+  nh os switch -H <host>
+  # same as nixos-rebuild switch --flake .#<host>
+    
+  #+end_src
+- rebuilding home changes:
+
+  #+begin_src bash
+  
+  nh home switch -c <host>
+  # same as home-manager switch --flake .#<host>
+
+  #+end_src
+
+* Installation
+> **/NOTE:/** this is still pretty barebones, you'll need to modify a ton of stuff to get it to work for you. These instructions are also probably missing some
+integral steps, because I made this system over time instead of at once.
+
+1. Have a working NixOS installation.
+2. ~nix-shell -p git vim~
+3. ~mkdir ~/.dotfiles~
+4. ~git clone https://github.com/eklavyasood/wolf-nixConfig.git ~/.dotfiles~
+5. ~cd ~/.dotfiles~
+6. Either generate ~hardware-configuration.nix~ or copy your own from
+   ~/etc/nixos/hardware-configuration.nix~ into
+   ~ ~/.dotfiles/hosts/<your-host>/hardware-configuration.nix~
+7. Modify ~flake.nix~ and change ~userSettings~ options to whatever you want
+   for your setup.
+8. ~sudo nixos-rebuild switch --flake .#<host>~
+9. ~home-manager switch --flake .#<host>~
+
+* Theme previews
+Theming possible through Styluix, a Nix project that generates base-16
+colorschemes whenever you rebuild your system/home configs, and applies
+them to most applications.
+More themes get added whenever I feel inspired.
+
+** gravesite-plain
+
+** mount-fuji
+
+** bleak-cabin
+
+** white-black-red
+
+** abstract-blue
+
+** starry-night
+
+* Programs used
+- [[https://nixos.org/][NixOS]]
+- [[https://nixos.wiki/wiki/flakes][Nix-Flakes]]
+- [[https://nix-community.github.io/home-manager/][Home Manager]]
+- [[https://stylix.danth.me/][Stylix]]
+- [[https://github.com/nix-community/nixvim][NixVim]]
+- [[https://zsh.sourceforge.io/][zsh]]
+- [[https://sw.kovidgoyal.net/kitty/][Kitty]]
+- [[https://github.com/dunst-project/dunst][Dunst]]
+- [[https://starship.rs/][Starship]]
+- [[https://www.gnu.org/software/emacs/][Emacs]]
+- [[https://github.com/jesseduffield/lazygit][LazyGit]]
+- [[https://github.com/Gerg-L/spicetify-nix][Spicetify-Nix]]
+- [[https://github.com/aome510/spotify-player][spotify_player]]
+
+** Hyprland
+- [[https://github.com/hyprwm/Hyprland][Hyprland]]
+- [[https://github.com/Alexays/Waybar][Waybar]]
+- [[https://github.com/SimplyCEO/wofi][Wofi]]
+
+** bspwm
+- [[https://github.com/baskerville/bspwm][bspwm]]
+- [[https://github.com/yshui/picom][Picom]]
+- [[https://github.com/polybar/polybar][Polybar]]
+- [[https://github.com/davatorium/rofi][rofi]]
