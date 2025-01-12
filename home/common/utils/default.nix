@@ -14,5 +14,6 @@
     ./wlogout
     ./wofi
     ./yazi
+    ./zathura
   ];
 }
