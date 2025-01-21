@@ -21,9 +21,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ghostty-pkg.url = "github:ghostty-org/ghostty";
-    ghostty.url = "github:clo4/ghostty-hm-module";
-
     anyrun = {
       url = "github:anyrun-org/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -106,7 +103,6 @@
           ./hosts/common/home.nix
 	        nixvim.homeManagerModules.nixvim
           inputs.spicetify-nix.homeManagerModules.default
-          inputs.ghostty.homeModules.default
           inputs.anyrun.homeManagerModules.default
         ];
       };
@@ -123,7 +119,6 @@
           ./hosts/common/home.nix
 	        nixvim.homeManagerModules.nixvim
           inputs.spicetify-nix.homeManagerModules.default
-          inputs.ghostty.homeModules.default
           inputs.anyrun.homeManagerModules.default
         ];
       };
