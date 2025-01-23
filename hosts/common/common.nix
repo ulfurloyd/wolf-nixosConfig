@@ -231,5 +231,16 @@ in
   # (e.g man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05";
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix = {
+
+    settings.experimental-features = [ "nix-command" "flakes" ];
+    
+    # Garbage Collection
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 10d";
+      auto-optimise-store = true;
+    };
+  };
 }
