@@ -2,11 +2,13 @@
   imports = [
     ./anyrun
     ./bat
+    ./cava
     ./cmus
     ./dunst
     ./fastfetch
     ./fuzzel
     ./hyprlock
+    ./mpd
     ./ncmpcpp
     ./picom
     ./rofi

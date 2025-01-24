@@ -16,7 +16,7 @@
         ];
 
         modules-left = [ "hyprland/workspaces" "hyprland/window" ];
-        modules-center = [ "custom/spotify" ];
+        modules-center = [ "custom/spotify" "mpris" ];
         modules-right = [ "tray" "custom/wttr" "pulseaudio" "network" "group/hardware" "clock" ];
 
         "custom/wttr" = {
@@ -35,6 +35,43 @@
             "disk"
             "memory"
           ];
+        };
+
+        "mpris" = {
+          "format" = "{player_icon}  {title} - {artist}";
+          "format-paused" = "{status_icon} {title} - {artist}";
+          "tooltip-format" = "{title} - {artist}" ;
+          "player-icons" = {
+            "default" = "▶";
+            "mpv" = "🎵";
+          };
+          "status-icons" = {
+            "paused" = "⏸";
+          };
+          "ignored-players" = [ "firefox" ];
+        };
+          
+        "cava"= {
+          # "cava_config"= "~/.config/cava/config";
+          "framerate"= 30;
+          "autosens"= 1;
+          "sensitivity"= 100;
+          "bars"= 14;
+          "lower_cutoff_freq"= 50;
+          "higher_cutoff_freq"= 10000;
+          "method"= "pulse";
+          "source"= "auto";
+          "stereo"= true;
+          "reverse"= false;
+          "bar_delimiter"= 0;
+          "monstercat"= false;
+          "waves"= false;
+          "noise_reduction"= 0.77;
+          "input_delay"= 4;
+          "format-icons" = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
+          "actions"= {
+            "on-click-right"= "mode";
+           };
         };
 
         "pulseaudio" = {
