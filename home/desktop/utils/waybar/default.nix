@@ -17,7 +17,7 @@
 
         modules-left = [ "hyprland/workspaces" "hyprland/window" ];
         modules-center = [ "custom/spotify" "mpris" ];
-        modules-right = [ "tray" "custom/wttr" "pulseaudio" "network" "group/hardware" "clock" ];
+        modules-right = [ "tray" "custom/wttr" "pulseaudio" "group/hardware" "clock" ];
 
         "custom/wttr" = {
           "format" = "{} ";
@@ -48,7 +48,7 @@
           "status-icons" = {
             "paused" = "⏸";
           };
-          "ignored-players" = [ "firefox" ];
+          "ignored-players" = [ "firefox" "zen" "whatsapp-for-linux" ];
         };
           
         "cava"= {

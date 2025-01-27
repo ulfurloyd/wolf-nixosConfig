@@ -46,6 +46,7 @@ in
     devenv
     inputs.fastanime.packages."${system}".default
     # inputs.ghostty.packages."${system}".default
+    lrcget
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
