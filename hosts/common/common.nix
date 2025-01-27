@@ -240,7 +240,6 @@ in
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 10d";
-      auto-optimise-store = true;
     };
   };
 }
