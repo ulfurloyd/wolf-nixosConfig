@@ -9,5 +9,6 @@
     nodejs_22
     sshfs
     shadps4
+    xwayland-satellite
   ];
 }

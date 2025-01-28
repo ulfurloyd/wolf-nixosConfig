@@ -25,6 +25,8 @@
       url = "github:anyrun-org/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    niri.url = "github:sodiboo/niri-flake";
 
     fastanime.url = "github:Benexl/FastAnime";
     wezterm.url = "github:wez/wezterm?dir=nix";
@@ -99,6 +101,7 @@
         };
         modules = [ 
           inputs.stylix.homeManagerModules.stylix
+          inputs.niri.homeModules.niri
 	        ./hosts/desktop/home.nix
           ./hosts/common/home.nix
 	        nixvim.homeManagerModules.nixvim
