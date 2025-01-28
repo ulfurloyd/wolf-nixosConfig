@@ -1,13 +1,9 @@
 { config, userSettings, ... }:
 {
   programs.niri = {
-
     enable = true;
-    
     settings = {
-      
       binds = with config.lib.niri.actions; {
-        
         "Mod+Return".action = spawn "${userSettings.term}";
         "Mod+W".action = close-window;
         "Mod+F".action = fullscreen-window;
@@ -37,25 +33,27 @@
         "Mod+J".action = focus-window-down;
         "Mod+K".action = focus-window-up;
         "Mod+L".action = focus-column-right;
-
+      };
+      
+      layout = {
+        focus-ring.enable = false;
+        border.width = 20;
+        gaps = 6.0;
       };
 
       environment = {
+        LIBGA_DRIVER_NAME = "nvidia";
+        __GLX_VENDOR_LIBRARY_NAME = "nvidia";
         DISPLAY = ":0";
       };
       
       spawn-at-startup = [
-
         { command = [ "~/.nix-profile/bin/xwayland-satellite" ]; }
         { command = [ "emacs --daemon" ]; }
         { command = [ "waybar" ]; }
         { command = [ "swww-daemon" ]; }
         { command = [ "swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.desktopTheme}/wallpaper.png -t random --transition-duration 2" ]; }
-
       ];
-
     };
-
   };
-
 }
