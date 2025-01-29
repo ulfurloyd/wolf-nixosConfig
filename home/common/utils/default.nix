@@ -4,10 +4,11 @@
     ./bat
     ./cava
     ./cmus
-    ./dunst
+    # ./dunst
     ./fastfetch
     ./fuzzel
     ./hyprlock
+    ./mako
     ./mpd
     ./ncmpcpp
     ./picom

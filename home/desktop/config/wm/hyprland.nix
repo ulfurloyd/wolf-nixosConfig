@@ -32,7 +32,7 @@
       bindm = $mod, mouse:272, movewindow
       bindm = $mod, mouse:273, resizewindow
 
-      exec-once = dunst
+      exec-once = niri
       exec-once = waybar &
       exec-once = emacs --daemon
       exec-once = steam
