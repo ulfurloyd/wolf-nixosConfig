@@ -15,9 +15,9 @@
           "HDMI-A-1"
         ];
 
-        modules-left = [ "hyprland/workspaces" "hyprland/window" ];
+        modules-left = [ "niri/workspaces" "hyprland/workspaces" "niri/window" "hyprland/window" ];
         modules-center = [ "custom/spotify" "mpris" ];
-        modules-right = [ "tray" "custom/wttr" "pulseaudio" "group/hardware" "clock" ];
+        modules-right = [ "tray" "custom/wttr" "pulseaudio" "cpu" "disk" "memory" "clock" ];
 
         "custom/wttr" = {
           "format" = "{} ";
@@ -122,6 +122,22 @@
           # "format-alt" = "{:%d-%m-%Y}";
           "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         };
+        
+        "niri/workspaces" = {
+          "format" = "{icon}";
+          "format-icons" = {
+            "active" = "";
+            "empty" = "";
+            "default" = "";
+            "urgent" = "";
+            "special" = "󰠱";
+          };
+        };
+        
+        "niri/window" = {
+          "icon" = true;
+          "icon-size" = 20;
+        };
 
         "hyprland/workspaces" = {
           "show-special" = true;
@@ -136,6 +152,11 @@
             "urgent" = "";
             "special" = "󰠱";
           };
+        };
+
+        "hyprland/window" = {
+          "icon" = true;
+          "icon-size" = 20;
         };
 
         "custom/spotify" = {

@@ -3,18 +3,26 @@
   programs.niri = {
     enable = true;
     settings = {
-      binds = with config.lib.niri.actions; {
+      binds = with config.lib.niri.actions; let
+        sh = spawn "sh" "-c";
+        in {
         "Mod+Return".action = spawn "${userSettings.term}";
         "Mod+W".action = close-window;
         "Mod+F".action = fullscreen-window;
+        "Mod+Shift+F".action = maximize-column;
         
         "Mod+Shift+P".action = spawn "wlogout";
         
         "Mod+B".action = spawn "${userSettings.browser}";
         "Mod+D".action = spawn "legcord";
+        "Mod+E".action = sh "emacsclient -c";
 
-        "Mod+Space".action = spawn "wofi"  "--show" "drun";
-        "Mod+Shift+Space".action = spawn "wofi"  "--show" "run";
+        "Mod+Space".action = sh "wofi --show drun";
+        "Mod+Shift+Space".action = sh "wofi --show run";
+        
+        "Mod+Shift+Slash".action = show-hotkey-overlay;
+        
+        "Mod+T".action = toggle-window-floating;
         
         "Mod+1".action = focus-workspace 1;
         "Mod+2".action = focus-workspace 2;
@@ -27,12 +35,52 @@
         "Mod+9".action = focus-workspace 9;
         "Mod+0".action = focus-workspace 10;
         
+        "Mod+Shift+H".action = move-column-left;
+        "Mod+Shift+L".action = move-column-right;
+        
         "Mod+Tab".action = focus-workspace-previous;
         
         "Mod+H".action = focus-column-left;
         "Mod+J".action = focus-window-down;
         "Mod+K".action = focus-window-up;
         "Mod+L".action = focus-column-right;
+        
+        "Mod+WheelScrollUp".action = focus-column-left;
+        "Mod+WheelScrollDown".action = focus-column-right;
+        
+
+
+
+        "Mod+Equal".action = sh "pactl set-sink-volume 0 +5%";
+        "Mod+Minus".action = sh "pactl set-sink-volume 0 -5%";
+        "Mod+M".action = sh "pactl set-sink-mute 0 toggle";
+        
+        "Mod+Period".action = sh "playerctl next";
+        "Mod+Comma".action = sh "playerctl previous";
+        "Mod+P".action = sh "playerctl play-pause";
+        
+      };
+      
+      workspaces = {
+        "01-term" = {
+          name = "term";
+        };
+        "02-www" = {
+          name = "www";
+        };
+        "03-disc" = {
+          name = "disc";
+        };
+      };
+      
+      screenshot-path = "~/Pictures/Screenshots/%Y-%m-%dT%H%M%S.png";
+      
+      hotkey-overlay.skip-at-startup = true;
+
+      input = {
+        focus-follows-mouse = {
+          enable = true;
+        };
       };
       
       layout = {
@@ -49,6 +97,7 @@
       
       spawn-at-startup = [
         { command = [ "~/.nix-profile/bin/xwayland-satellite" ]; }
+        { command = [ "mako" ]; }
         { command = [ "emacs --daemon" ]; }
         { command = [ "waybar" ]; }
         { command = [ "swww-daemon" ]; }
