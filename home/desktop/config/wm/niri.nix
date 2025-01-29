@@ -8,7 +8,7 @@
         "Mod+W".action = close-window;
         "Mod+F".action = fullscreen-window;
         
-        "Mod+Alt+L".action = spawn "wlogout";
+        "Mod+Shift+P".action = spawn "wlogout";
         
         "Mod+B".action = spawn "${userSettings.browser}";
         "Mod+D".action = spawn "legcord";
