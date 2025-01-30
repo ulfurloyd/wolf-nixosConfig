@@ -26,6 +26,7 @@
         "Mod+Shift+Slash".action = show-hotkey-overlay;
         
         "Mod+T".action = toggle-window-floating;
+        "Mod+Shift+T".action = switch-focus-between-floating-and-tiling;
         
         "Mod+1".action = focus-workspace 1;
         "Mod+2".action = focus-workspace 2;
@@ -52,6 +53,9 @@
         "Mod+Shift+H".action = move-column-left;
         "Mod+Shift+L".action = move-column-right;
         
+        "Mod+Shift+WheelScrollUp".action = move-column-left;
+        "Mod+Shift+WheelScrollDown".action = move-column-right;
+        
         "Mod+Shift+J".action = consume-window-into-column;
         "Mod+Shift+K".action = expel-window-from-column;
         
@@ -64,6 +68,11 @@
         
         "Mod+WheelScrollUp".action = focus-column-left;
         "Mod+WheelScrollDown".action = focus-column-right;
+
+        "Mod+Control+WheelScrollUp".action = focus-workspace-up;
+        "Mod+Control+WheelScrollDown".action = focus-workspace-down;
+        
+        "Mod+R".action = switch-preset-column-width;
         
 
 
@@ -103,6 +112,13 @@
         focus-ring.enable = false;
         border.width = 20;
         gaps = 6.0;
+        
+        preset-column-widths = [
+          { proportion = 1. / 3.; }
+          { proportion = 1. / 2.; }
+          { proportion = 2. / 3.; }
+        ];
+
       };
 
       environment = {
@@ -113,12 +129,20 @@
       
       spawn-at-startup = [
         { command = [ "~/.nix-profile/bin/xwayland-satellite" ]; }
+        { command = [ "xwayland-satellite" ]; }
         { command = [ "mako" ]; }
         { command = [ "emacs" "--daemon" ]; }
         { command = [ "waybar" ]; }
+        { command = [ "steam" ]; }
         { command = [ "swww-daemon" ]; }
         { command = [ "swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.desktopTheme}/wallpaper.png -t random --transition-duration 2" ]; }
       ];
     };
   };
+  
+  home.packages = with pkgs; [
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-gnome
+    gnome-keyring
+  ];
 }
