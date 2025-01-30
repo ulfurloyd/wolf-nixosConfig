@@ -56,8 +56,8 @@
         "Mod+Shift+WheelScrollUp".action = move-column-left;
         "Mod+Shift+WheelScrollDown".action = move-column-right;
         
-        "Mod+Shift+J".action = consume-window-into-column;
-        "Mod+Shift+K".action = expel-window-from-column;
+        "Mod+Shift+J".action = consume-or-expel-window-left;
+        "Mod+Shift+K".action = consume-or-expel-window-right;
         
         "Mod+Tab".action = focus-workspace-previous;
         
@@ -72,10 +72,10 @@
         "Mod+Control+WheelScrollUp".action = focus-workspace-up;
         "Mod+Control+WheelScrollDown".action = focus-workspace-down;
         
-        "Mod+R".action = switch-preset-column-width;
+        "Mod+U".action = focus-workspace-up;
+        "Mod+I".action = focus-workspace-down;
         
-
-
+        "Mod+R".action = switch-preset-column-width;
 
         "Mod+Equal".action = sh "pactl set-sink-volume 0 +5%";
         "Mod+Minus".action = sh "pactl set-sink-volume 0 -5%";
