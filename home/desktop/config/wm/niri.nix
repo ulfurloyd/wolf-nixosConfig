@@ -129,7 +129,6 @@
       
       spawn-at-startup = [
         { command = [ "~/.nix-profile/bin/xwayland-satellite" ]; }
-        { command = [ "xwayland-satellite" ]; }
         { command = [ "mako" ]; }
         { command = [ "emacs" "--daemon" ]; }
         { command = [ "waybar" ]; }

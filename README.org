@@ -15,8 +15,8 @@
   - [[#starry-night][starry-night]]
 - [[#programs-used][Programs used]]
   - [[#general][General]]
-  - [[#hyprland][Hyprland]]
-  - [[#bspwm][bspwm]]
+  - [[#wayland][Wayland]]
+  - [[#x][X]]
 
 * wolf-nixos
 - Two Hosts, #desktop and #laptop for both my systems (you guessed it, a desktop
@@ -25,6 +25,7 @@ and a laptop)
 changes (GPU Drivers)
 - TODO figure out a simple installation script that automates the entire
 process, including hostname change
+- NEW: configured Niri, a very slick Wayland (wlroots) based window manager.
 
 * How it works
 - The flake (flake.nix) is the core of the system, responsible for creating
@@ -107,12 +108,13 @@ More themes get added whenever I feel inspired.
 - [[https://github.com/Gerg-L/spicetify-nix][Spicetify-Nix]]
 - [[https://github.com/aome510/spotify-player][spotify_player]]
 
-** Hyprland
+** Wayland
+- [[Niri][Niri]]
 - [[https://github.com/hyprwm/Hyprland][Hyprland]]
 - [[https://github.com/Alexays/Waybar][Waybar]]
 - [[https://github.com/SimplyCEO/wofi][Wofi]]
 
-** bspwm
+** X
 - [[https://github.com/baskerville/bspwm][bspwm]]
 - [[https://github.com/yshui/picom][Picom]]
 - [[https://github.com/polybar/polybar][Polybar]]
