@@ -67,6 +67,7 @@
         inherit system;
         modules = [ 
           inputs.stylix.nixosModules.stylix
+          inputs.niri.nixosModules.niri
           ./hosts/desktop/desktop.nix
           ./hosts/common/common.nix
         ];
