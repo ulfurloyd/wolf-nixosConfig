@@ -1,8 +1,9 @@
-#+TITLE: My NixOS Configuration
 #+AUTHOR: Eklavya Sood
 #+STARTUP: showeverything
 
-#+HTML: <div align="center"><img src="./nixos-logo.png"></img></div>
+#+HTML: <div align="center"><img src="./nixos-logo.png"></img></div><br>
+#+HTML: <div align="center"><img src="./wolf-nixOS-header.png"></img></div>
+#+HTML: <div align="center"><b>wolf-nixosConfig</b></div>
 
 * Table of Contents :toc:
 - [[#wolf-nixos][wolf-nixos]]
