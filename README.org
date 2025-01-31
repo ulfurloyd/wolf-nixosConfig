@@ -1,8 +1,8 @@
 #+AUTHOR: Eklavya Sood
 #+STARTUP: showeverything
 
-#+HTML: <div align="center"><img src="./nixos-logo.png" style="width: 16vw;"></img></div><br>
-#+HTML: <div align="center"><img src="./wolf-nixOS-header.png"></img></div>
+#+HTML: <div align="center"><img src="./res/nixos-logo.png" style="width: 16vw;"></img></div><br>
+#+HTML: <div align="center"><img src="./res/wolf-nixOS-header.png"></img></div>
 #+HTML: <div align="center"><h1>wolf-nixosConfig</h1></div>
 
 * Table of Contents :toc:
