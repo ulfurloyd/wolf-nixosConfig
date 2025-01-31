@@ -109,7 +109,7 @@
 
         border = {
           enable = true;
-          width = 2;
+          width = 1;
         };
 
         gaps = 6.0;
