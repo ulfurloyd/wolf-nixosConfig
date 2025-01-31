@@ -72,8 +72,8 @@
         "Mod+Control+WheelScrollUp".action = focus-workspace-up;
         "Mod+Control+WheelScrollDown".action = focus-workspace-down;
         
-        "Mod+U".action = focus-workspace-up;
-        "Mod+I".action = focus-workspace-down;
+        "Mod+I".action = focus-workspace-up;
+        "Mod+O".action = focus-workspace-down;
         
         "Mod+R".action = switch-preset-column-width;
 
@@ -97,10 +97,6 @@
           name = "disc";
         };
       };
-      
-      screenshot-path = "~/Pictures/Screenshots/%FT%%H:%M:%S.png";
-      
-      hotkey-overlay.skip-at-startup = true;
 
       input = {
         focus-follows-mouse = {
@@ -110,7 +106,12 @@
       
       layout = {
         focus-ring.enable = false;
-        border.width = 20;
+
+        border = {
+          enable = true;
+          width = 2;
+        };
+
         gaps = 6.0;
         
         preset-column-widths = [
@@ -118,8 +119,24 @@
           { proportion = 1. / 2.; }
           { proportion = 2. / 3.; }
         ];
-
       };
+      
+      window-rules = [
+        {
+          matches = [{ app-id = "[E|e]macs"; }];
+          draw-border-with-background = false;
+        }
+
+        {
+          matches = [{ app-id = "[L|l]egcord"; }];
+          open-on-workspace = "disc";
+        }
+        
+        {
+          matches = [{ app-id = "[Z|z]en"; }];
+          open-on-workspace = "www";
+        }
+      ];
 
       environment = {
         LIBGA_DRIVER_NAME = "nvidia";
@@ -131,11 +148,17 @@
         { command = [ "~/.nix-profile/bin/xwayland-satellite" ]; }
         { command = [ "mako" ]; }
         { command = [ "emacs" "--daemon" ]; }
-        { command = [ "waybar" ]; }
+        { command = [ "waybar" "&" ]; }
         { command = [ "steam" ]; }
         { command = [ "swww-daemon" ]; }
         { command = [ "swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.desktopTheme}/wallpaper.png -t random --transition-duration 2" ]; }
       ];
+      
+      prefer-no-csd = true;
+
+      screenshot-path = "~/Pictures/Screenshots/%FT%%H:%M:%S.png";
+      
+      hotkey-overlay.skip-at-startup = true;
     };
   };
   
