@@ -2,6 +2,8 @@
 #+AUTHOR: Eklavya Sood
 #+STARTUP: showeverything
 
+#+HTML: <div align="center"><img src="./nixos-logo.png"></img></div>
+
 * Table of Contents :toc:
 - [[#wolf-nixos][wolf-nixos]]
 - [[#how-it-works][How it works]]
@@ -69,7 +71,7 @@ integral steps, because I made this system over time instead of at once.
 9. ~home-manager switch --flake .#<host>~
 
 * Theme previews
-Theming possible through Styluix, a Nix project that generates base-16
+Theming possible through Stylix, a Nix project that generates base-16
 colorschemes whenever you rebuild your system/home configs, and applies
 them to most applications.
 More themes get added whenever I feel inspired.
@@ -78,19 +80,19 @@ More themes get added whenever I feel inspired.
 [[./screenshots/gravesite-plain.png]]
 
 ** mount-fuji
-[[./screenshots/hypr-mount-fuji.png]]
+[[./screenshots/mount-fuji.png]]
 
 ** bleak-cabin
-[[./screenshots/hypr-bleak-cabin.png]]
+[[./screenshots/bleak-cabin.png]]
 
 ** white-black-red
-[[./screenshots/hypr-white-black-red.png]]
+[[./screenshots/white-black-red.png]]
 
 ** abstract-blue
-[[./screenshots/hypr-abstract-blue.png]]
+[[./screenshots/abstract-blue.png]]
 
 ** starry-night
-[[./screenshots/hypr-starry-night.png]]
+[[./screenshots/starry-night.png]]
 
 * Programs used
 ** General

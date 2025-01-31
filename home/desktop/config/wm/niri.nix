@@ -10,6 +10,9 @@
         "Mod+W".action = close-window;
         "Mod+F".action = maximize-column;
         "Mod+Shift+F".action = fullscreen-window;
+
+        "Mod+S".action = focus-workspace "scratch";
+        "Mod+Shift+S".action = move-window-to-workspace "scratch";
         
         "Mod+Shift+P".action = spawn "wlogout";
         
@@ -90,11 +93,25 @@
         "01-term" = {
           name = "term";
         };
+
         "02-www" = {
           name = "www";
         };
+
         "03-disc" = {
           name = "disc";
+        };
+        
+        "04-game" = {
+          name = "game";
+        };
+
+        "05-thunder" = {
+          name = "thunderbird";
+        };
+        
+        "06-scratch" = {
+          name = "scratch";
         };
       };
 
@@ -136,6 +153,10 @@
           matches = [{ app-id = "[Z|z]en"; }];
           open-on-workspace = "www";
         }
+        {
+          matches = [{ title = "[T|t]hunderbird"; }];
+          open-on-workspace = "thunderbird";
+        }
       ];
 
       environment = {
@@ -148,7 +169,9 @@
         { command = [ "~/.nix-profile/bin/xwayland-satellite" ]; }
         { command = [ "mako" ]; }
         { command = [ "emacs" "--daemon" ]; }
-        { command = [ "waybar" "&" ]; }
+        { command = [ "waybar &" ]; }
+        { command = [ "legcord" ]; }
+        { command = [ "zen" ]; }
         { command = [ "steam" ]; }
         { command = [ "swww-daemon" ]; }
         { command = [ "swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.desktopTheme}/wallpaper.png -t random --transition-duration 2" ]; }
