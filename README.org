@@ -105,14 +105,16 @@ More themes get added whenever I feel inspired.
 - [[https://zsh.sourceforge.io/][zsh]]
 - [[https://sw.kovidgoyal.net/kitty/][Kitty]]
 - [[https://github.com/dunst-project/dunst][Dunst]]
+- [[https://github.com/emersion/mako][Mako]]
 - [[https://starship.rs/][Starship]]
 - [[https://www.gnu.org/software/emacs/][Emacs]]
 - [[https://github.com/jesseduffield/lazygit][LazyGit]]
+- [[https://github.com/cmus/cmus][cmus]]
 - [[https://github.com/Gerg-L/spicetify-nix][Spicetify-Nix]]
 - [[https://github.com/aome510/spotify-player][spotify_player]]
 
 ** Wayland
-- [[Niri][Niri]]
+- [[https://github.com/YaLTeR/niri][Niri]]
 - [[https://github.com/hyprwm/Hyprland][Hyprland]]
 - [[https://github.com/Alexays/Waybar][Waybar]]
 - [[https://github.com/SimplyCEO/wofi][Wofi]]
