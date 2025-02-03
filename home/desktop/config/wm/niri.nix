@@ -10,6 +10,8 @@
         "Mod+W".action = close-window;
         "Mod+F".action = maximize-column;
         "Mod+Shift+F".action = fullscreen-window;
+        "Mod+Shift+Q".action = quit;
+        "Mod+Control+Shift+Q".action = quit { skip-confirmation = true; };
 
         "Mod+S".action = focus-workspace "scratch";
         "Mod+Shift+S".action = move-window-to-workspace "scratch";
