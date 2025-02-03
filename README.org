@@ -65,6 +65,7 @@ Theming possible through Stylix, a Nix project that generates base-16
 colorschemes whenever you rebuild your system/home configs, and applies
 them to most applications.
 More themes get added whenever I feel inspired.
+(I configure GNU-Emacs in a separate repository [[https://github.com/eklavyasood/wolf-emacs][here]])
 
 ** gravesite-plain
 [[./screenshots/gravesite-plain.png]]
