@@ -56,6 +56,9 @@
         "Mod+Shift+H".action = move-column-left;
         "Mod+Shift+L".action = move-column-right;
         
+        "Mod+Control+J".action = move-column-to-workspace-down;
+        "Mod+Control+K".action = move-column-to-workspace-up;
+        
         "Mod+Shift+WheelScrollUp".action = move-column-left;
         "Mod+Shift+WheelScrollDown".action = move-column-right;
         
