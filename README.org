@@ -22,36 +22,25 @@
   - [[#x][X]]
 
 * wolf-nixos
-- Two Hosts, #desktop and #laptop for both my systems (you guessed it, a desktop
-and a laptop)
-- Massive work in progress, but it /did/ work in a VM with minor configuration
-changes (GPU Drivers)
-- TODO figure out a simple installation script that automates the entire
-process, including hostname change
+- Two Hosts, #desktop and #laptop for both my systems (you guessed it, a desktop and a laptop)
+- Massive work in progress, but it /did/ work in a VM with minor configuration changes (GPU Drivers)
+- TODO figure out a simple installation script that automates the entire process, including hostname change
 - NEW: configured Niri, a very slick Wayland (wlroots) based window manager.
 
 * How it works
-- The flake (flake.nix) is the core of the system, responsible for creating
-the #desktop and #laptop hosts.
-- The hosts directory contains confguration relevant for both hosts separately,
-as well as modules common to both hosts.
-- I use *nh*, a wrapper around standard NixOS tools that provides attractive
-progress updates during rebuilds.
+- The hosts directory contains confguration relevant for both hosts separately, as well as modules common to both hosts.
+- I use *nh*, a wrapper around standard NixOS tools that provides attractive progress updates during rebuilds.
 - rebuilding system changes:
 
   #+begin_src bash
-    
   nh os switch -H <host>
   # same as nixos-rebuild switch --flake .#<host>
-    
   #+end_src
 - rebuilding home changes:
 
   #+begin_src bash
-  
   nh home switch -c <host>
   # same as home-manager switch --flake .#<host>
-
   #+end_src
 
 * Installation
