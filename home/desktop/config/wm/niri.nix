@@ -119,6 +119,8 @@
         focus-follows-mouse = {
           enable = true;
         };
+        workspace-auto-back-and-forth = true;
+        warp-mouse-to-focus = true;
       };
       
       layout = {
