@@ -83,6 +83,8 @@
         "Mod+I".action = focus-workspace-up;
         "Mod+O".action = focus-workspace-down;
         
+        "Mod+Control+H".action = set-column-width "-10%";
+        "Mod+Control+L".action = set-column-width "+10%";
         "Mod+R".action = switch-preset-column-width;
 
         "Mod+Equal".action = sh "pactl set-sink-volume 0 +5%";
