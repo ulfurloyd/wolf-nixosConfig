@@ -15,10 +15,17 @@
           "eDP-1"
         ];
 
-        modules-left = [ "niri/workspaces" "hyprland/workspaces" "niri/window" "hyprland/window" ];
+        modules-left = [ "custom/launcher" "niri/workspaces" "hyprland/workspaces" "niri/window" "hyprland/window" ];
         modules-center = [ "custom/spotify" ];
         modules-right = [ "tray" "custom/wttr" "pulseaudio" "network" "cpu" "disk" "memory" "battery" "clock" ];
 
+        "custom/launcher" = {
+          "format" = "Test";
+          "on-click" = "wofi --show drun -l top_left";
+          "on-click-right" = "killall wofi";
+          "tooltip" = false;
+        };
+        
         "custom/wttr" = {
           "format" = "{} ";
           "interval" = 300;
