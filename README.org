@@ -25,7 +25,7 @@
 - Two Hosts, #nyx and #lykaon for both my systems (nyx - desktop and lykaon - laptop)
 - Massive work in progress, but it /did/ work in a VM with minor configuration changes (GPU Drivers)
 - TODO figure out a simple installation script that automates the entire process, including hostname change
-- NEW: configured Niri, a very slick Wayland (wlroots) based window manager.
+- NEW: changed names for both hosts, from #desktop to #nyx and from #laptop to #lykaon
 
 * How it works
 - The hosts directory contains confguration relevant for both hosts separately, as well as modules common to both hosts.
