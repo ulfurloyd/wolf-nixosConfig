@@ -82,6 +82,7 @@
         inherit system;
         modules = [ 
           inputs.stylix.nixosModules.stylix
+          inputs.niri.nixosModules.niri
           ./hosts/laptop/laptop.nix
           ./hosts/common/common.nix
         ];
@@ -119,6 +120,7 @@
         };
         modules = [ 
           inputs.stylix.homeManagerModules.stylix
+          inputs.niri.homeModules.niri
 	        ./hosts/laptop/home.nix
           ./hosts/common/home.nix
 	        nixvim.homeManagerModules.nixvim

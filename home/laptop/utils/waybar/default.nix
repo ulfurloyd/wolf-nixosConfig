@@ -15,9 +15,9 @@
           "eDP-1"
         ];
 
-        modules-left = [ "hyprland/workspaces" "hyprland/window" ];
+        modules-left = [ "niri/workspaces" "hyprland/workspaces" "niri/window" "hyprland/window" ];
         modules-center = [ "custom/spotify" ];
-        modules-right = [ "tray" "custom/wttr" "pulseaudio" "network" "group/hardware" "battery" "clock" ];
+        modules-right = [ "tray" "custom/wttr" "pulseaudio" "network" "cpu" "disk" "memory" "battery" "clock" ];
 
         "custom/wttr" = {
           "format" = "{} ";
@@ -84,6 +84,22 @@
           "format-alt" = "{:%A, %B %d, %Y}";
           # "format-alt" = "{:%d-%m-%Y}";
           "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+        };
+        
+        "niri/workspaces" = {
+          "format" = "{icon}";
+          "format-icons" = {
+            "active" = "";
+            "empty" = "";
+            "default" = "";
+            "urgent" = "";
+            "special" = "󰠱";
+          };
+        };
+
+        "niri/window" = {
+          "icon" = true;
+          "icon-size" = 20;
         };
 
         "hyprland/workspaces" = {

@@ -11,6 +11,8 @@
     networkmanagerapplet
     wpa_supplicant_gui
   ];
+  
+  programs.niri.enable = true;
 
   networking.hostName = "wolfNixLap";
 

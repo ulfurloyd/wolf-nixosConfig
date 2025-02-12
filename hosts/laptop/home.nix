@@ -9,5 +9,6 @@
     brightnessctl
     android-studio
     speedtest-cli
+    xwayland-satellite
   ];
 }
