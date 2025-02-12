@@ -78,12 +78,12 @@
         };
       };
 
-      laptop = lib.nixosSystem {
+      lykaon = lib.nixosSystem {
         inherit system;
         modules = [ 
           inputs.stylix.nixosModules.stylix
           inputs.niri.nixosModules.niri
-          ./hosts/laptop/laptop.nix
+          ./hosts/lykaon/lykaon.nix
           ./hosts/common/common.nix
         ];
 
@@ -112,7 +112,7 @@
         ];
       };
 
-      laptop = home-manager.lib.homeManagerConfiguration {
+      lykaon = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
           inherit inputs;
@@ -121,7 +121,7 @@
         modules = [ 
           inputs.stylix.homeManagerModules.stylix
           inputs.niri.homeModules.niri
-	        ./hosts/laptop/home.nix
+	        ./hosts/lykaon/home.nix
           ./hosts/common/home.nix
 	        nixvim.homeManagerModules.nixvim
           inputs.spicetify-nix.homeManagerModules.default
