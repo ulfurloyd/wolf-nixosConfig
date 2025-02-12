@@ -19,6 +19,12 @@
         modules-center = [ "custom/spotify" "mpris" ];
         modules-right = [ "tray" "custom/wttr" "pulseaudio" "cpu" "disk" "memory" "clock" ];
 
+        "custom/launcher" = {
+          "format" = " ξ";
+          "on-click" = "wofi --show drun -l top_left";
+          "tooltip" = false;
+        };
+        
         "custom/wttr" = {
           "format" = "{} ";
           "interval" = 300;
