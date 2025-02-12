@@ -52,8 +52,8 @@
         email = "eklavyasood@gmail.com";
         dotfilesDir = "~/.dotfiles";
         shell = "zsh";
-        desktopTheme = "gravesite-plain";
-        laptopTheme = "gravesite-plain";
+        nyxTheme = "gravesite-plain";
+        lykaonTheme = "gravesite-plain";
         wm = "bspwm";
         browser = "zen";
         term = "kitty";
@@ -63,12 +63,12 @@
       };
     in {
     nixosConfigurations = {
-      desktop = lib.nixosSystem {
+      nyx = lib.nixosSystem {
         inherit system;
         modules = [ 
           inputs.stylix.nixosModules.stylix
           inputs.niri.nixosModules.niri
-          ./hosts/desktop/desktop.nix
+          ./hosts/nyx/nyx.nix
           ./hosts/common/common.nix
         ];
 
@@ -95,7 +95,7 @@
     };
 
     homeConfigurations = {
-      desktop = home-manager.lib.homeManagerConfiguration {
+      nyx = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
           inherit inputs;
@@ -104,7 +104,7 @@
         modules = [ 
           inputs.stylix.homeManagerModules.stylix
           inputs.niri.homeModules.niri
-	        ./hosts/desktop/home.nix
+	        ./hosts/nyx/home.nix
           ./hosts/common/home.nix
 	        nixvim.homeManagerModules.nixvim
           inputs.spicetify-nix.homeManagerModules.default

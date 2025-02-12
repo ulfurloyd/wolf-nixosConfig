@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../home/desktop
+    ../../home/nyx
     ../../home/common
   ];
 

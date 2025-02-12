@@ -16,15 +16,18 @@
         layout = dwindle
       }
 
+      input {
+        numlock_by_default = true;
+        touchpad {
+          natural_scroll = true
+          scroll_factor = 1.6
+        }
+      }
+
       decoration {
         rounding = 5
       }
 
-      input {
-      }
-
-      env = LIBGA_DRIVER_NAME,nvidia
-      env = __GLX_VENDOR_LIBRARY_NAME,nvidia
       cursor {
         no_hardware_cursors = true
       }
@@ -32,19 +35,19 @@
       bindm = $mod, mouse:272, movewindow
       bindm = $mod, mouse:273, resizewindow
 
-      exec-once = niri
+      exec-once = nm-applet --indicator
+      exec-once = dunst
       exec-once = waybar &
       exec-once = emacs --daemon
-      exec-once = steam
       exec-once = swww-daemon
-      exec-once = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.desktopTheme}/wallpaper.png -t random --transition-duration 2
-      exec = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.desktopTheme}/wallpaper.png -t random --transition-duration 2
+      # exec-once = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.lykaonTheme}/wallpaper.png -t random --transition-duration 2
+      exec = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.lykaonTheme}/wallpaper.png -t random --transition-duration 2
     '';
 
     xwayland.enable = true;
 
     settings = {
-      "monitor" = "HDMI-A-1,1920x1080@144,auto,1";
+      "monitor" = "eDP-1,1920x1080@144,auto,1";
       "$mod" = "SUPER";
 
       bind = [
@@ -55,7 +58,7 @@
         "$mod, b, exec, ${userSettings.browser}"
 
         "$mod, t, togglefloating"
-        "$mod SHIFT, j, togglesplit"
+        "$mod Control_L, j, togglesplit"
         "$mod, SPACE, exec, wofi --show drun"
         "SUPER_SHIFT, SPACE, exec, wofi --show run"
 
@@ -97,21 +100,29 @@
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
 
-        # Power Menu and Hyprlock
-        "$mod SHIFT, P, exec, wlogout"
+        # Brightness Buttons
+        ", XF86MonBrightnessUp, exec, brightnessctl -q s +5%"
+        ", XF86MonBrightnessDown, exec, brightnessctl -q s 5%-"
 
-        # Volume Controls
+        # Volume Buttons
+        ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
+        ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         "$mod, equal, exec, pactl set-sink-volume 0 +5%"
         "$mod, minus, exec, pactl set-sink-volume 0 -5%"
         "$mod, m, exec, pactl set-sink-mute 0 toggle"
-        
+
         # Media Controls
-        "$mod, period, exec, playerctl next"
-        "$mod, comma, exec, playerctl previous"
-        "$mod, p, exec, playerctl play-pause"
+        ", XF86AudioPlay, exec, playerctl play-pause"
+        ", XF86AudioPause, exec, playerctl pause"
+        ", XF86AudioNext, exec, playerctl next"
+        ", XF86AudioPrev, exec, playerctl previous"
 
         # Emacs Client window
         "$mod, e, exec, emacsclient -c"
+
+        # Power Menu and Hyprlock
+        "$mod, P, exec, wlogout"
 
         # Discord
         "$mod, d, exec, legcord"
@@ -124,6 +135,12 @@
         "$mod, s, exec, scratchpad"
         "$mod SHIFT, s, exec, scratchpad -g -m 'wofi -d'"
       ];
+
+      # touchpad gestures
+      gestures = {
+        "workspace_swipe" = true;
+        "workspace_swipe_fingers" = 3;
+      };
 
       windowrule = [
         "workspace 2, ${userSettings.browser}"

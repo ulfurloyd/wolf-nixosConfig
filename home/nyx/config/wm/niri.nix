@@ -183,7 +183,7 @@
         { command = [ "zen" ]; }
         { command = [ "steam" ]; }
         { command = [ "swww-daemon" ]; }
-        { command = [ "swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.desktopTheme}/wallpaper.png -t random --transition-duration 2" ]; }
+        { command = [ "swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.nyxTheme}/wallpaper.png -t random --transition-duration 2" ]; }
       ];
       
       prefer-no-csd = true;

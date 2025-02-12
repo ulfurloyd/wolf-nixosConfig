@@ -22,7 +22,7 @@
   - [[#x][X]]
 
 * wolf-nixos
-- Two Hosts, #desktop and #laptop for both my systems (you guessed it, a desktop and a laptop)
+- Two Hosts, #nyx and #lykaon for both my systems (nyx - desktop and lykaon - laptop)
 - Massive work in progress, but it /did/ work in a VM with minor configuration changes (GPU Drivers)
 - TODO figure out a simple installation script that automates the entire process, including hostname change
 - NEW: configured Niri, a very slick Wayland (wlroots) based window manager.

@@ -2,9 +2,9 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../stylix/laptop
+    ../../stylix/lykaon
     ../../system
-    ../../modules/laptop
+    ../../modules/lykaon
   ];
 
   environment.systemPackages = with pkgs; [
@@ -14,7 +14,7 @@
   
   programs.niri.enable = true;
 
-  networking.hostName = "wolfNixLap";
+  networking.hostName = "lykaon";
 
   services.power-profiles-daemon.enable = false;
   services.auto-cpufreq = {

@@ -1,6 +1,6 @@
 {pkgs, config, userSettings, ...}:
 let
-  imagePath = ../../../themes/${userSettings.desktopTheme}/wallpaper.png;
+  imagePath = ../../../themes/${userSettings.lykaonTheme}/wallpaper.png;
 in
 {
   stylix = {
@@ -12,7 +12,6 @@ in
 
     opacity = {
       terminal = 0.6;
-      applications = 0.9;
       desktop = 0.6;
     };
 
@@ -21,11 +20,11 @@ in
 
       rofi = {
         enable = true;
+        # fontSize = 14; # this option doesn't exist yet
       };
 
       nixvim = {
         enable = true;
-        transparentBackground.main = true;
         # plugin = "base16-nvim";
       };
 

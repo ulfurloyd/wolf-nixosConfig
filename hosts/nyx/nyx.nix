@@ -2,9 +2,9 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../stylix/desktop
+    ../../stylix/nyx
     ../../system
-    ../../modules/desktop
+    ../../modules/nyx
   ];
   
   programs.niri.enable = true;
@@ -12,7 +12,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  networking.hostName = "wolfNix";
+  networking.hostName = "nyx";
 
   environment.systemPackages = with pkgs; [ ];
 }

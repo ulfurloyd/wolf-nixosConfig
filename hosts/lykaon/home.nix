@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../home/laptop
+    ../../home/lykaon
     ../../home/common
   ];
 
