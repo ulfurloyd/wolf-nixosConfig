@@ -2,6 +2,7 @@
   imports = [
     ./anyrun
     ./bat
+    ./beets
     ./cava
     ./cmus
     # ./dunst
