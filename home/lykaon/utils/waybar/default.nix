@@ -143,6 +143,7 @@
           "format-wifi" = "   {signalStrength}%";
           "format-ethernet" = "  {ipaddr}";
           "format-disconnected" = ""; # An empty format will hide the module
+          "on-click" = "wpa_gui";
           "tooltip-format" = " {ifname} via {gwaddri}";
           "tooltip-format-wifi" = "   {essid} ({signalStrength}%)";
           "tooltip-format-ethernet" = "  {ifname} ({ipaddr}/{cidr})";
