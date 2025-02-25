@@ -47,6 +47,9 @@ in
     inputs.fastanime.packages."${system}".default
     # inputs.ghostty.packages."${system}".default
     lrcget
+    # inputs.fum.packages."${system}".default
+    conda
+    uv
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

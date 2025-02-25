@@ -28,6 +28,7 @@
     
     niri.url = "github:sodiboo/niri-flake";
 
+    fum.url = "github:qxb3/fum";
     fastanime.url = "github:Benexl/FastAnime";
     wezterm.url = "github:wez/wezterm?dir=nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
