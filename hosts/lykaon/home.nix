@@ -10,5 +10,6 @@
     android-studio
     speedtest-cli
     xwayland-satellite
+    libsForQt5.qt5.qtwayland
   ];
 }

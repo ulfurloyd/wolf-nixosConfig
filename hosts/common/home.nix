@@ -50,6 +50,8 @@ in
     # inputs.fum.packages."${system}".default
     conda
     uv
+    virtualbox
+    vagrant
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
