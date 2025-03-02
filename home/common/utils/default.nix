@@ -14,6 +14,7 @@
     ./ncmpcpp
     ./picom
     ./rofi
+    ./sptlrx
     ./starship
     ./swaylock
     ./tofi

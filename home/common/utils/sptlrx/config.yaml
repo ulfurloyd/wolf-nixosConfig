@@ -1,0 +1,10 @@
+player: mpris
+mpd:
+  address: 127.0.0.1:6600
+  password: ""
+
+mpris:
+  players: [cmus]
+
+local:
+  folder: "~/Music/"
