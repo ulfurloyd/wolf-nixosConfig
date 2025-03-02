@@ -197,6 +197,7 @@ in
     pinentry-curses
     pass
     passExtensions.pass-import
+    mangohud
   ];
 
   programs.nh = {
