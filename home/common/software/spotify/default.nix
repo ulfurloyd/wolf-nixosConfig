@@ -1,6 +1,6 @@
 {
   imports = [
-    ./spicetify.nix
+    # ./spicetify.nix
     ./spotify-player.nix
   ];
 }

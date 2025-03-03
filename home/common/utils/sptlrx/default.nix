@@ -1,6 +1,12 @@
-{ pkgs, ... }:
 {
-  home.packages = [ pkgs.sptlrx ];
+  imports = [ ./sptlrx.nix ];
+  programs.sptlrx = {
+    enable = true;
 
-  home.file.".config/sptlrx/config.yaml".source = ./config.yaml;
+    settings = {
+      player = "mpris";
+      mpris.players = [ "cmus" ];
+      local.folder = "~/Music";
+    };
+  };
 }
