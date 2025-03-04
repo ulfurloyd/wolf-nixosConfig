@@ -9,6 +9,7 @@
 - [[#wolf-nixos][wolf-nixos]]
 - [[#how-it-works][How it works]]
 - [[#installation][Installation]]
+- [[#nix-wrapper-script][Nix Wrapper Script]]
 - [[#theme-previews][Theme previews]]
   - [[#alea-iacta-est][alea-iacta-est]]
   - [[#gravesite-plain][gravesite-plain]]
@@ -60,6 +61,15 @@ integral steps, because I made this system over time instead of at once.
    for your setup.
 8. ~sudo nixos-rebuild switch --flake .#<host>~
 9. ~home-manager switch --flake .#<host>~
+
+* Nix Wrapper Script
+I was bored so I decided to write a set of scripts that wrap around the most common Nix commands.
+TLDR:
+- ~wolf sync~ - Rebuild system and home-manager config files (essentially ~nh os switch~ and ~nh home switch~)
+  - ~wolf sync system~ - Only rebuild system configuration (essentialy ~nh os switch~)
+  - ~wolf sync home~ - Only rebuild home configuration (essentialy ~nh home switch~)
+- ~wolf update~ - Update all flake inputs without rebuilding any configurations
+- ~wolf upgrade~ - Update all flake inputs and then rebuild all configurations (~wolf sync system~ + ~wolf sync home~)
 
 * Theme previews
 Theming possible through Stylix, a Nix project that generates base-16
