@@ -6,6 +6,7 @@ in
 
   imports = [
     ../../modules/common
+    ../../wrapper/wolf.nix
   ];
 
   # Bootloader
