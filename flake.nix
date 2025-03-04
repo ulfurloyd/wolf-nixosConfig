@@ -53,7 +53,7 @@
         email = "eklavyasood@gmail.com";
         dotfilesDir = "~/.dotfiles";
         shell = "zsh";
-        nyxTheme = "gravesite-plain";
+        nyxTheme = "alea-iacta-est";
         lykaonTheme = "gravesite-plain";
         wm = "bspwm";
         browser = "zen";

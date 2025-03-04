@@ -10,6 +10,7 @@
 - [[#how-it-works][How it works]]
 - [[#installation][Installation]]
 - [[#theme-previews][Theme previews]]
+  - [[#alea-iacta-est][alea-iacta-est]]
   - [[#gravesite-plain][gravesite-plain]]
   - [[#mount-fuji][mount-fuji]]
   - [[#bleak-cabin][bleak-cabin]]
@@ -67,6 +68,9 @@ them to most applications.
 More themes get added whenever I feel inspired.
 
 I configure GNU-Emacs in a separate repository [[https://github.com/eklavyasood/wolf-emacs][here]]
+
+** alea-iacta-est
+[[./screenshots/alea-iacta-est.png]]
 
 ** gravesite-plain
 [[./screenshots/gravesite-plain.png]]
