@@ -54,7 +54,7 @@
         dotfilesDir = "~/.dotfiles";
         shell = "zsh";
         nyxTheme = "alea-iacta-est";
-        lykaonTheme = "gravesite-plain";
+        lykaonTheme = "alea-iacta-est";
         wm = "bspwm";
         browser = "zen";
         term = "kitty";
