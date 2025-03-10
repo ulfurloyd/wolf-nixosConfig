@@ -10,5 +10,6 @@
     sshfs
     shadps4
     xwayland-satellite
+    pcsx2
   ];
 }
