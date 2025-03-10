@@ -4,7 +4,7 @@
     
     width = 300;
     height = 300;
-    anchor = "top-center";
+    anchor = "bottom-right";
     defaultTimeout = 5000;
   };
 }
