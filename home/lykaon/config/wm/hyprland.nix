@@ -47,7 +47,10 @@
     xwayland.enable = true;
 
     settings = {
-      "monitor" = "eDP-1,1920x1080@144,auto,1";
+      "monitor" = [
+        "eDP-1,1920x1080@144,auto,1"
+        "HDMI-A-1,1920x1080@144,auto,1,mirror,eDP-1"
+       ];
       "$mod" = "SUPER";
 
       bind = [
