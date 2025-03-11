@@ -19,6 +19,11 @@
             installRustc = true;
             installRustfmt = true;
           };
+          terraformls = {
+            enable = true;
+            autostart = true;
+            filetypes = [ "ts" ];
+          };
           ts_ls.enable = true;
         };
         keymaps = {
