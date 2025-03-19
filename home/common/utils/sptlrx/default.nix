@@ -1,7 +1,9 @@
+{ pkgs, ... }:
 {
   imports = [ ./sptlrx.nix ];
+  home.packages = [ pkgs.sptlrx ];
   programs.sptlrx = {
-    enable = true;
+    enable = false;
 
     settings = {
       player = "mpris";

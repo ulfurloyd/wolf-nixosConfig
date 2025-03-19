@@ -54,7 +54,7 @@
           "status-icons" = {
             "paused" = "⏸";
           };
-          "ignored-players" = [ "firefox" "zen" "whatsapp-for-linux" ];
+          "ignored-players" = [ "firefox" "zen" "whatsapp-for-linux" "legcord" ];
         };
           
         "cava"= {
@@ -123,7 +123,7 @@
 
         "clock" = {
           "interval" = 1;
-          "format" = "{:%H:%M}";
+          "format" = "{:%A, %B %d, %Y %H:%M}";
           "format-alt" = "{:%A, %B %d, %Y}";
           # "format-alt" = "{:%d-%m-%Y}";
           "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
