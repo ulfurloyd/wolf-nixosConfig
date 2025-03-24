@@ -26,7 +26,8 @@
         "Mod+Shift+Space".action = sh "wofi --show run";
 
         "Mod+F12".action = screenshot;
-        "Mod+Shift+F12".action = screenshot-screen;
+        # "Mod+Shift+F12".action = screenshot-screen;
+        "Mod+Shift+F12".action = sh "niri msg action screenshot-screen";
         
         "Mod+Shift+Slash".action = show-hotkey-overlay;
         
