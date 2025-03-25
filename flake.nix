@@ -28,7 +28,6 @@
     
     niri.url = "github:sodiboo/niri-flake";
 
-    fum.url = "github:qxb3/fum";
     fastanime.url = "github:Benexl/FastAnime";
     wezterm.url = "github:wez/wezterm?dir=nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
@@ -42,9 +41,10 @@
 
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nixvim,  anyrun, ... }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim,  anyrun, ... }:
     let
       pkgs = nixpkgs.legacyPackages.${system};
+      pkgsUnstable = nixpkgs-unstable.legacyPackages.${system};
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       
@@ -76,6 +76,7 @@
         specialArgs = {
           inherit inputs;
           inherit userSettings;
+          inherit pkgsUnstable;
         };
       };
 
@@ -91,6 +92,7 @@
         specialArgs = {
           inherit inputs;
           inherit userSettings;
+          inherit pkgsUnstable;
         };
       };
     };
@@ -101,6 +103,7 @@
         extraSpecialArgs = {
           inherit inputs;
           inherit userSettings;
+          inherit pkgsUnstable;
         };
         modules = [ 
           inputs.stylix.homeManagerModules.stylix
@@ -118,6 +121,7 @@
         extraSpecialArgs = {
           inherit inputs;
           inherit userSettings;
+          inherit pkgsUnstable;
         };
         modules = [ 
           inputs.stylix.homeManagerModules.stylix

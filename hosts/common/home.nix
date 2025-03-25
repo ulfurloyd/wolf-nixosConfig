@@ -11,7 +11,7 @@ in
 
   home.stateVersion = "24.05";
 
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     gh
     kitty
     nerdfonts
@@ -52,7 +52,13 @@ in
     uv
     virtualbox
     vagrant
-  ];
+  ])
+
+  ++
+
+  (with pkgsUnstable; [
+    # fum
+  ]);
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

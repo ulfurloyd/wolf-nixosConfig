@@ -7,6 +7,7 @@
     ./cmus
     # ./dunst
     ./fastfetch
+    ./fum
     ./fuzzel
     ./hyprlock
     ./mako
