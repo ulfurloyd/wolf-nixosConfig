@@ -7,7 +7,7 @@
 
   home.packages = with pkgs; [
     brightnessctl
-    android-studio
+    # android-studio
     speedtest-cli
     xwayland-satellite
     terraform
