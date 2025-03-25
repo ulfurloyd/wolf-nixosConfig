@@ -100,12 +100,12 @@
 
         "clock" = {
           "interval" = 1;
-          "format" = "{:%H:%M}";
+          "format" = "{:%A, %B %d, %Y %H:%M}";
           "format-alt" = "{:%A, %B %d, %Y}";
           # "format-alt" = "{:%d-%m-%Y}";
           "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         };
-        
+
         "niri/workspaces" = {
           "format" = "{icon}";
           "format-icons" = {
