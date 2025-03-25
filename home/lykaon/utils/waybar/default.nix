@@ -16,7 +16,7 @@
         ];
 
         modules-left = [ "niri/workspaces" "hyprland/workspaces" "niri/window" "hyprland/window" ];
-        modules-center = [ "custom/spotify" ];
+        modules-center = [ "custom/spotify" "mpris" ];
         modules-right = [ "tray" "custom/wttr" "pulseaudio" "network" "cpu" "disk" "memory" "battery" "clock" ];
 
         "custom/launcher" = {
@@ -41,6 +41,20 @@
             "disk"
             "memory"
           ];
+        };
+
+        "mpris" = {
+          "format" = "{player_icon}  {title} - {artist}";
+          "format-paused" = "{status_icon} {title} - {artist}";
+          "tooltip-format" = "{title} - {artist}" ;
+          "player-icons" = {
+            "default" = "▶";
+            "mpv" = "🎵";
+          };
+          "status-icons" = {
+            "paused" = "⏸";
+          };
+          "ignored-players" = [ "firefox" "zen" "whatsapp-for-linux" "legcord" ];
         };
 
         "pulseaudio" = {
@@ -158,7 +172,7 @@
             "critical" = 15;
           };
           "format" = "{icon}   {capacity}%";
-          "format-charging" = "  {capacity}%";
+          "format-charging" = "  {capacity}%";
           "format-plugged" = "  {capacity}%";
           "format-alt" = "{icon}  {time}";
           # "format-good" = ""; # An empty format will hide the module
