@@ -23,5 +23,6 @@
     ./wofi
     ./yazi
     ./zathura
+    ./zellij
   ];
 }
