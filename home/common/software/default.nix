@@ -6,5 +6,6 @@
     ./obs-studio
     ./spotify
     ./thunderbird
+    # ./zen
   ];
 }
