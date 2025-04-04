@@ -17,6 +17,7 @@
     ./rofi
     ./sptlrx
     ./starship
+    ./superfile
     ./swaylock
     ./tofi
     ./wlogout
