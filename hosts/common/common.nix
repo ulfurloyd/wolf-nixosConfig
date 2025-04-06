@@ -124,7 +124,12 @@ in
             src = /home/wolf/.config/dwm;
           };
         };
-
+        qtile = {
+          enable = true;
+          extraPackages = python3Packages: with python3Packages; [
+            qtile-extras
+          ];
+        };
         bspwm.enable = true;
       };
     };
