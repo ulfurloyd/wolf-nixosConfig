@@ -1,5 +1,7 @@
-{ userSettings, ...}:
-
+{ config, userSettings, ...}:
+let
+  stylixPalette = config.stylix.base16Scheme;
+in
 {
   # home.file.".config/qtile/config.py".source = ./configs/qtile/config.py;
   home.file.".config/qtile/config.py".text = ''
@@ -12,6 +14,25 @@
     terminal = "${userSettings.term}"
     browser = "${userSettings.browser}"
     discord = "legcord"
+
+    colors = [
+      "#${stylixPalette.base00}",
+      "#${stylixPalette.base01}",
+      "#${stylixPalette.base02}",
+      "#${stylixPalette.base03}",
+      "#${stylixPalette.base04}",
+      "#${stylixPalette.base05}",
+      "#${stylixPalette.base06}",
+      "#${stylixPalette.base07}",
+      "#${stylixPalette.base08}",
+      "#${stylixPalette.base09}",
+      "#${stylixPalette.base0A}",
+      "#${stylixPalette.base0B}",
+      "#${stylixPalette.base0C}",
+      "#${stylixPalette.base0D}",
+      "#${stylixPalette.base0E}",
+      "#${stylixPalette.base0F}"
+    ]
     
     keys = [
             # Switch between windows
@@ -55,7 +76,7 @@
             ),
             Key([mod], "t", lazy.window.toggle_floating(), desc = "Toggle floating on the focused window"),
             Key([mod, "control"], "r", lazy.reload_config(), desc = "Reload config"),
-            Key([mod, "control"], "q", lazy.shutdown(), desc = "Shutdown qtile"),
+            Key([mod, "shift"], "p", lazy.shutdown(), desc = "Shutdown qtile"),
             Key([mod], "space", lazy.spawncmd(), desc = "Spawn run launcher"),
 
             # program keybindings
@@ -71,8 +92,6 @@
             Key([mod], "period", lazy.spawn("playerctl next"), desc = "Next track"),
             Key([mod], "comma", lazy.spawn("playerctl previous"), desc = "Previous track"),
             Key([mod], "p", lazy.spawn("playerctl play-pause"), desc = "Toggle play/pause"),
-
-            # Key([mod], "s" lazy.group[9].toscreen(), desc = "Switch to the music screen"),
     ]
     
     # Add keybindings to switch VTs in wayland.
@@ -112,22 +131,31 @@
             ]
         )
 
+    layout_theme = {
+      "margin": 8,
+      "border_width": 1,
+      "border_focus": colors[6],
+      "border_normal": colors[2],
+    }
+
     layouts = [
-        layout.Columns(border_focus_stack = ["#d75f5f", "#8f3d3d"], border_width = 2),
-        layout.Max(),
-        layout.Bsp(),
+        # layout.Columns(border_focus_stack = ["#d75f5f", "#8f3d3d"], border_width = 2, margin = 10),
+        layout.Columns(**layout_theme),
+        layout.Max(margin = 10),
+        layout.Bsp(margin = 10),
     ]
     
     widget_defaults = dict(
         font = "sans",
         fontsize = 12,
         padding = 3,
+        foreground = colors[5],
     )
     extension_defaults = widget_defaults.copy()
     
     screens = [
         Screen(
-            bottom = bar.Bar(
+            top = bar.Bar(
                 [
                     widget.CurrentLayout(),
                     widget.GroupBox(),
@@ -139,16 +167,19 @@
                         },
                         name_transform = lambda name: name.upper(),
                     ),
-                    widget.TextBox("Press &lt;M-r&gt; to spawn", foreground = "#d75f5f"),
                     # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                     # widget.StatusNotifier(),
                     widget.Systray(),
+                    widget.Volume(
+                      unmute_format = "-> vol. {volume}/100",
+                      mute_format = "-> vol. 0/100",
+                    ),
                     widget.Clock(format = "%Y/%m/%d %a %I:%M %p"),
-                    widget.QuickExit(),
                 ],
-                24,
+                36,
                 # border_width = [2, 0, 2, 0],
                 # border_color = ["ff00ff", "000000", "ff00ff", "000000"]
+                background = colors[3],
             ),
             # You can uncommend this variable if you see that on X11 floating resize/moving is laggy
             # By default we handle these events delayed to already improve performance, however your system might still be struggling

@@ -5,6 +5,27 @@ from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = "kitty"
+browser = "zen"
+discord = "legcord"
+
+colors = [
+  "#181c1f",
+  "#46464e",
+  "#766575",
+  "#a79b9f",
+  "#b5b9ba",
+  "#dfe3e2",
+  "#f0f1f3",
+  "#f0f0f0",
+  "#928f9a",
+  "#a58b8a",
+  "#dc7538",
+  "#ab8791",
+  "#b68483",
+  "#8f918e",
+  "#879296",
+  "#969084"
+]
 
 keys = [
         # Switch between windows
@@ -48,8 +69,22 @@ keys = [
         ),
         Key([mod], "t", lazy.window.toggle_floating(), desc = "Toggle floating on the focused window"),
         Key([mod, "control"], "r", lazy.reload_config(), desc = "Reload config"),
-        Key([mod, "control"], "q", lazy.shutdown(), desc = "Shutdown qtile"),
+        Key([mod, "shift"], "p", lazy.shutdown(), desc = "Shutdown qtile"),
         Key([mod], "space", lazy.spawncmd(), desc = "Spawn run launcher"),
+
+        # program keybindings
+        Key([mod], "b", lazy.spawn(browser), desc = "Spawn browser"),
+        Key([mod], "d", lazy.spawn(discord), desc = "Spawn discord client"),
+        
+        # audio controls
+        Key([mod], "minus", lazy.spawn("pactl set-sink-volume 0 -5%"), desc = "Decrease volume"),
+        Key([mod], "equal", lazy.spawn("pactl set-sink-volume 0 +5%"), desc = "Increase volume"),
+        Key([mod], "m", lazy.spawn("pactl set-sink-mute 0 toggle"), desc = "Toggle mute"),
+
+        # media controls
+        Key([mod], "period", lazy.spawn("playerctl next"), desc = "Next track"),
+        Key([mod], "comma", lazy.spawn("playerctl previous"), desc = "Previous track"),
+        Key([mod], "p", lazy.spawn("playerctl play-pause"), desc = "Toggle play/pause"),
 ]
 
 # Add keybindings to switch VTs in wayland.
@@ -89,24 +124,35 @@ for i in groups:
         ]
     )
 
+layout_theme = {
+  "margin": 8,
+  "border_width": 1,
+  "border_focus": colors[12],
+  "border_normal": colors[2],
+}
+
 layouts = [
-    layout.Columns(border_focus_stack = ["#d75f5f", "#8f3d3d"], border_width = 2),
-    layout.Max(),
-    layout.Bsp(),
+    # layout.Columns(border_focus_stack = ["#d75f5f", "#8f3d3d"], border_width = 2, margin = 10),
+    layout.Columns(**layout_theme),
+    layout.Max(margin = 10),
+    layout.Bsp(margin = 10),
 ]
 
 widget_defaults = dict(
     font = "sans",
     fontsize = 12,
     padding = 3,
+    foreground = colors[5],
 )
 extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        bottom = bar.Bar(
+        top = bar.Bar(
             [
+                widget.Spacer(length = 24),
                 widget.CurrentLayout(),
+                widget.Spacer(length = 12),
                 widget.GroupBox(),
                 widget.Prompt(),
                 widget.WindowName(),
@@ -116,16 +162,21 @@ screens = [
                     },
                     name_transform = lambda name: name.upper(),
                 ),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground = "#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 widget.Systray(),
+                widget.Volume(
+                  unmute_format = "-> vol. {volume}/100",
+                  mute_format = "-> vol. 0/100",
+                ),
                 widget.Clock(format = "%Y/%m/%d %a %I:%M %p"),
-                widget.QuickExit(),
+                widget.Spacer(length = 24),
             ],
-            24,
+            36,
+            margin = [ 8, 12, 0, 12 ],
             # border_width = [2, 0, 2, 0],
             # border_color = ["ff00ff", "000000", "ff00ff", "000000"]
+            background = colors[1],
         ),
         # You can uncommend this variable if you see that on X11 floating resize/moving is laggy
         # By default we handle these events delayed to already improve performance, however your system might still be struggling
@@ -146,7 +197,7 @@ dgroups_app_rules = []
 follow_mouse_focus = True
 bring_front_click = False
 floats_kept_above = True
-cursor_warp = False
+cursor_warp = True
 
 floating_layout = layout.Floating(
     float_rules = [
@@ -180,3 +231,4 @@ wl_xcursor_size = 24
 # mailing lists, GitHub issues, and other WM documentation that sugges setting this 
 # string if your 
 wmname = "LG3D"
+
