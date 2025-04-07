@@ -117,6 +117,7 @@ I configure GNU-Emacs in a separate repository [[https://github.com/eklavyasood/
 - [[https://github.com/cmus/cmus][cmus]]
 - [[https://github.com/Gerg-L/spicetify-nix][Spicetify-Nix]]
 - [[https://github.com/aome510/spotify-player][spotify_player]]
+- [[https://github.com/zellij-org/zellij][zellij]]
 
 ** Wayland
 - [[https://github.com/YaLTeR/niri][Niri]]
