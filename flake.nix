@@ -34,6 +34,8 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     swww.url = "github:LGFae/swww";
+
+    hyprland.url = "github:hyprwm/Hyprland";
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
