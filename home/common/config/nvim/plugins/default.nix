@@ -1,6 +1,8 @@
 { config, ... }:
 {
   imports = [
+    # colorizer isn't available in 24.11
+    # ./colorizer.nix
     ./comment.nix
     ./completions.nix
     ./dap.nix

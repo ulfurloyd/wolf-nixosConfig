@@ -5,47 +5,18 @@
     enable = true;
     systemd.enable = true;
 
-    extraConfig = ''
-      # disable this random monitor that i have no clue about
-      monitor = Unknown-1, disable
-
-      general {
-        gaps_in = 6
-        gaps_out = 8
-        border_size = 2
-        layout = dwindle
-      }
-
-      decoration {
-        rounding = 5
-      }
-
-      input {
-      }
-
-      env = LIBGA_DRIVER_NAME,nvidia
-      env = __GLX_VENDOR_LIBRARY_NAME,nvidia
-      cursor {
-        no_hardware_cursors = true
-      }
-
-      bindm = $mod, mouse:272, movewindow
-      bindm = $mod, mouse:273, resizewindow
-
-      exec-once = niri
-      exec-once = waybar &
-      exec-once = emacs --daemon
-      exec-once = steam
-      exec-once = swww-daemon
-      exec-once = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.nyxTheme}/wallpaper.png -t random --transition-duration 2
-      exec = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.nyxTheme}/wallpaper.png -t random --transition-duration 2
-    '';
-
     xwayland.enable = true;
 
     settings = {
       "monitor" = "HDMI-A-1,1920x1080@144,auto,1";
       "$mod" = "SUPER";
+
+      general = {
+        gaps_in = 6;
+        gaps_out = 8;
+        border_size = 2;
+        layout = "dwindle";
+      };
 
       bind = [
         "$mod, RETURN, exec, ${userSettings.term}"
@@ -125,6 +96,15 @@
         "$mod SHIFT, s, exec, scratchpad -g -m 'wofi -d'"
       ];
 
+      bindm = [
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
+      ];
+
+      decoration = {
+        rounding = 5;
+      };
+
       windowrule = [
         "workspace 2, ${userSettings.browser}"
         "workspace 3, vesktop"
@@ -132,7 +112,28 @@
         "workspace 6, whatsapp-for-linux"
         "workspace 10, spotify"
       ];
+
+      cursor = {
+        no_hardware_cursors = true;
+      };
+
+      exec-once = [
+        "waybar &"
+        "emacs --daemon"
+        "steam"
+        "swww-daemon"
+        "swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.nyxTheme}/wallpaper.png -t random --transition-duration 2"
+        "swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.nyxTheme}/wallpaper.png -t random --transition-duration 2"
+      ];
     };
+
+    extraConfig = ''
+      # disable this random monitor that i have no clue about
+      monitor = Unknown-1, disable
+
+      env = LIBGA_DRIVER_NAME,nvidia
+      env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+    '';
   };
 
   home.packages = with pkgs; [
