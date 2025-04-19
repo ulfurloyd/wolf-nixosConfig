@@ -9,7 +9,7 @@
     xwayland.enable = true;
 
     settings = {
-      "monitor" = "HDMI-A-1,1920x1080@144,auto,1";
+      "monitor" = "HDMI-A-1,preferred,auto,1";
       "$mod" = "SUPER";
 
       general = {
@@ -107,11 +107,12 @@
       };
 
       windowrule = [
-        "workspace 2, ${userSettings.browser}"
-        "workspace 3, vesktop"
-        "workspace 3, legcord"
-        "workspace 6, whatsapp-for-linux"
-        "workspace 10, spotify"
+        "workspace 2,class:^(zen)$"
+        "workspace 3,class:^(vesktop)$"
+        "workspace 3,class:^(legcord)$"
+        "workspace 5,class:^(steam)$"
+        "workspace 6,class:^(whatsapp-for-linux)$"
+        "workspace 10,class:^(spotify)$"
       ];
 
       cursor = {
@@ -121,6 +122,8 @@
       exec-once = [
         "waybar &"
         "emacs --daemon"
+        "legcord"
+        "zen"
         "steam"
         "swww-daemon"
         "swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.nyxTheme}/wallpaper.png -t random --transition-duration 2"
