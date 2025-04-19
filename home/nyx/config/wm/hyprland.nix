@@ -117,7 +117,7 @@
         "6,monitor:DP-3"
         "7,monitor:DP-3"
         "8,monitor:DP-3"
-        "9,monitor:DP-3"
+        "9,monitor:HDMI-A-1"
         "10,monitor:HDMI-A-1"
       ];
 
@@ -129,7 +129,6 @@
         "workspace 2,class:^(zen)$"
         "workspace 3,class:^(vesktop)$"
         "workspace 3,class:^(legcord)$"
-        "workspace 5,class:^(steam)$"
         "workspace 6,class:^(whatsapp-for-linux)$"
         "workspace 10,class:^(spotify)$"
       ];
