@@ -131,6 +131,11 @@
       ];
     };
 
+    plugins = [
+      # inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
+      # inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
+    ];
+
     extraConfig = ''
       # disable this random monitor that i have no clue about
       monitor = Unknown-1, disable
