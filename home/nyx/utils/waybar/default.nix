@@ -12,6 +12,7 @@
         margin-left = 5;
         margin-right = 5;
         output = [
+          "DP-3"
           "HDMI-A-1"
         ];
 

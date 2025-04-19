@@ -9,7 +9,10 @@
     xwayland.enable = true;
 
     settings = {
-      "monitor" = "HDMI-A-1,preferred,auto,1";
+      "monitor" = [
+        "DP-3,1920x1080@144,0x0,1"
+        "HDMI-A-1,preferred,1920x0,auto"
+      ];
       "$mod" = "SUPER";
 
       general = {
@@ -52,6 +55,9 @@
         "$mod, j, movefocus, d"
         "$mod, k, movefocus, u"
         "$mod, l, movefocus, r"
+
+        "$mod, bracketleft, focusmonitor, -1"
+        "$mod, bracketright, focusmonitor, +1"
 
         "$mod ALT, h, resizeactive, -100 0"
         "$mod ALT, j, resizeactive, 0 100"
@@ -100,6 +106,19 @@
       bindm = [
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
+      ];
+
+      workspace = [
+        "1,monitor:DP-3"
+        "2,monitor:DP-3"
+        "3,monitor:HDMI-A-1"
+        "4,monitor:DP-3"
+        "5,monitor:HDMI-A-1"
+        "6,monitor:DP-3"
+        "7,monitor:DP-3"
+        "8,monitor:DP-3"
+        "9,monitor:DP-3"
+        "10,monitor:HDMI-A-1"
       ];
 
       decoration = {
