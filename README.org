@@ -27,7 +27,7 @@
 - Two Hosts, #nyx and #lykaon for both my systems (nyx - desktop and lykaon - laptop)
 - Massive work in progress, but it /did/ work in a VM with minor configuration changes (GPU Drivers)
 - TODO figure out a simple installation script that automates the entire process, including hostname change
-- NEW: changed names for both hosts, from #desktop to #nyx and from #laptop to #lykaon
+- NEW: configured a second monitor for nyx, with all the required hyprland configuration changes
 
 * How it works
 - The hosts directory contains confguration relevant for both hosts separately, as well as modules common to both hosts.
@@ -77,7 +77,7 @@ colorschemes whenever you rebuild your system/home configs, and applies
 them to most applications.
 More themes get added whenever I feel inspired.
 
-I configure GNU-Emacs in a separate repository [[https://github.com/eklavyasood/wolf-emacs][here]]
+I configure GNU-Emacs in a separate repository [[https://github.com/ulfurloyd/wolf-emacs][here]]
 
 ** alea-iacta-est
 [[./screenshots/alea-iacta-est.png]]
@@ -115,17 +115,16 @@ I configure GNU-Emacs in a separate repository [[https://github.com/eklavyasood/
 - [[https://www.gnu.org/software/emacs/][Emacs]]
 - [[https://github.com/jesseduffield/lazygit][LazyGit]]
 - [[https://github.com/cmus/cmus][cmus]]
-- [[https://github.com/Gerg-L/spicetify-nix][Spicetify-Nix]]
-- [[https://github.com/aome510/spotify-player][spotify_player]]
 - [[https://github.com/zellij-org/zellij][zellij]]
 
 ** Wayland
-- [[https://github.com/YaLTeR/niri][Niri]]
 - [[https://github.com/hyprwm/Hyprland][Hyprland]]
+- [[https://github.com/YaLTeR/niri][Niri]]
 - [[https://github.com/Alexays/Waybar][Waybar]]
 - [[https://github.com/SimplyCEO/wofi][Wofi]]
 
 ** X
+- [[https://github.com/qtile/qtile][qtile]]
 - [[https://github.com/baskerville/bspwm][bspwm]]
 - [[https://github.com/yshui/picom][Picom]]
 - [[https://github.com/polybar/polybar][Polybar]]
