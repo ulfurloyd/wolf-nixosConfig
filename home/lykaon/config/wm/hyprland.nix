@@ -155,19 +155,6 @@
       "swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.lykaonTheme}/wallpaper.png -t random --transition-duration 2"
       ];
     };
-
-    extraConfig = ''
-      # disable this random monitor that i have no clue about
-      monitor = Unknown-1, disable
-
-      input {
-        numlock_by_default = true;
-        touchpad {
-          natural_scroll = true
-          scroll_factor = 1.6
-        }
-      }
-    '';
   };
 
   home.packages = with pkgs; [
