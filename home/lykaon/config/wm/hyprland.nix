@@ -1,11 +1,48 @@
-{ inputs, userSettings, pkgs, ... }:
+{ userSettings, pkgs, ... }:
 
 {
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    # portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+
+    extraConfig = ''
+      # disable this random monitor that i have no clue about
+      monitor = Unknown-1, disable
+
+      general {
+        gaps_in = 6
+        gaps_out = 8
+        border_size = 2
+        layout = dwindle
+      }
+
+      input {
+        numlock_by_default = true;
+        touchpad {
+          natural_scroll = true
+          scroll_factor = 1.6
+        }
+      }
+
+      decoration {
+        rounding = 5
+      }
+
+      cursor {
+        no_hardware_cursors = true
+      }
+
+      bindm = $mod, mouse:272, movewindow
+      bindm = $mod, mouse:273, resizewindow
+
+      exec-once = nm-applet --indicator
+      exec-once = dunst
+      exec-once = waybar &
+      exec-once = emacs --daemon
+      exec-once = swww-daemon
+      # exec-once = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.lykaonTheme}/wallpaper.png -t random --transition-duration 2
+      exec = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.lykaonTheme}/wallpaper.png -t random --transition-duration 2
+    '';
 
     xwayland.enable = true;
 
@@ -15,13 +52,6 @@
         "HDMI-A-1,1920x1080@144,auto,1,mirror,eDP-1"
        ];
       "$mod" = "SUPER";
-
-      general = {
-        gaps_in = 6;
-        gaps_out = 8;
-        border_size = 2;
-        layout = "dwindle";
-      };
 
       bind = [
         "$mod, RETURN, exec, ${userSettings.term}"
@@ -109,15 +139,6 @@
         "$mod SHIFT, s, exec, scratchpad -g -m 'wofi -d'"
       ];
 
-      bindm = [
-        "$mod, mouse:272, movewindow"
-        "$mod, mouse:273, resizewindow"
-      ];
-
-      decoration = {
-        rounding = 5;
-      };
-
       # touchpad gestures
       gestures = {
         "workspace_swipe" = true;
@@ -130,29 +151,6 @@
         "workspace 3, legcord"
         "workspace 6, whatsapp-for-linux"
         "workspace 10, spotify"
-      ];
-
-      cursor = {
-        no_hardware_cursors = true;
-      };
-
-      input = {
-        numlock_by_default = true;
-
-        touchpad = {
-          natural_scroll = true;
-          scroll_factor = 1.6;
-        };
-      };
-
-      exec-once = [
-      "nm-applet --indicator"
-      "dunst"
-      "waybar &"
-      "emacs --daemon"
-      "swww-daemon"
-      "swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.lykaonTheme}/wallpaper.png -t random --transition-duration 2"
-      "swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.lykaonTheme}/wallpaper.png -t random --transition-duration 2"
       ];
     };
   };
