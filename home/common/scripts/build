@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+
+# this script lets me build and run basic c/cpp programs without needing to exec the compiler by name.
+# [./build $programName] will build the program with gcc (for C) and g++ (for C++) and then run the resulting binary
+
+usage() {
+  echo "Usage: $0 [-p] FILE"
+  echo
+  echo "  FILE      Path to a C or C++ source file"
+  echo "  -p        Persist the compiled binary after execution (by default, it is deleted after execution)"
+  exit 0
+}
+
+persistFlag=false
+
+while getopts "ph" opt; do
+  case "$opt" in
+    p) persistFlag=true ;;
+    h) usage ;;
+    *) echo "${RED}Usage: $0 [-p] FILE${RESET}"; exit 1;;
+  esac
+done
+shift $((OPTIND - 1))
+
+file="$1"
+ext="${file##*.}"
+out="${file%.*}.out"
+
+# colours
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+RESET=$(tput sgr0)
+
+if [[ ! -f "$file" ]]; then
+  echo "${RED}File not found, Exiting.${RESET}"
+  exit 3
+fi
+
+if [[ "$ext" == "c" ]]; then
+  gcc -o "$out" "$file"
+elif [[ "$ext" == "cpp" ]]; then
+  g++ -o "$out" "$file"
+else
+  echo "${RED}Not a C or C++ program file, exiting.${RESET}"
+  exit 2
+fi
+
+if [[ "$?" -ne 0 ]]; then
+  echo "${RED}Build failed!${RESET}"
+  exit 1
+fi
+
+if [[ ! -x "$out" ]]; then
+  echo "${RED}Build did not create an executable, exiting.${RESET}"
+  exit 4
+fi
+
+./"$out"
+
+if [[ "$persistFlag" == false ]]; then
+  echo "${GREEN}Execution complete, deleting the binary.${RESET}"
+  rm "$out"
+  exit 0
+fi
+
+echo "${GREEN}Execution complete.${RESET}"
+exit 0
