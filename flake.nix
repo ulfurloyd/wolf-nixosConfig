@@ -49,9 +49,11 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim,  anyrun, ... }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim,  anyrun, nixos-cosmic, ... }:
     let
       pkgs = nixpkgs.legacyPackages.${system};
       pkgsUnstable = nixpkgs-unstable.legacyPackages.${system};
@@ -79,6 +81,7 @@
         modules = [ 
           inputs.stylix.nixosModules.stylix
           inputs.niri.nixosModules.niri
+          inputs.nixos-cosmic.nixosModules.default
           ./hosts/nyx/nyx.nix
           ./hosts/common/common.nix
         ];

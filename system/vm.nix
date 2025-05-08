@@ -4,9 +4,7 @@
   programs.dconf.enable = true;
 
   # add user to libvirtd group
-  users.users.wolf.extraGroups = [ "libvirtd" ];
-
-  virtualisation.vmware.host.enable = true;
+  users.users.wolf.extraGroups = [ "libvirtd" "kvm" ];
 
   # install necessary packages
   environment.systemPackages = with pkgs; [
@@ -18,6 +16,7 @@
     win-virtio
     win-spice
     adwaita-icon-theme
+    qemu_full
   ];
 
   # manage virtualization services
@@ -33,6 +32,8 @@
     };
 
     spiceUSBRedirection.enable = true;
+
+    vmware.host.enable = true;
   };
 
   services.spice-vdagentd.enable = true;
