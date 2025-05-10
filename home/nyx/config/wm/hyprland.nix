@@ -138,7 +138,7 @@
       };
 
       exec-once = [
-        "waybar &"
+        # "waybar &"
         "emacs --daemon"
         "legcord"
         "zen"
