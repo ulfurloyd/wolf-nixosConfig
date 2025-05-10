@@ -165,5 +165,6 @@
 
   home.packages = with pkgs; [
     xdg-desktop-portal-hyprland
+    # hyprpanel
   ];
 }

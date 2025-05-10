@@ -1,5 +1,6 @@
 {
   imports = [
+    ./hyprpanel
     ./polybar
     ./waybar
   ];
