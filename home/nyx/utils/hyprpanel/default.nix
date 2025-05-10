@@ -7,19 +7,28 @@
     overwrite.enable = true;
     hyprland.enable = true;
 
-    # layout = {
-    #   "bar.layouts" = {
-    #     "*" = {
-    #       left = [ "dashboard" "workspaces" ];
-    #       middle = [ "media" ];
-    #       right = [ "systray" "volume" "notifications" "clock" ];
-    #     };
-    #   };
-    # };
-
     settings = {
-      bar.launcher.autoDetectIcon = true;
-      bar.workspaces.show_icons = true;
+      bar = {
+        launcher.autoDetectIcon = true;
+        workspaces.show_icons = true;
+
+        customModules = {
+          weather = {
+            unit = "metric";
+          };
+        };
+      };
+
+      layout = {
+        "bar.layouts" = {
+          "*" = {
+            left = [ "dashboard" "workspaces" ];
+            middle = [ "media" ];
+            # right = [ "systray" "weather" "volume" "clock" "notifications" ];
+            right = [ "systray" "volume" "clock" "notifications" ];
+          };
+        };
+      };
 
       menus = {
         clock = {
@@ -28,7 +37,10 @@
             hideSeconds = true;
           };
 
-          weather.unit = "metric";
+          weather = {
+            location = "Jaipur";
+            unit = "metric";
+          };
         };
 
         dashboard.directories.enabled = false;
