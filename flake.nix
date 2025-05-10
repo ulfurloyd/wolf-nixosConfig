@@ -44,6 +44,10 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     Hyprspace = {
       url = "github:KZDKM/Hyprspace";
       inputs.hyprland.follows = "hyprland";
@@ -55,7 +59,13 @@
 
   outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim,  anyrun, nixos-cosmic, ... }:
     let
-      pkgs = nixpkgs.legacyPackages.${system};
+      # pkgs = nixpkgs.legacyPackages.${system};
+      overlays = [
+        inputs.hyprpanel.overlay
+      ];
+      pkgs = import nixpkgs {
+        inherit system overlays;
+      };
       pkgsUnstable = nixpkgs-unstable.legacyPackages.${system};
       system = "x86_64-linux";
       lib = nixpkgs.lib;

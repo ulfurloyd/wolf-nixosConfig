@@ -138,7 +138,7 @@
       };
 
       exec-once = [
-        "waybar &"
+        # "waybar &"
         "emacs --daemon"
         "legcord"
         "zen"
@@ -165,5 +165,6 @@
 
   home.packages = with pkgs; [
     xdg-desktop-portal-hyprland
+    # hyprpanel
   ];
 }
