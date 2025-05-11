@@ -22,9 +22,8 @@
       layout = {
         "bar.layouts" = {
           "*" = {
-            left = [ "dashboard" "workspaces" ];
+            left = [ "dashboard" "workspaces" "windowtitle" ];
             middle = [ "media" ];
-            # right = [ "systray" "weather" "volume" "clock" "notifications" ];
             right = [ "systray" "volume" "clock" "notifications" ];
           };
         };
@@ -37,10 +36,7 @@
             hideSeconds = true;
           };
 
-          weather = {
-            location = "Jaipur";
-            unit = "metric";
-          };
+          weather.unit = "metric";
         };
 
         dashboard.directories.enabled = false;

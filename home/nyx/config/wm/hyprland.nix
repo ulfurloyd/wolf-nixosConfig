@@ -138,11 +138,7 @@
       };
 
       exec-once = [
-        # "waybar &"
         "emacs --daemon"
-        "legcord"
-        "zen"
-        "steam"
         "swww-daemon"
         "swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.nyxTheme}/wallpaper.png -t random --transition-duration 2"
         "swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.nyxTheme}/wallpaper.png -t random --transition-duration 2"
