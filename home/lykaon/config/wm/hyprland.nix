@@ -36,8 +36,6 @@
       bindm = $mod, mouse:273, resizewindow
 
       exec-once = nm-applet --indicator
-      exec-once = dunst
-      exec-once = waybar &
       exec-once = emacs --daemon
       exec-once = swww-daemon
       # exec-once = swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.lykaonTheme}/wallpaper.png -t random --transition-duration 2
