@@ -4,7 +4,7 @@
 
   programs.hyprpanel = {
     enable = true;
-    overwrite.enable = true;
+    overwrite.enable = false;
     hyprland.enable = true;
 
     settings = {
