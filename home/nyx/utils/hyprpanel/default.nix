@@ -5,7 +5,7 @@
   programs.hyprpanel = {
     enable = true;
     overwrite.enable = false;
-    hyprland.enable = true;
+    hyprland.enable = false;
 
     settings = {
       bar = {

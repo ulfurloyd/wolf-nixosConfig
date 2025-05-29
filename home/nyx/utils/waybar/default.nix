@@ -1,4 +1,7 @@
-{ userSettings, ... }:
+{ config, userSettings, ... }:
+let
+  stylixPalette = config.stylix.base16Scheme;
+in
 {
   programs.waybar = {
     enable = true;
@@ -7,7 +10,7 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 30;
+        height = 28;
         margin-top = 6;
         margin-left = 5;
         margin-right = 5;
@@ -15,6 +18,7 @@
           "DP-3"
           "HDMI-A-1"
         ];
+        name = "mainBar";
 
         modules-left = [ "niri/workspaces" "hyprland/workspaces" "niri/window" "hyprland/window" ];
         modules-center = [ "custom/spotify" "mpris" ];
@@ -25,9 +29,9 @@
           "on-click" = "wofi --show drun -l top_left";
           "tooltip" = false;
         };
-        
+
         "custom/wttr" = {
-          "format" = "{} ";
+          "format" = "{}  ";
           "interval" = 300;
           "exec" = "/home/${userSettings.username}/.dotfiles/home/common/scripts/wttrin.sh";
         };
@@ -45,8 +49,8 @@
         };
 
         "mpris" = {
-          "format" = "{player_icon}  {title} - {artist}";
-          "format-paused" = "{status_icon} {title} - {artist}";
+          "format" = "  {player_icon}  {title} - {artist}  ";
+          "format-paused" = "  {status_icon} {title} - {artist}  ";
           "tooltip-format" = "{title} - {artist}" ;
           "player-icons" = {
             "default" = "▶";
@@ -87,8 +91,8 @@
           "format-bluetooth" = "{volume}% {icon} {format_source}";
           "format-bluetooth-muted" = " {icon} {format_source}";
           "format-muted" = " {format_source}";
-          "format-source" = "{volume}% ";
-          "format-source-muted" = " ";
+          "format-source" = "{volume}%  ";
+          "format-source-muted" = "  ";
           "format-icons" = {
             "headphone" = "";
             "hands-free" = "";
@@ -107,29 +111,29 @@
 
         "disk" = {
           "intervel" = 30;
-          "format" = "󰋊 {percentage_used}%";
+          "format" = "󰋊 {percentage_used}%  ";
           "tooltip-format" = "{used} used out of {total} on \"{path}\" ({percentage_used}%)";
         };
 
         "memory" = {
           "interval" = 10;
-          "format" = "  {used}";
+          "format" = "  {used}  ";
           "tooltip-format" = "{used}GiB used of {total}GiB ({percentage}%)";
         };
 
         "cpu" = {
           "interval" = 10;
-          "format" = "  {usage}%";
+          "format" = "  {usage}%  ";
         };
 
         "clock" = {
           "interval" = 1;
-          "format" = "{:%A, %B %d, %Y %H:%M}";
-          "format-alt" = "{:%A, %B %d, %Y}";
+          "format" = "{:%A, %B %d, %Y %H:%M} ";
+          "format-alt" = "{:%A, %B %d, %Y} ";
           # "format-alt" = "{:%d-%m-%Y}";
           "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         };
-        
+
         "niri/workspaces" = {
           "format" = "{icon}";
           "format-icons" = {
@@ -140,7 +144,7 @@
             "special" = "󰠱";
           };
         };
-        
+
         "niri/window" = {
           "icon" = true;
           "icon-size" = 20;
@@ -155,14 +159,15 @@
           "format-icons" = {
             "active" = "";
             "empty" = "";
-            "default" = "";
+            # "default" = "";
             "urgent" = "";
             "special" = "󰠱";
           };
         };
 
         "hyprland/window" = {
-          "icon" = true;
+          "format" = "  {title}  ";
+          "icon" = false;
           "icon-size" = 20;
         };
 
@@ -196,9 +201,75 @@
     };
 
     style = ''
+      * {
+        font-size: 8pt;
+      }
+
       window#waybar {
-        background-color: rgba(0,0,0,0.8);
+        background-image: none;
         background: transparent;
+      }
+
+      window#waybar.empty {
+        background-color: transparent;
+      }
+
+      .modules-left {
+        background-color: transparent;
+        border-style: none;
+      }
+      .modules-left #workspaces {
+        background-color: @base00;
+        margin-left: 0;
+        padding-left: 0;
+        border-radius: 14px 0px 0px 14px;
+      }
+      .modules-left #window {
+        background-color: @base01;
+        border-radius: 0px 14px 14px 0px;
+      }
+
+      .modules-right {
+        background-color: transparent;
+        border-style: none;
+      }
+      .modules-right > *:not(:first-child) {
+        margin-right: 6px;
+        margin-left: 6px;
+      }
+      .modules-right #clock {
+        background-color: @base00;
+        margin-right: 0;
+        padding-right: 0;
+        border-radius: 0px 14px 14px 0px;
+      }
+      .modules-right #memory {
+        background-color: @base01;
+      }
+      .modules-right #disk {
+        background-color: @base00;
+      }
+      .modules-right #cpu {
+        background-color: @base01;
+      }
+      .modules-right #pulseaudio {
+        background-color: @base00;
+      }
+      .modules-right #custom-wttr {
+        background-color: @base01;
+      }
+      .modules-right #tray {
+        background-color: @base00;
+        border-radius: 14px 0px 0px 14px;
+      }
+
+      .modules-center {
+        background-color: transparent;
+        border-style: none;
+      }
+      .modules-center #mpris {
+        background-color: @base00;
+        border-radius: 14px;
       }
 
       #window {
