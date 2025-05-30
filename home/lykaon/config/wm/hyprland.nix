@@ -135,6 +135,7 @@
       };
 
       exec-once = [
+        "waybar &"
         "nm-applet --indicator"
         "emacs --daemon"
         "swww-daemon"
