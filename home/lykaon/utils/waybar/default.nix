@@ -1,4 +1,7 @@
-{ userSettings, ... }:
+{ config, userSettings, ... }:
+let
+  stylixPalette = config.stylix.base16Scheme;
+in
 {
   programs.waybar = {
     enable = true;
@@ -15,7 +18,7 @@
           "eDP-1"
         ];
 
-        modules-left = [ "niri/workspaces" "hyprland/workspaces" "niri/window" "hyprland/window" ];
+        modules-left = [ "hyprland/workspaces" "hyprland/window" ];
         modules-center = [ "custom/spotify" "mpris" ];
         modules-right = [ "tray" "custom/wttr" "pulseaudio" "network" "cpu" "disk" "memory" "battery" "clock" ];
 
@@ -26,7 +29,7 @@
         };
         
         "custom/wttr" = {
-          "format" = "{} ";
+          "format" = "{}  ";
           "interval" = 300;
           "exec" = "/home/${userSettings.username}/.dotfiles/home/common/scripts/wttrin.sh";
         };
@@ -44,7 +47,7 @@
         };
 
         "mpris" = {
-          "format" = "{player_icon}  {title} - {artist}";
+          "format" = " {player_icon}  {title} - {artist}";
           "format-paused" = "{status_icon} {title} - {artist}";
           "tooltip-format" = "{title} - {artist}" ;
           "player-icons" = {
@@ -54,7 +57,7 @@
           "status-icons" = {
             "paused" = "⏸";
           };
-          "ignored-players" = [ "firefox" "zen" "whatsapp-for-linux" "legcord" ];
+          "ignored-players" = [ "legcord" ];
         };
 
         "pulseaudio" = {
@@ -129,12 +132,18 @@
           # };
           "format" = "{icon}";
           "format-icons" = {
-            "active" = "";
+            "active" = " ";
             "empty" = "";
-            "default" = "";
+            # "default" = "";
             "urgent" = "";
             "special" = "󰠱";
           };
+        };
+
+        "hyprland/window" = {
+          "format" = "{title}";
+          "icon" = false;
+          "icon-size" = 20;
         };
 
         "custom/spotify" = {
@@ -189,9 +198,97 @@
     };
 
     style = ''
+      * {
+        font-size: 8pt;
+      }
+
       window#waybar {
-        background-color: rgba(0,0,0,0.8);
+        background-image: none;
         background: transparent;
+      }
+
+      window#waybar.empty {
+        background-color: transparent;
+      }
+
+      .modules-left {
+        background-color: transparent;
+        border-style: solid;
+        border-width: 1px;
+        border-color: @base03;
+        border-radius: 14px;
+      }
+      .modules-left #workspaces {
+        background-color: @base00;
+        margin-left: 0;
+        padding: 0 6px 0 6px;
+        border-radius: 14px 0px 0px 14px;
+      }
+      .modules-left #window {
+        background-color: @base01;
+        padding: 0 6px 0 6px;
+        border-radius: 0px 14px 14px 0px;
+      }
+
+      .modules-right {
+        background-color: transparent;
+        border-style: solid;
+        border-width: 1px;
+        border-color: @base03;
+        border-radius: 14px;
+      }
+      .modules-right #clock {
+        background-color: @base00;
+        padding: 0 6px 0 6px;
+        margin-right: 0;
+        border-radius: 0px 14px 14px 0px;
+      }
+      .modules-right #battery {
+        padding: 0 6px 0 6px;
+        background-color: @base01;
+      }
+      .modules-right #memory {
+        padding: 0 6px 0 6px;
+        background-color: @base00;
+      }
+      .modules-right #disk {
+        padding: 0 6px 0 6px;
+        background-color: @base01;
+      }
+      .modules-right #cpu {
+        padding: 0 6px 0 6px;
+        background-color: @base00;
+      }
+      .modules-right #network {
+        padding: 0 6px 0 6px;
+        background-color: @base01;
+      }
+      .modules-right #pulseaudio {
+        padding: 0 6px 0 6px;
+        background-color: @base00;
+      }
+      .modules-right #custom-wttr {
+        padding: 0 6px 0 6px;
+        background-color: @base01;
+      }
+      .modules-right #tray {
+        margin-left: 0;
+        padding: 0 6px 0 10px;
+        background-color: @base00;
+        border-radius: 14px 0px 0px 14px;
+      }
+
+      .modules-center {
+        background-color: transparent;
+        border-style: solid;
+        border-width: 1px;
+        border-color: @base06;
+        border-radius: 14px;
+      }
+      .modules-center #mpris {
+        padding: 0 6px 0 6px;
+        background-color: @base0A;
+        border-radius: 14px;
       }
 
       #window {
@@ -202,6 +299,7 @@
           margin: 0 2px 0 8px;
           padding: 2px;
       }
+
     '';
   };
 }
