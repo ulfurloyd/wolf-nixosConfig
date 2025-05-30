@@ -14,6 +14,7 @@
     ./mpd
     ./ncmpcpp
     ./picom
+    # ./rmpc
     ./rofi
     ./sptlrx
     ./starship

@@ -52,6 +52,7 @@ in
     uv
     virtualbox
     vagrant
+    rmpc
   ])
 
   ++

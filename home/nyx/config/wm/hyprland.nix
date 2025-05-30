@@ -123,7 +123,21 @@
 
       decoration = {
         rounding = 5;
+
+        blur = {
+          enabled = true;
+          size = 8;
+          passes = 4;
+          ignore_opacity = false;
+        };
+
+        # drop_shadow = false;
       };
+
+      layerrule = [
+        "blur, waybar"
+        "ignorealpha 0.0, waybar"
+      ];
 
       windowrule = [
         "workspace 2,class:^(zen)$"
@@ -138,6 +152,7 @@
       };
 
       exec-once = [
+        "waybar &"
         "emacs --daemon"
         "swww-daemon"
         "swww img /home/${userSettings.username}/.dotfiles/themes/${userSettings.nyxTheme}/wallpaper.png -t random --transition-duration 2"
