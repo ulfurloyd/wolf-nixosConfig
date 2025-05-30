@@ -20,7 +20,7 @@ in
         ];
         name = "mainBar";
 
-        modules-left = [ "niri/workspaces" "hyprland/workspaces" "niri/window" "hyprland/window" ];
+        modules-left = [ "hyprland/workspaces" "hyprland/window" ];
         modules-center = [ "custom/spotify" "mpris" ];
         modules-right = [ "tray" "custom/wttr" "pulseaudio" "cpu" "disk" "memory" "clock" ];
 
@@ -49,9 +49,9 @@ in
         };
 
         "mpris" = {
-          "format" = "  {player_icon}  {title} - {artist}  ";
-          "format-paused" = "  {status_icon} {title} - {artist}  ";
-          "tooltip-format" = "{title} - {artist}" ;
+          "format" = " {player_icon}  {title} - {artist}";
+          "format-paused" = "{status_icon} {title} - {artist}";
+          "tooltip-format" = "{title} - {artist}";
           "player-icons" = {
             "default" = "▶";
             "mpv" = "🎵";
@@ -91,8 +91,8 @@ in
           "format-bluetooth" = "{volume}% {icon} {format_source}";
           "format-bluetooth-muted" = " {icon} {format_source}";
           "format-muted" = " {format_source}";
-          "format-source" = "{volume}%  ";
-          "format-source-muted" = "  ";
+          "format-source" = "{volume}% ";
+          "format-source-muted" = " ";
           "format-icons" = {
             "headphone" = "";
             "hands-free" = "";
@@ -111,25 +111,25 @@ in
 
         "disk" = {
           "intervel" = 30;
-          "format" = "󰋊 {percentage_used}%  ";
+          "format" = "󰋊 {percentage_used}%";
           "tooltip-format" = "{used} used out of {total} on \"{path}\" ({percentage_used}%)";
         };
 
         "memory" = {
           "interval" = 10;
-          "format" = "  {used}  ";
+          "format" = "  {used}";
           "tooltip-format" = "{used}GiB used of {total}GiB ({percentage}%)";
         };
 
         "cpu" = {
           "interval" = 10;
-          "format" = "  {usage}%  ";
+          "format" = "  {usage}%";
         };
 
         "clock" = {
           "interval" = 1;
-          "format" = "{:%A, %B %d, %Y %H:%M} ";
-          "format-alt" = "{:%A, %B %d, %Y} ";
+          "format" = "{:%A, %B %d %H:%M}";
+          "format-alt" = "{:%A, %B %d, %Y}";
           # "format-alt" = "{:%d-%m-%Y}";
           "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         };
@@ -157,7 +157,7 @@ in
           # };
           "format" = "{icon}";
           "format-icons" = {
-            "active" = "";
+            "active" = " ";
             "empty" = "";
             # "default" = "";
             "urgent" = "";
@@ -166,7 +166,7 @@ in
         };
 
         "hyprland/window" = {
-          "format" = "  {title}  ";
+          "format" = "{title}";
           "icon" = false;
           "icon-size" = 20;
         };
@@ -216,59 +216,73 @@ in
 
       .modules-left {
         background-color: transparent;
-        border-style: none;
+        border-style: solid;
+        border-width: 1px;
+        border-color: @base03;
+        border-radius: 14px;
       }
       .modules-left #workspaces {
         background-color: @base00;
         margin-left: 0;
-        padding-left: 0;
+        padding: 0 6px 0 6px;
         border-radius: 14px 0px 0px 14px;
       }
       .modules-left #window {
         background-color: @base01;
+        padding: 0 6px 0 6px;
         border-radius: 0px 14px 14px 0px;
       }
 
       .modules-right {
         background-color: transparent;
-        border-style: none;
-      }
-      .modules-right > *:not(:first-child) {
-        margin-right: 6px;
-        margin-left: 6px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: @base03;
+        border-radius: 14px;
       }
       .modules-right #clock {
         background-color: @base00;
+        padding: 0 6px 0 6px;
         margin-right: 0;
-        padding-right: 0;
         border-radius: 0px 14px 14px 0px;
       }
       .modules-right #memory {
+        padding: 0 6px 0 6px;
         background-color: @base01;
       }
       .modules-right #disk {
+        padding: 0 6px 0 6px;
         background-color: @base00;
       }
       .modules-right #cpu {
+        padding: 0 6px 0 6px;
         background-color: @base01;
       }
       .modules-right #pulseaudio {
+        padding: 0 6px 0 6px;
         background-color: @base00;
       }
       .modules-right #custom-wttr {
+        padding: 0 6px 0 6px;
         background-color: @base01;
       }
       .modules-right #tray {
+        margin-left: 0;
+        padding: 0 6px 0 6px;
         background-color: @base00;
         border-radius: 14px 0px 0px 14px;
       }
 
       .modules-center {
         background-color: transparent;
-        border-style: none;
+        border-style: solid;
+        border-width: 1px;
+        border-color: @base06;
+        border-radius: 14px;
       }
       .modules-center #mpris {
-        background-color: @base00;
+        padding: 0 6px 0 6px;
+        background-color: @base0A;
         border-radius: 14px;
       }
 

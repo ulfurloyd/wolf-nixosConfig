@@ -49,7 +49,7 @@ in
         "mpris" = {
           "format" = " {player_icon}  {title} - {artist}";
           "format-paused" = "{status_icon} {title} - {artist}";
-          "tooltip-format" = "{title} - {artist}" ;
+          "tooltip-format" = "{title} - {artist}";
           "player-icons" = {
             "default" = "▶";
             "mpv" = "🎵";
