@@ -1,34 +1,45 @@
+# feat: 
 # feat: ✨ 
 # feat: 🔍 
 # feat: 🔗 
 # feat: 🔒 
 
+# fix: 
 # fix: 🐛 
 # fix: 🐞 
 # fix: 🩹 
 # fix: 🚑️ 
 
+# style: 
 # style: 💅 
 # style: 🎨 
 # style: 💄 
 
+# ci: 
 # ci: 🦊 
 # ci: 📦 
 
+# deploy: 
 # deploy: 🚀 
 # deploy: 📦 
 
+# chore: 
 # chore: 🧹 
 # chore: 🔧 
 # chore: ⚙️ 
 # docs: 📜 
 
+# refactor: 
 # refactor: 🔨 
+# perf: 
 # perf: 🚀 
 
+# test: 
 # test: 🚦 
+# debug: 
 # debug: 🧪 
 
+# BREAKING CHANGE: 
 # BREAKING CHANGE: 🚨 
 # BREAKING CHANGE: 💥 
 # BREAKING CHANGE: 💣 
