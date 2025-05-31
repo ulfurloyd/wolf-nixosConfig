@@ -10,7 +10,7 @@
 
     settings = {
       "monitor" = [
-        "DP-3,1920x1080@144,0x0,1"
+        "DP-1,preferred,0x0,1"
         "HDMI-A-1,preferred,1920x0,auto"
       ];
       "$mod" = "SUPER";
@@ -109,14 +109,14 @@
       ];
 
       workspace = [
-        "1,monitor:DP-3"
-        "2,monitor:DP-3"
+        "1,monitor:DP-1"
+        "2,monitor:DP-1"
         "3,monitor:HDMI-A-1"
-        "4,monitor:DP-3"
-        "5,monitor:DP-3"
-        "6,monitor:DP-3"
-        "7,monitor:DP-3"
-        "8,monitor:DP-3"
+        "4,monitor:DP-1"
+        "5,monitor:DP-1"
+        "6,monitor:DP-1"
+        "7,monitor:DP-1"
+        "8,monitor:DP-1"
         "9,monitor:HDMI-A-1"
         "10,monitor:HDMI-A-1"
       ];

@@ -15,7 +15,7 @@ in
         margin-left = 5;
         margin-right = 5;
         output = [
-          "DP-3"
+          "DP-1"
           "HDMI-A-1"
         ];
         name = "mainBar";
